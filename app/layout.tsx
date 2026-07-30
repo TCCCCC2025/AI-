@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "北京 AI 政策情报",
-  description: "北京 AI、大模型、算力与数据政策的核验周报与申报窗口。",
+  description: "北京 AI、大模型、算力与数据政策的全景总览、周更与分类政策库。",
   openGraph: {
     title: "北京 AI 政策情报",
     description: "北京 AI、大模型、算力与数据政策的核验周报与申报窗口。",
