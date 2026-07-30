@@ -24,5 +24,9 @@ test("renders the Beijing AI policy intelligence homepage", async () => {
   assert.match(html, /京发改〔2026〕1185号/);
   assert.match(html, /经官方核验/);
   assert.match(html, /申报窗口雷达/);
+  assert.match(html, /政策库基线/);
+  assert.match(html, /北京市公共数据资源授权运营管理办法/);
+  assert.match(html, /北京经开区/);
+  assert.match(html, /政策库基线（[\s\S]*36[\s\S]*项）/);
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });
