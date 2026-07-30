@@ -7,8 +7,18 @@ export type Policy = {
   status: "持续适用" | "滚动核验" | "待回核";
 };
 
-export const policyGroups: { title: string; note: string; policies: Policy[] }[] = [
+export type PolicyWithBrief = Policy & {
+  summary: string;
+  businessImpact: string;
+  complianceImpact: string;
+  action: string;
+};
+
+export type PolicyGroup = { id: "national" | "beijing" | "districts"; title: string; note: string; policies: PolicyWithBrief[] };
+
+const policyGroupsBase = [
   {
+    id: "national" as const,
     title: "国家部委（20 项）",
     note: "与北京企业机会、合规或基础设施直接相关的国家政策基线。",
     policies: [
@@ -35,6 +45,7 @@ export const policyGroups: { title: string; note: string; policies: Policy[] }[]
     ],
   },
   {
+    id: "beijing" as const,
     title: "北京市级（12 项）",
     note: "北京本市的政策、实施方案及可与企业行动直接关联的兑现机制。",
     policies: [
@@ -53,6 +64,7 @@ export const policyGroups: { title: string; note: string; policies: Policy[] }[]
     ],
   },
   {
+    id: "districts" as const,
     title: "北京各区（4 项）",
     note: "区级支持政策应结合注册地、项目落地地和当期申报要求使用。",
     policies: [
@@ -62,4 +74,31 @@ export const policyGroups: { title: string; note: string; policies: Policy[] }[]
       { title: "北京经开区：进一步加快建设全域人工智能之城实施方案（2026—2027年）", issuer: "北京经开区管委会", date: "2026-01-29", themes: "AI / 大模型 / 算力 / 数据", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202601/t20260130_4478660.html", status: "持续适用" },
     ],
   },
+];
+
+const tailoredBriefs: Record<string, Pick<PolicyWithBrief, "summary" | "businessImpact" | "complianceImpact" | "action">> = {
+  "北京市关于加快智能体引领发展的若干措施": { summary: "围绕基础模型、智能体原生应用、Token 经济、算力保障和安全治理推出十项措施。", businessImpact: "可关注智能体场景、Token 服务、算力券及重点项目支持。", complianceImpact: "智能体分级分类监管仍在探索，补贴和揭榜以配套通知为准。", action: "梳理智能体产品、算力和场景项目，跟进后续揭榜及券类细则。" },
+  "北京市公共数据资源授权运营管理办法": { summary: "明确公共数据整体授权、授权期限、定价和收益分配的管理框架。", businessImpact: "可信数据空间、北数所交易及公共数据应用成为可进入的合作方向。", complianceImpact: "须符合授权协议、使用范围和数据安全要求。", action: "评估可申请的数据场景及授权运营合作路径。" },
+  "支持人工智能OPC创新发展行动方案（试行）": { summary: "支持 AI 一人公司社区建设，并配置 Token、算力和数据券等创业支持。", businessImpact: "OPC 企业可关注社区入驻、券类支持、融资和路演机会。", complianceImpact: "支持对象、额度和兑现条件以当期申报要求为准。", action: "核对企业身份与入驻资格，准备产品和融资材料。" },
+  "北京市AI赋能工业互联网高质量发展实施方案（2026—2028年）": { summary: "提出工业高质量数据集、工业智能体和解决方案供应商的建设目标。", businessImpact: "行业模型、智能体和软件智能化项目可争取相关支持。", complianceImpact: "项目需满足工业场景、数据质量和验收要求。", action: "围绕制造业客户形成可验收的数据集或智能体方案。" },
+  "2026年高精尖产业发展项目资金实施指南（第一批）": { summary: "明确算力券、模型、软件智能化和服务券等资金支持方向。", businessImpact: "可按机构、行业模型、开源和备案模型等路径匹配资助。", complianceImpact: "该类指南具有批次与截止期，须以当期申报通知为准。", action: "核对申报主体、备案情况和项目材料，持续跟踪下一批指南。" },
+  "北京经开区：进一步加快建设全域人工智能之城实施方案（2026—2027年）": { summary: "提出建设全域人工智能之城，覆盖企业集聚、开发者、Token 和 OPC 生态。", businessImpact: "经开区落地企业可关注模型券、社区和产业场景机会。", complianceImpact: "需结合注册地、项目落地和区级具体兑现规则判断。", action: "评估亦庄落地可行性，并对接对应园区和场景资源。" },
+};
+
+function addBrief(policy: Policy): PolicyWithBrief {
+  const fallback = {
+    summary: `${policy.title}明确了${policy.themes}领域的相关工作安排与支持方向。`,
+    businessImpact: `企业可结合自身产品、场景或数据能力关注${policy.themes}相关机会。`,
+    complianceImpact: policy.status === "待回核" ? "原文链接尚待精确回核，暂不应据此作出申报或合规判断。" : policy.status === "滚动核验" ? "公告、指南或征集事项会随批次变化，应以最新官方通知为准。" : "落实时仍应以正式原文、实施细则和当期通知为准。",
+    action: policy.status === "待回核" ? "先完成官方原文回核，再评估适用性。" : "核对自身主体资格与业务关联，持续关注配套细则。",
+  };
+  return { ...policy, ...fallback, ...tailoredBriefs[policy.title] };
+}
+
+export const policyGroups: PolicyGroup[] = policyGroupsBase.map((group) => ({ ...group, policies: group.policies.map(addBrief) }));
+
+export type WeeklyChange = { title: string; changeType: "新增" | "修订" | "截止" | "移出"; date: string; detail: string; href?: string; status: Policy["status"] };
+
+export const weeklyChanges: WeeklyChange[] = [
+  { title: "北京市关于加快智能体引领发展的若干措施", changeType: "新增", date: "2026-07-23", detail: "智能体、Token 经济、算力保障与场景支持成为北京市级政策重点。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202607/t20260723_4781085.html", status: "持续适用" },
 ];
