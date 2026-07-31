@@ -45,3 +45,21 @@ test("renders the overview, weekly, and policy-category routes", async () => {
   assert.match(beijingHtml, /合规与业务影响/);
   assert.match(districtsHtml, /行动提示/);
 });
+
+test("renders policy action intelligence and homepage judgement board", async () => {
+  const homeHtml = await (await render("/")).text();
+  const beijingHtml = await (await render("/beijing")).text();
+
+  assert.match(homeHtml, /本期判断/);
+  assert.match(homeHtml, /机会与风险看板/);
+  assert.match(homeHtml, /高机会政策/);
+  assert.match(homeHtml, /合规关注/);
+
+  assert.match(beijingHtml, /业务研判/);
+  assert.match(beijingHtml, /机会等级/);
+  assert.match(beijingHtml, /可能涉及客户/);
+  assert.match(beijingHtml, /应用场景/);
+  assert.match(beijingHtml, /相关政策/);
+  assert.match(beijingHtml, /北京市关于加快智能体引领发展的若干措施/);
+  assert.match(beijingHtml, /支持人工智能OPC创新发展行动方案/);
+});
