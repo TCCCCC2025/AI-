@@ -63,3 +63,28 @@ test("renders policy action intelligence and homepage judgement board", async ()
   assert.match(beijingHtml, /北京市关于加快智能体引领发展的若干措施/);
   assert.match(beijingHtml, /支持人工智能OPC创新发展行动方案/);
 });
+
+test("renders leadership and client-manager policy views", async () => {
+  const homeHtml = await (await render("/")).text();
+  const leadershipHtml = await (await render("/leadership")).text();
+  const clientHtml = await (await render("/client-manager")).text();
+
+  assert.match(homeHtml, /领导看政策/);
+  assert.match(homeHtml, /客户经理找机会/);
+
+  assert.match(leadershipHtml, /领导摘要/);
+  assert.match(leadershipHtml, /重点机会/);
+  assert.match(leadershipHtml, /风险与核验/);
+  assert.match(leadershipHtml, /管理层建议/);
+  assert.match(leadershipHtml, /政策结构/);
+  assert.match(leadershipHtml, /基于公开政策的业务研判/);
+
+  assert.match(clientHtml, /客户经理找机会/);
+  assert.match(clientHtml, /会前准备卡/);
+  assert.match(clientHtml, /央国企及大型企业数字化部门/);
+  assert.match(clientHtml, /AI 创业公司与 OPC/);
+  assert.match(clientHtml, /制造业及行业客户/);
+  assert.match(clientHtml, /建议提问/);
+  assert.match(clientHtml, /下一步动作/);
+  assert.match(clientHtml, /基于公开政策的业务研判/);
+});
