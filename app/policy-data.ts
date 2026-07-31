@@ -1,4 +1,4 @@
-export type Policy = {
+export type PolicyBase = {
   title: string;
   issuer: string;
   date: string;
@@ -7,7 +7,30 @@ export type Policy = {
   status: "持续适用" | "滚动核验" | "待回核";
 };
 
-export type PolicyWithBrief = Policy & {
+export type Policy = PolicyBase & {
+  id: string;
+};
+
+export type PolicyValidity = "现行有效" | "滚动事项" | "待核实" | "已截止" | "已废止" | "被替代";
+
+export type OpportunityLevel = "高" | "中" | "观察";
+
+export type RelatedPolicy = {
+  type: "上位依据" | "配套细则" | "同主题";
+  policyId: string;
+};
+
+export type PolicyAnalysis = {
+  validity: PolicyValidity;
+  opportunityLevel: OpportunityLevel;
+  judgement: string;
+  customerTypes: string[];
+  scenarios: string[];
+  relatedPolicies: RelatedPolicy[];
+  analysisBasis: "官方事实 + 业务研判";
+};
+
+export type PolicyWithBrief = Policy & PolicyAnalysis & {
   summary: string;
   businessImpact: string;
   complianceImpact: string;
@@ -85,17 +108,192 @@ const tailoredBriefs: Record<string, Pick<PolicyWithBrief, "summary" | "business
   "北京经开区：进一步加快建设全域人工智能之城实施方案（2026—2027年）": { summary: "提出建设全域人工智能之城，覆盖企业集聚、开发者、Token 和 OPC 生态。", businessImpact: "经开区落地企业可关注模型券、社区和产业场景机会。", complianceImpact: "需结合注册地、项目落地和区级具体兑现规则判断。", action: "评估亦庄落地可行性，并对接对应园区和场景资源。" },
 };
 
-function addBrief(policy: Policy): PolicyWithBrief {
+const policyIds: Record<string, string> = {
+  "2026年工业和信息化领域创新任务揭榜挂帅工作通知": "nat-2026-innovation-challenge",
+  "第二批央企AI战略性高价值场景和行业高质量数据集": "nat-2026-soe-ai-scenarios",
+  "智能体互信互联互操作全球合作倡议": "nat-agent-interoperability",
+  "手机端侧生成式人工智能服务已备案信息公告（7款）": "nat-mobile-genai-filing-202607",
+  "关于推动互联网基础资源高质量发展的指导意见": "nat-internet-infrastructure",
+  "生成式AI服务已备案信息公告（2026年5—6月）": "nat-genai-filing-20260506",
+  "数据产权登记工作指引（试行）": "nat-data-property-registration",
+  "《人工智能 智能体互联》系列7项国家标准": "nat-agent-standards",
+  "“人工智能+信息通信”创新发展实施意见（2026—2028年）": "nat-ai-telecom-2026",
+  "关于推进行业高质量数据集建设行动的实施方案": "nat-industry-datasets",
+  "2026年数字经济发展工作要点": "nat-digital-economy-2026",
+  "生成式AI服务已备案信息公告（2026年3—4月）": "nat-genai-filing-20260304",
+  "智能体规范应用与创新发展实施意见": "nat-agent-development",
+  "关于举办2026年“数据要素×”大赛的通知": "nat-data-factor-contest-2026",
+  "人工智能拟人化互动服务管理暂行办法": "nat-anthropomorphic-ai",
+  "关于促进人工智能与能源双向赋能的行动方案": "nat-ai-energy",
+  "关于开展普惠算力赋能中小企业发展专项行动的通知": "nat-inclusive-compute-sme",
+  "人工智能科技伦理审查与服务办法（试行）": "nat-ai-ethics-review",
+  "关于组织开展国家算力互联互通节点建设工作的通知": "nat-compute-interconnection",
+  "“人工智能+制造”专项行动实施意见": "nat-ai-manufacturing",
+  "北京市关于加快智能体引领发展的若干措施": "bj-agent-measures",
+  "北京市公共数据资源授权运营管理办法": "bj-public-data-operation",
+  "2026智慧城市场景创新需求（第四批）及智慧教育专项揭榜": "bj-smart-city-demand-202604",
+  "2026年第三批AI赋能新型工业化高质量数据集需求清单": "bj-industrial-dataset-demand-202603",
+  "推动高精尖产业深化产教融合行动方案（2026—2028年）": "bj-industry-education-2026",
+  "支持人工智能OPC创新发展行动方案（试行）": "bj-ai-opc",
+  "北京市AI赋能工业互联网高质量发展实施方案（2026—2028年）": "bj-ai-industrial-internet",
+  "北京市智能眼镜产业高质量发展行动方案（2026—2030年）": "bj-smart-glasses",
+  "北京市2026年推动经济稳中有进的若干措施": "bj-economic-measures-2026",
+  "2026年高精尖产业发展项目资金实施指南（第一批）": "bj-high-tech-fund-202601",
+  "促进商业卫星遥感数据资源开发利用的若干措施（2026—2030年）": "bj-satellite-data",
+  "北京人工智能创新高地建设行动计划": "bj-ai-innovation-highland",
+  "通州区：支持数字经济高质量发展的若干措施": "dist-tongzhou-digital-economy",
+  "昌平区：推动“人工智能+”创新发展行动计划（2026—2028年）": "dist-changping-ai-plus",
+  "海淀区：关于全面打造OPC创业生态的若干措施": "dist-haidian-opc",
+  "北京经开区：进一步加快建设全域人工智能之城实施方案（2026—2027年）": "dist-etown-ai-city",
+};
+
+const themeCustomers: Record<string, string[]> = {
+  AI: ["大模型与智能体企业", "央国企与大型企业数字化部门"],
+  大模型: ["大模型与智能体企业", "AI 创业公司与 OPC"],
+  算力: ["云服务与算力运营商", "芯片、服务器与数据中心企业"],
+  数据: ["数据服务与数据运营机构", "网络安全、数据治理与模型评测机构"],
+};
+
+const themeScenarios: Record<string, string> = {
+  AI: "人工智能产品与行业应用",
+  大模型: "大模型、智能体与生成式 AI 服务",
+  算力: "智算基础设施与算力服务",
+  数据: "数据集建设、授权运营与数据治理",
+};
+
+const tailoredAnalysis: Record<string, Partial<PolicyAnalysis>> = {
+  "bj-agent-measures": {
+    opportunityLevel: "高",
+    judgement: "北京市级智能体支持主线已形成，场景、Token、算力和安全治理值得优先跟进。",
+    customerTypes: ["大模型与智能体企业", "AI 创业公司与 OPC", "云服务与算力运营商", "央国企与大型企业数字化部门"],
+    scenarios: ["智能体原生应用", "Token 与算力服务", "标杆场景建设"],
+    relatedPolicies: [
+      { type: "同主题", policyId: "bj-ai-opc" },
+      { type: "配套细则", policyId: "bj-high-tech-fund-202601" },
+      { type: "同主题", policyId: "nat-agent-development" },
+    ],
+  },
+  "bj-public-data-operation": {
+    opportunityLevel: "高",
+    judgement: "公共数据授权运营进入制度化阶段，数据产品、可信空间和安全治理存在合作机会。",
+    customerTypes: ["数据服务与数据运营机构", "网络安全、数据治理与模型评测机构", "央国企与大型企业数字化部门"],
+    scenarios: ["公共数据授权运营", "可信数据空间", "数据产品开发与交易"],
+    relatedPolicies: [
+      { type: "同主题", policyId: "nat-data-property-registration" },
+      { type: "同主题", policyId: "bj-satellite-data" },
+    ],
+  },
+  "bj-ai-opc": {
+    opportunityLevel: "高",
+    judgement: "OPC 支持体系覆盖社区、Token、算力和融资，适合轻量化 AI 创业主体重点跟进。",
+    customerTypes: ["AI 创业公司与 OPC", "大模型与智能体企业", "园区、科研机构和高校"],
+    scenarios: ["OPC 社区入驻", "模型与智能体创业", "Token、算力及融资支持"],
+    relatedPolicies: [
+      { type: "上位依据", policyId: "bj-agent-measures" },
+      { type: "同主题", policyId: "dist-haidian-opc" },
+      { type: "同主题", policyId: "dist-etown-ai-city" },
+    ],
+  },
+  "bj-ai-industrial-internet": {
+    opportunityLevel: "高",
+    judgement: "工业数据集、工业智能体和软件智能化形成组合机会，制造业客户项目化需求较明确。",
+    customerTypes: ["制造业行业客户", "央国企与大型企业数字化部门", "数据服务与数据运营机构", "大模型与智能体企业"],
+    scenarios: ["工业高质量数据集", "工业智能体", "工业软件智能化"],
+    relatedPolicies: [
+      { type: "上位依据", policyId: "nat-ai-manufacturing" },
+      { type: "配套细则", policyId: "bj-industrial-dataset-demand-202603" },
+    ],
+  },
+  "bj-high-tech-fund-202601": {
+    opportunityLevel: "高",
+    judgement: "资金指南直接连接算力、模型和软件项目，但批次与申报窗口必须持续核验。",
+    customerTypes: ["大模型与智能体企业", "云服务与算力运营商", "软件与信息服务企业", "AI 创业公司与 OPC"],
+    scenarios: ["算力券与服务券", "行业模型项目", "软件智能化项目"],
+    relatedPolicies: [
+      { type: "上位依据", policyId: "bj-agent-measures" },
+      { type: "同主题", policyId: "bj-ai-innovation-highland" },
+    ],
+  },
+  "dist-etown-ai-city": {
+    opportunityLevel: "高",
+    judgement: "经开区提供企业落地、模型与 Token 生态组合支持，适合评估属地化项目机会。",
+    customerTypes: ["AI 创业公司与 OPC", "大模型与智能体企业", "云服务与算力运营商", "园区、科研机构和高校"],
+    scenarios: ["企业落地与园区合作", "模型与 Token 服务", "产业场景开放"],
+    relatedPolicies: [
+      { type: "同主题", policyId: "bj-agent-measures" },
+      { type: "同主题", policyId: "bj-ai-opc" },
+    ],
+  },
+  "nat-anthropomorphic-ai": {
+    opportunityLevel: "观察",
+    judgement: "拟人化互动服务面临专门合规约束，产品设计、内容安全和用户保护需要优先核对。",
+    customerTypes: ["大模型与智能体企业", "网络安全、数据治理与模型评测机构"],
+    scenarios: ["拟人化智能体服务", "内容安全与用户保护"],
+    relatedPolicies: [{ type: "同主题", policyId: "nat-agent-development" }],
+  },
+  "nat-ai-ethics-review": {
+    opportunityLevel: "观察",
+    judgement: "人工智能研发与应用项目需要关注科技伦理审查合规，尤其是高风险或敏感场景。",
+    customerTypes: ["大模型与智能体企业", "园区、科研机构和高校", "网络安全、数据治理与模型评测机构"],
+    scenarios: ["人工智能伦理审查", "高风险应用治理"],
+    relatedPolicies: [{ type: "同主题", policyId: "nat-anthropomorphic-ai" }],
+  },
+};
+
+function unique<T>(values: T[]): T[] {
+  return [...new Set(values)];
+}
+
+function mapValidity(status: PolicyBase["status"]): PolicyValidity {
+  if (status === "待回核") return "待核实";
+  if (status === "滚动核验") return "滚动事项";
+  return "现行有效";
+}
+
+function addAnalysis(policy: Policy): PolicyAnalysis {
+  const themes = policy.themes.split(" / ");
+  const pending = policy.status === "待回核";
+  const fallback: PolicyAnalysis = {
+    validity: mapValidity(policy.status),
+    opportunityLevel: pending ? "观察" : "中",
+    judgement: pending
+      ? "原文仍待精确回核，当前只作为政策线索观察。"
+      : `该政策对${themes.join("、")}相关产品、项目或治理工作具有持续影响。`,
+    customerTypes: unique(themes.flatMap((theme) => themeCustomers[theme] ?? [])).slice(0, 4),
+    scenarios: unique(themes.map((theme) => themeScenarios[theme]).filter(Boolean)).slice(0, 3),
+    relatedPolicies: [],
+    analysisBasis: "官方事实 + 业务研判",
+  };
+  return { ...fallback, ...tailoredAnalysis[policy.id] };
+}
+
+function addBrief(policyBase: PolicyBase): PolicyWithBrief {
+  const id = policyIds[policyBase.title];
+  if (!id) throw new Error(`Missing stable policy ID: ${policyBase.title}`);
+  const policy: Policy = { ...policyBase, id };
   const fallback = {
     summary: `${policy.title}明确了${policy.themes}领域的相关工作安排与支持方向。`,
     businessImpact: `企业可结合自身产品、场景或数据能力关注${policy.themes}相关机会。`,
     complianceImpact: policy.status === "待回核" ? "原文链接尚待精确回核，暂不应据此作出申报或合规判断。" : policy.status === "滚动核验" ? "公告、指南或征集事项会随批次变化，应以最新官方通知为准。" : "落实时仍应以正式原文、实施细则和当期通知为准。",
     action: policy.status === "待回核" ? "先完成官方原文回核，再评估适用性。" : "核对自身主体资格与业务关联，持续关注配套细则。",
   };
-  return { ...policy, ...fallback, ...tailoredBriefs[policy.title] };
+  return { ...policy, ...fallback, ...tailoredBriefs[policy.title], ...addAnalysis(policy) };
 }
 
 export const policyGroups: PolicyGroup[] = policyGroupsBase.map((group) => ({ ...group, policies: group.policies.map(addBrief) }));
+
+export const allPolicies = policyGroups.flatMap((group) => group.policies);
+
+export function getPolicyById(id: string) {
+  return allPolicies.find((policy) => policy.id === id);
+}
+
+export const policyMetrics = {
+  highOpportunity: allPolicies.filter((policy) => policy.opportunityLevel === "高").length,
+  complianceAttention: allPolicies.filter((policy) => policy.judgement.includes("合规")).length,
+  pendingVerification: allPolicies.filter((policy) => policy.validity === "待核实").length,
+  rollingVerification: allPolicies.filter((policy) => policy.validity === "滚动事项").length,
+};
 
 export type WeeklyChange = { title: string; changeType: "新增" | "修订" | "截止" | "移出"; date: string; detail: string; href?: string; status: Policy["status"] };
 
