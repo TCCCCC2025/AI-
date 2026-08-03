@@ -97,6 +97,8 @@ test("renders subsidy entry routes and keeps intelligence in policy analysis", a
 
   assert.match(subsidiesHtml, /补贴申报雷达/);
   assert.match(subsidiesHtml, /有效申报入口/);
+  assert.match(subsidiesHtml, /打开申报入口/);
+  assert.match(subsidiesHtml, /服务合同实际发生额最高 25%/);
   assert.doesNotMatch(subsidiesHtml, /政策依据链/);
   assert.doesNotMatch(subsidiesHtml, /趋势与预警/);
   assert.doesNotMatch(subsidiesHtml, /客户准备度/);
