@@ -26,6 +26,10 @@ npm run build
 - `scripts/prepare-github-pages.mjs` 将静态导出的根路径改写为项目站点路径 `/AI-/`。
 - 正式政策结论仅使用已核验的官方来源；每周更新时同步政策状态、概要、企业机会、合规影响与行动提示。
 
+## 每周同步
+
+现有政策自动化在 OpenAI Sites 发布后调用 [`npm run sync:github`](docs/weekly-github-sync.md)，将同一份已核验内容提交到 `github-pages`。推送成功后 GitHub Actions 自动重新发布 Pages；失败时按[同步运行手册](docs/weekly-github-sync.md)使用 GitHub Desktop 补推。
+
 ## Sites 版本
 
 该目录也保留 OpenAI Sites 所需的 `.openai/hosting.json` 与构建配置，现有 ChatGPT Sites 地址继续独立运行；GitHub Pages 是同一份静态内容的公开镜像。
@@ -93,6 +97,7 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 - `npm run dev`: start local development
 - `npm run build`: verify the vinext build output
 - `npm test`: build the starter and verify its rendered loading skeleton
+- `npm run sync:github`: validate, commit, push, and verify the GitHub Pages sync
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
 ## Learn More
