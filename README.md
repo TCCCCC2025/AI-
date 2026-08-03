@@ -1,14 +1,14 @@
-# vinext-starter
+# 北京 AI 政策情报
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+面向领导汇报与客户经理会前准备的北京 AI、大模型、算力与数据政策站点。
 
-## Prerequisites
+公开访问：<https://tccccc2025.github.io/AI-/>
 
-- Node.js `>=22.13.0`
+站点按首页总览、本周最新、国家、北京市级、区级，以及领导摘要和客户经理准备卡组织；政策事实以可追溯的官方来源为准，业务机会与行动提示属于研判信息。
 
-## Quick Start
+## 本地开发
+
+项目运行在 [vinext](https://github.com/cloudflare/vinext) 上，Node.js 需要 `>=22.13.0`。
 
 ```bash
 npm install
@@ -16,16 +16,19 @@ npm run dev
 npm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+## GitHub Pages 发布
 
-## Included Shape
+推送到 `main` 分支后，`.github/workflows/pages.yml` 会构建静态文件并发布到 GitHub Pages。仓库 Settings → Pages 的发布来源请选择 **GitHub Actions**。
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+## 内容维护
+
+- 页面与政策数据位于 `app/`。
+- `scripts/prepare-github-pages.mjs` 将静态导出的根路径改写为项目站点路径 `/AI-/`。
+- 正式政策结论仅使用已核验的官方来源；每周更新时同步政策状态、概要、企业机会、合规影响与行动提示。
+
+## Sites 版本
+
+该目录也保留 OpenAI Sites 所需的 `.openai/hosting.json` 与构建配置，现有 ChatGPT Sites 地址继续独立运行；GitHub Pages 是同一份静态内容的公开镜像。
 
 ## Workspace Auth Headers
 
