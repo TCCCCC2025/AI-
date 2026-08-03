@@ -103,3 +103,10 @@ test("renders subsidy intelligence and source registry routes", async () => {
   assert.match(sourcesHtml, /待核验线索/);
   assert.match(sourcesHtml, /官方政策/);
 });
+
+test("homepage links to subsidy radar and source registry", async () => {
+  const html = await (await render("/")).text();
+  assert.match(html, /补贴申报雷达/);
+  assert.match(html, /政策来源库/);
+  assert.match(html, /当前可申报/);
+});

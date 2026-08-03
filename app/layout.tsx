@@ -3,10 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "北京 AI 政策情报",
-  description: "北京 AI、大模型、算力与数据政策的全景总览、周更与分类政策库。",
+  description: "北京 AI、大模型、算力与数据政策的全景总览、周更、补贴申报雷达和政策来源库。",
   openGraph: {
     title: "北京 AI 政策情报",
-    description: "北京 AI、大模型、算力与数据政策的核验周报与申报窗口。",
+    description: "北京 AI、大模型、算力与数据政策的核验周报、补贴申报窗口与来源索引。",
     images: [{ url: "/og.png", width: 1734, height: 908 }],
   },
   icons: {

@@ -3,6 +3,8 @@ const links = [
   { href: "/leadership", label: "领导看政策" },
   { href: "/client-manager", label: "客户经理找机会" },
   { href: "/weekly", label: "本周最新" },
+  { href: "/subsidies", label: "补贴申报雷达" },
+  { href: "/sources", label: "政策来源库" },
   { href: "/national", label: "国家" },
   { href: "/beijing", label: "北京市级" },
   { href: "/districts", label: "区级" },
