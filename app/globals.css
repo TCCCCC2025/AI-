@@ -136,6 +136,88 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
 .next-action p { font-weight: 700; }
 .role-entry-card:focus-visible, .audience-section a:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
 
+.subsidy-entry { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: end; padding: 58px max(24px, calc((100vw - 1180px) / 2)); background: #fbfaf6; border-bottom: 1px solid var(--ink); }
+.subsidy-entry h2 { margin-bottom: 14px; font-family: Georgia, "Songti SC", serif; font-size: clamp(34px, 4vw, 54px); font-weight: 500; letter-spacing: -.04em; line-height: 1; }
+.subsidy-entry p:not(.eyebrow) { max-width: 640px; margin: 0; color: #536164; font-size: 15px; }
+.subsidy-entry > a { display: grid; gap: 35px; min-height: 160px; padding: 24px; color: var(--paper); background: var(--ink); text-decoration: none; border-top: 4px solid var(--signal); }
+.subsidy-entry > a span { color: #b6c3bc; font-size: 12px; }
+.subsidy-entry > a strong { font-size: 18px; }
+
+.subsidy-page { padding: 42px max(24px, calc((100vw - 1180px) / 2)) 72px; }
+.subsidy-hero > p:last-child { max-width: 720px; }
+.subsidy-anchor-nav { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 34px; }
+.subsidy-anchor-nav a { padding: 8px 12px; color: var(--ink); background: #fbfaf6; border: 1px solid var(--ink); font-size: 13px; font-weight: 700; text-decoration: none; }
+.subsidy-metrics { display: grid; grid-template-columns: repeat(5, 1fr); margin-bottom: 60px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+.subsidy-metrics article { padding: 18px; border-right: 1px solid var(--line); }
+.subsidy-metrics article:last-child { border-right: 0; }
+.subsidy-metrics strong { display: block; color: var(--signal); font-family: Georgia, serif; font-size: 42px; line-height: 1; }
+.subsidy-metrics span { font-size: 12px; }
+.subsidy-section { padding: 48px 0; border-top: 1px solid var(--ink); }
+.subsidy-section > .section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: end; margin-bottom: 32px; }
+.subsidy-section > .section-heading .eyebrow { grid-column: 1 / -1; margin-bottom: -12px; }
+.subsidy-section > .section-heading p:last-child { margin: 0; color: #536164; font-size: 14px; }
+.subsidy-window-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.subsidy-window-card { padding: 24px; background: #e8e8df; border-top: 3px solid var(--ink); }
+.subsidy-window-topline { display: flex; justify-content: space-between; gap: 12px; align-items: start; color: #536164; font-size: 12px; }
+.subsidy-window-card h3 { margin: 24px 0 10px; font-family: Georgia, "Songti SC", serif; font-size: 24px; font-weight: 500; line-height: 1.12; }
+.subsidy-window-card h3 a { color: var(--ink); text-decoration: none; }
+.subsidy-window-amount { min-height: 42px; margin-bottom: 12px; color: var(--signal); font-size: 15px; font-weight: 700; }
+.subsidy-window-card > p:not(.subsidy-window-amount):not(.subsidy-window-action) { margin-bottom: 12px; color: #536164; font-size: 13px; }
+.subsidy-window-action { margin: 0; padding-top: 13px; border-top: 1px solid var(--line); font-size: 13px; }
+.subsidy-card-list { display: grid; gap: 20px; }
+.subsidy-card { padding: 28px; background: #fbfaf6; border-top: 3px solid var(--ink); scroll-margin-top: 20px; }
+.subsidy-card-head { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.subsidy-card-head h3 { margin: 8px 0 7px; font-family: Georgia, "Songti SC", serif; font-size: 28px; font-weight: 500; line-height: 1.12; }
+.subsidy-kicker { margin: 0; color: var(--signal); font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+.subsidy-meta { margin: 0; color: #536164; font-size: 12px; }
+.subsidy-facts { display: grid; grid-template-columns: 1.4fr 1fr .7fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.subsidy-facts div { display: grid; gap: 6px; align-content: start; }
+.subsidy-facts span, .subsidy-detail-grid h4, .subsidy-tags h4 { color: #536164; font-size: 11px; letter-spacing: .08em; }
+.subsidy-facts strong { font-size: 15px; }
+.subsidy-tags { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.subsidy-tags h4 { margin: 0 0 9px; }
+.subsidy-tags section > div { display: flex; flex-wrap: wrap; gap: 7px; }
+.subsidy-tags span { padding: 5px 8px; background: var(--mist); font-size: 12px; }
+.subsidy-details { padding-top: 18px; }
+.subsidy-details summary { color: var(--signal); cursor: pointer; font-size: 13px; font-weight: 700; }
+.subsidy-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+.subsidy-detail-grid section { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.subsidy-detail-grid h4 { margin: 0 0 9px; }
+.subsidy-detail-grid p { margin: 0; font-size: 14px; }
+.subsidy-list { margin: 0; padding-left: 19px; font-size: 14px; }
+.subsidy-list li + li { margin-top: 7px; }
+.subsidy-links, .subsidy-sources { display: grid; gap: 8px; }
+.subsidy-links a { color: var(--signal); font-size: 13px; font-weight: 700; text-decoration: none; }
+.subsidy-contact { margin-top: 12px !important; color: #536164; font-size: 12px !important; }
+.subsidy-sources a { display: grid; grid-template-columns: max-content 1fr; gap: 6px 9px; color: var(--ink); font-size: 13px; font-weight: 700; text-decoration: none; }
+.subsidy-sources a span { color: var(--signal); font-size: 11px; }
+.subsidy-sources small { grid-column: 1 / -1; color: #536164; font-size: 11px; font-weight: 400; }
+.subsidy-note, .subsidy-disclaimer { margin: 18px 0 0; color: #687477; font-size: 11px; }
+.subsidy-coverage { background: #e8e8df; margin: 0 max(-1 * max(24px, calc((100vw - 1180px) / 2)), -100vw); padding-left: max(24px, calc((100vw - 1180px) / 2)); padding-right: max(24px, calc((100vw - 1180px) / 2)); }
+.coverage-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px 12px; margin-bottom: 24px; }
+.coverage-summary strong { color: var(--signal); font-family: Georgia, serif; font-size: 38px; line-height: 1; }
+.coverage-summary span { margin-right: 20px; font-size: 12px; }
+.coverage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.coverage-grid article { padding: 16px; background: #fbfaf6; border-top: 2px solid var(--ink); }
+.coverage-grid article > div { display: flex; justify-content: space-between; gap: 8px; align-items: start; }
+.coverage-grid h3 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: 19px; font-weight: 500; }
+.coverage-grid article > strong { display: block; margin-top: 18px; color: var(--signal); font-family: Georgia, serif; font-size: 30px; line-height: 1; }
+.coverage-grid p { margin: 7px 0 0; color: #536164; font-size: 11px; }
+.subsidy-anchor-nav a:focus-visible, .subsidy-entry a:focus-visible, .subsidy-window-card a:focus-visible, .subsidy-card a:focus-visible, .subsidy-details summary:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
+
+@media (max-width: 720px) {
+  .subsidy-entry, .subsidy-section > .section-heading, .subsidy-window-list, .subsidy-facts, .subsidy-tags, .subsidy-detail-grid { grid-template-columns: 1fr; }
+  .subsidy-entry { gap: 24px; }
+  .subsidy-entry > a { min-height: 130px; }
+  .subsidy-metrics { grid-template-columns: repeat(2, 1fr); }
+  .subsidy-metrics article:nth-child(2n) { border-right: 0; }
+  .subsidy-card-head { display: block; }
+  .subsidy-card-head .status { margin-top: 14px; }
+  .subsidy-facts { gap: 13px; }
+  .subsidy-coverage { margin-left: -24px; margin-right: -24px; }
+  .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 720px) {
   .role-entry .section-heading, .audience-section > .section-heading, .audience-hero, .signal-grid, .priority-list article, .risk-grid, .management-section, .structure-wrap, .playbook-grid { grid-template-columns: 1fr; }
   .role-entry .section-heading .eyebrow, .audience-section > .section-heading .eyebrow, .audience-hero > .eyebrow, .policy-signals, .conversation-topic, .next-action { grid-column: auto; }

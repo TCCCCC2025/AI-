@@ -89,3 +89,23 @@ test("renders leadership and client-manager policy views", async () => {
   assert.match(clientHtml, /下一步动作/);
   assert.match(clientHtml, /基于公开政策的业务研判/);
 });
+
+test("renders the subsidy radar with current windows and application details", async () => {
+  const html = await (await render("/subsidies")).text();
+
+  assert.match(html, /补贴申报雷达/);
+  assert.match(html, /当前可申报/);
+  assert.match(html, /Token/);
+  assert.match(html, /算力券/);
+  assert.match(html, /申报条件/);
+  assert.match(html, /申报入口/);
+  assert.match(html, /官方来源/);
+  assert.match(html, /丰台区/);
+  assert.match(html, /海淀区/);
+});
+
+test("links to subsidy radar from navigation and homepage", async () => {
+  const homeHtml = await (await render("/")).text();
+  assert.match(homeHtml, /补贴申报雷达/);
+  assert.match(homeHtml, /href="\/subsidies"/);
+});
