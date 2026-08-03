@@ -70,9 +70,10 @@ test("renders leadership and client-manager policy views", async () => {
   const leadershipHtml = await (await render("/leadership")).text();
   const clientHtml = await (await render("/client-manager")).text();
 
-  assert.match(homeHtml, /领导看政策/);
-  assert.match(homeHtml, /客户经理找机会/);
+  assert.match(homeHtml, /政策分析/);
+  assert.match(homeHtml, /客户分类/);
 
+  assert.match(leadershipHtml, /政策分析/);
   assert.match(leadershipHtml, /领导摘要/);
   assert.match(leadershipHtml, /重点机会/);
   assert.match(leadershipHtml, /风险与核验/);
@@ -80,7 +81,7 @@ test("renders leadership and client-manager policy views", async () => {
   assert.match(leadershipHtml, /政策结构/);
   assert.match(leadershipHtml, /基于公开政策的业务研判/);
 
-  assert.match(clientHtml, /客户经理找机会/);
+  assert.match(clientHtml, /客户分类/);
   assert.match(clientHtml, /会前准备卡/);
   assert.match(clientHtml, /央国企及大型企业数字化部门/);
   assert.match(clientHtml, /AI 创业公司与 OPC/);
@@ -90,22 +91,36 @@ test("renders leadership and client-manager policy views", async () => {
   assert.match(clientHtml, /基于公开政策的业务研判/);
 });
 
-test("renders the subsidy radar with current windows and application details", async () => {
-  const html = await (await render("/subsidies")).text();
+test("renders subsidy entry routes and keeps intelligence in policy analysis", async () => {
+  const subsidiesHtml = await (await render("/subsidies")).text();
+  const leadershipHtml = await (await render("/leadership")).text();
 
-  assert.match(html, /补贴申报雷达/);
-  assert.match(html, /当前可申报/);
-  assert.match(html, /Token/);
-  assert.match(html, /算力券/);
-  assert.match(html, /申报条件/);
-  assert.match(html, /申报入口/);
-  assert.match(html, /官方来源/);
-  assert.match(html, /丰台区/);
-  assert.match(html, /海淀区/);
+  assert.match(subsidiesHtml, /补贴申报雷达/);
+  assert.match(subsidiesHtml, /有效申报入口/);
+  assert.match(subsidiesHtml, /打开申报入口/);
+  assert.match(subsidiesHtml, /服务合同实际发生额最高 25%/);
+  assert.doesNotMatch(subsidiesHtml, /政策依据链/);
+  assert.doesNotMatch(subsidiesHtml, /趋势与预警/);
+  assert.doesNotMatch(subsidiesHtml, /客户准备度/);
+  assert.match(subsidiesHtml, /已扫描未检出正式记录/);
+  assert.match(leadershipHtml, /政策依据链/);
+  assert.match(leadershipHtml, /趋势与预警/);
+  assert.match(leadershipHtml, /客户准备度/);
+  assert.match(leadershipHtml, /北京市关于加快智能体引领发展的若干措施/);
 });
 
-test("links to subsidy radar from navigation and homepage", async () => {
-  const homeHtml = await (await render("/")).text();
-  assert.match(homeHtml, /补贴申报雷达/);
-  assert.match(homeHtml, /href="\/subsidies"/);
+test("homepage links to subsidy radar and renamed audience views", async () => {
+  const html = await (await render("/")).text();
+  assert.match(html, /补贴申报雷达/);
+  assert.match(html, /政策分析/);
+  assert.match(html, /客户分类/);
+  assert.match(html, /有效申报入口/);
+  assert.doesNotMatch(html, /政策来源库/);
+});
+
+test("weekly page includes the previous week section", async () => {
+  const html = await (await render("/weekly")).text();
+  assert.match(html, /本周最新政策/);
+  assert.match(html, /上周政策/);
+  assert.match(html, /北京市关于加快智能体引领发展的若干措施/);
 });
