@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function LeadershipPage() {
   return <main>
     <section className="audience-hero leadership-hero">
-      <p className="eyebrow">LEADERSHIP BRIEF · 2026-07-30</p>
+      <p className="eyebrow">LEADERSHIP BRIEF · 2026-08-03</p>
       <div>
         <h1>领导看政策</h1>
         <p>用一页快速掌握政策方向、业务机会、风险边界和需要推动的管理动作。</p>

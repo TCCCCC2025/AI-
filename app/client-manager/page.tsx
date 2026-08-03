@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ClientManagerPage() {
   return <main>
     <section className="audience-hero client-hero">
-      <p className="eyebrow">CLIENT CONVERSATION PLAYBOOK · 2026-07-30</p>
+      <p className="eyebrow">CLIENT CONVERSATION PLAYBOOK · 2026-08-03</p>
       <div>
         <h1>客户经理<br />找机会</h1>
         <p>会前准备卡：从客户类型出发，快速找到相关政策、可能需求和可继续讨论的问题。</p>

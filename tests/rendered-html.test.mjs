@@ -19,7 +19,7 @@ test("renders the Beijing AI policy intelligence homepage", async () => {
   const html = await response.text();
 
   assert.match(html, /<title>北京 AI 政策情报/);
-  assert.match(html, /2026-07-30/);
+  assert.match(html, /2026-08-03/);
   assert.match(html, /经官方核验/);
   assert.match(html, /申报窗口雷达/);
   assert.match(html, /政策全景/);
@@ -38,7 +38,8 @@ test("renders the overview, weekly, and policy-category routes", async () => {
   assert.match(homeHtml, /本周最新/);
   assert.match(weeklyHtml, /本周最新政策/);
   assert.match(weeklyHtml, /新增/);
-  assert.match(weeklyHtml, /北京市关于加快智能体引领发展的若干措施/);
+  assert.match(weeklyHtml, /第二批央企AI战略性高价值场景和行业高质量数据集/);
+  assert.match(weeklyHtml, /国务院国资委/);
   assert.match(nationalHtml, /国家部委（20 项）/);
   assert.match(nationalHtml, /企业机会/);
   assert.doesNotMatch(nationalHtml, /北京市级（12 项）/);
