@@ -77,8 +77,8 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
 .signal-grid h3 { margin: 34px 0 12px; font-family: Georgia, "Songti SC", serif; font-size: 25px; font-weight: 500; }
 .signal-grid article > p { color: #536164; }
 .signal-grid article > strong { display: block; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; }
-.policy-link-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-.policy-link-row a { color: var(--signal); font-size: 12px; font-weight: 700; text-decoration: none; }
+.policy-link-row { display: grid; gap: 7px; margin-top: 22px; }
+.policy-link-row a { color: var(--signal); font-size: 12px; font-weight: 700; line-height: 1.35; overflow-wrap: anywhere; text-decoration: none; }
 .priority-section { color: var(--paper); background: var(--ink); }
 .priority-section .section-heading p:last-child { color: #b6c3bc; }
 .priority-list { margin-top: 38px; border-top: 1px solid #607174; }
@@ -135,6 +135,17 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
 .conversation-topic, .next-action { grid-column: 1 / -1; }
 .next-action p { font-weight: 700; }
 .role-entry-card:focus-visible, .audience-section a:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
+
+.weekly-period + .weekly-period { margin-top: 46px; }
+.weekly-period .section-heading { margin-bottom: 26px; }
+.weekly-period .section-heading h2 { margin-bottom: 0; }
+.previous-period { padding: 28px; background: #e8e8df; border-top: 1px solid var(--ink); }
+.subsidy-effective-window { margin: 0 max(-1 * max(24px, calc((100vw - 1180px) / 2)), -100vw); padding: 52px max(24px, calc((100vw - 1180px) / 2)); background: #fff4ed; border-top: 4px solid var(--signal); }
+.subsidy-effective-window > .section-heading h2 { color: var(--signal); font-size: clamp(38px, 5vw, 64px); }
+.subsidy-effective-window .subsidy-window-card { background: #fff; border-top-color: var(--signal); }
+.policy-analysis-sections { background: var(--paper); }
+.policy-analysis-sections .analysis-section { border-top: 1px solid var(--ink); }
+.policy-analysis-sections .analysis-section:nth-child(2) { background: #e8e8df; }
 
 @media (max-width: 720px) {
   .role-entry .section-heading, .audience-section > .section-heading, .audience-hero, .signal-grid, .priority-list article, .risk-grid, .management-section, .structure-wrap, .playbook-grid { grid-template-columns: 1fr; }

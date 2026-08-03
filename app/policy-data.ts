@@ -300,4 +300,8 @@ export type WeeklyChange = { title: string; changeType: "新增" | "修订" | "�
 
 export const weeklyChanges: WeeklyChange[] = [
   { title: "第二批央企AI战略性高价值场景和行业高质量数据集", changeType: "新增", date: "2026-07-27", detail: "国务院国资委官网确认发布第二批央企人工智能战略性高价值场景和行业高质量数据集，并同步推进 AI 开源社区、智能软件工厂、算力与数据治理能力建设；本次不是公开申报通知。", href: "https://wap.sasac.gov.cn/n2588020/n2588072/n2590902/n2590904/c35690985/content.html", status: "持续适用" },
+]; 
+
+export const previousWeeklyChanges: WeeklyChange[] = [
+  { title: "北京市关于加快智能体引领发展的若干措施", changeType: "新增", date: "2026-07-23", detail: "北京市级政策围绕基础模型、智能体原生应用、Token 经济、算力保障和安全治理形成十项措施；这是上周已核验政策，具体申报以配套通知为准。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202607/t20260723_4781085.html", status: "持续适用" },
 ];
