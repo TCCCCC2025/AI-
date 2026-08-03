@@ -6,10 +6,6 @@ function statusClass(status: SubsidyPolicy["status"]) {
   return "review";
 }
 
-function List({ items }: { items: string[] }) {
-  return <ul className="subsidy-list">{items.map((item) => <li key={item}>{item}</li>)}</ul>;
-}
-
 export function SubsidyCard({ policy }: { policy: SubsidyPolicy }) {
   return <article className="subsidy-card" id={policy.id}>
     <div className="subsidy-card-head">
@@ -27,6 +23,8 @@ export function SubsidyCard({ policy }: { policy: SubsidyPolicy }) {
       <div><span>支持机制</span><strong>{policy.mechanism}</strong></div>
     </div>
 
+    {policy.applicationUrl && <a className="subsidy-entry-link subsidy-entry-link-card" href={policy.applicationUrl}>打开申报入口 ↗</a>}
+
     <div className="subsidy-tags">
       <section><h4>支持方向</h4><div>{policy.supportDirections.map((item) => <span key={item}>{item}</span>)}</div></section>
       <section><h4>适合客户</h4><div>{policy.beneficiaries.map((item) => <span key={item}>{item}</span>)}</div></section>
@@ -42,7 +40,7 @@ export function SubsidyCard({ policy }: { policy: SubsidyPolicy }) {
         <section><h4>合规与边界</h4><p>{policy.complianceImpact}</p></section>
         <section><h4>行动提示</h4><p>{policy.action}</p></section>
         <section className="subsidy-source-section"><h4>政策依据与核验</h4><div className="subsidy-sources">{policy.sources.map((source) => <a key={source.url} href={source.url}><span>{source.sourceGrade === "official" ? "官方原文" : source.sourceGrade === "official_repost" ? "官方转载" : "线索"}</span>{source.title} ↗<small>{source.evidence}</small></a>)}</div></section>
-        <section><h4>关联政策 ID</h4><p className="subsidy-related-ids">{policy.basisPolicyIds.join(" · ")}</p><List items={["本条内容仅作为政策情报整理，不替代正式申报审核。"]} /></section>
+        <section><h4>使用说明</h4><p>本条内容仅作为政策情报整理，不替代正式申报审核。</p></section>
       </div>
     </details>
   </article>;

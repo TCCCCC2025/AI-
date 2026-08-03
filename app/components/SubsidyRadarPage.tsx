@@ -20,9 +20,12 @@ function WindowCard({ policy }: { policy: SubsidyPolicy }) {
   return <article className="subsidy-window-card">
     <div className="subsidy-window-topline"><span className="status active">{subsidyStatusLabel(policy.status)}</span><span>{policy.region} · {policy.mechanism}</span></div>
     <h3><a href={`#${policy.id}`}>{policy.title} ↘</a></h3>
-    <p className="subsidy-window-amount">{policy.amount}</p>
-    <p>{policy.applicationWindow}</p>
+    <div className="subsidy-action-strip">
+      <div><span>支持强度</span><strong>{policy.amount}</strong></div>
+      <div><span>申报时间</span><strong>{policy.applicationWindow}</strong></div>
+    </div>
     <p className="subsidy-window-action">{policy.action}</p>
+    {policy.applicationUrl && <a className="subsidy-entry-link" href={policy.applicationUrl}>打开申报入口 ↗</a>}
   </article>;
 }
 
