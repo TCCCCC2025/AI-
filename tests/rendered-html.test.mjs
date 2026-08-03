@@ -89,3 +89,17 @@ test("renders leadership and client-manager policy views", async () => {
   assert.match(clientHtml, /下一步动作/);
   assert.match(clientHtml, /基于公开政策的业务研判/);
 });
+
+test("renders subsidy intelligence and source registry routes", async () => {
+  const subsidiesHtml = await (await render("/subsidies")).text();
+  const sourcesHtml = await (await render("/sources")).text();
+
+  assert.match(subsidiesHtml, /补贴申报雷达/);
+  assert.match(subsidiesHtml, /政策依据链/);
+  assert.match(subsidiesHtml, /趋势与预警/);
+  assert.match(subsidiesHtml, /客户准备度/);
+  assert.match(subsidiesHtml, /已扫描未检出正式记录/);
+  assert.match(sourcesHtml, /政策来源库/);
+  assert.match(sourcesHtml, /待核验线索/);
+  assert.match(sourcesHtml, /官方政策/);
+});
