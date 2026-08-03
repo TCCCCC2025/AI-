@@ -153,7 +153,9 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
 .subsidy-entry-link:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 .subsidy-entry-link-card { margin: 18px 0 0; }
 .policy-analysis-sections { background: var(--paper); }
-.policy-analysis-sections .analysis-section { border-top: 1px solid var(--ink); }
+.policy-analysis-sections .analysis-section { padding: 38px max(24px, calc((100vw - 1180px) / 2)) 42px; border-top: 1px solid var(--ink); }
+.policy-analysis-sections .analysis-section > .section-heading { margin-bottom: 24px; }
+.policy-analysis-sections .analysis-section > .section-heading h2 { font-size: clamp(32px, 3.4vw, 44px); }
 .policy-analysis-sections .analysis-section:nth-child(2) { background: #e8e8df; }
 
 @media (max-width: 720px) {
@@ -237,9 +239,9 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
 .subsidy-sources small { grid-column: 1 / -1; color: #536164; font-size: 11px; font-weight: 400; }
 .subsidy-related-ids { color: var(--signal); font-size: 12px !important; }
 .subsidy-disclaimer, .source-registry-disclaimer { margin: 18px 0 0; color: #687477; font-size: 11px; }
-.basis-chain-card { padding: 22px; background: #e8e8df; border-top: 3px solid var(--ink); }
+.basis-chain-card { padding: 18px; background: #e8e8df; border-top: 3px solid var(--ink); }
 .basis-chain-title > span { color: var(--signal); font-size: 11px; letter-spacing: .1em; }
-.basis-chain-title h3 { margin: 8px 0 20px; font-family: Georgia, "Songti SC", serif; font-size: 24px; font-weight: 500; }
+.basis-chain-title h3 { margin: 8px 0 16px; font-family: Georgia, "Songti SC", serif; font-size: 20px; font-weight: 500; }
 .basis-chain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .basis-node { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 14px; background: #fbfaf6; }
 .basis-node > span { color: var(--signal); font-family: Georgia, serif; font-size: 24px; }
@@ -247,15 +249,15 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
 .basis-node strong { color: #536164; font-size: 11px; letter-spacing: .08em; }
 .basis-node a { margin-top: 6px; font-size: 13px; font-weight: 700; }
 .basis-node small { margin-top: 7px; color: #536164; font-size: 11px; }
-.intelligence-section { background: #e8e8df; margin: 0 max(-1 * max(24px, calc((100vw - 1180px) / 2)), -100vw); padding-left: max(24px, calc((100vw - 1180px) / 2)); padding-right: max(24px, calc((100vw - 1180px) / 2)); }
-.trend-grid { grid-template-columns: repeat(2, 1fr); }
-.trend-card { padding: 24px; background: #fbfaf6; border-top: 3px solid var(--ink); }
+.intelligence-section { background: #e8e8df; margin: 0; padding-left: 0; padding-right: 0; }
+.trend-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.trend-card { padding: 20px; background: #fbfaf6; border-top: 3px solid var(--ink); }
 .trend-card-top > span:last-child { color: #536164; }
-.trend-card h3 { margin: 22px 0 20px; font-family: Georgia, "Songti SC", serif; font-size: 23px; font-weight: 500; line-height: 1.15; }
-.trend-card section { padding: 14px 0; border-top: 1px solid var(--line); }
+.trend-card h3 { margin: 16px 0 16px; font-family: Georgia, "Songti SC", serif; font-size: 20px; font-weight: 500; line-height: 1.2; }
+.trend-card section { padding: 11px 0; border-top: 1px solid var(--line); }
 .trend-card h4 { margin: 0 0 7px; }
-.trend-card section p { margin: 0; font-size: 13px; }
-.warning-card { margin-top: 14px; padding: 14px; color: var(--paper); background: var(--ink); font-size: 12px; }
+.trend-card section p { margin: 0; font-size: 12px; }
+.warning-card { margin-top: 12px; padding: 12px; color: var(--paper); background: var(--ink); font-size: 11px; }
 .warning-card strong { color: var(--signal); }
 .warning-card p { margin: 7px 0 0; color: #b6c3bc; }
 .readiness-grid { grid-template-columns: repeat(2, 1fr); }
@@ -278,10 +280,12 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
 
 @media (max-width: 720px) {
   .subsidy-entry, .subsidy-section > .section-heading, .subsidy-window-list, .subsidy-facts, .subsidy-tags, .subsidy-detail-grid, .basis-chain, .trend-grid, .readiness-grid, .source-filters { grid-template-columns: 1fr; }
-  .subsidy-entry { gap: 24px; }.subsidy-metrics { grid-template-columns: repeat(2, 1fr); }.subsidy-metrics article:nth-child(2n) { border-right: 0; }.subsidy-card-head { display: block; }.subsidy-card-head .status { margin-top: 14px; }.subsidy-coverage, .intelligence-section { margin-left: -24px; margin-right: -24px; }.coverage-grid { grid-template-columns: repeat(2, 1fr); }.source-registry-summary { grid-template-columns: repeat(2, 1fr); }.source-registry-summary strong, .source-registry-summary span { border-right: 0; border-bottom: 1px solid var(--line); }.source-registry-method { display: block; }.source-registry-method strong { display: block; margin-bottom: 7px; }.source-registry-card-head { display: block; }.source-registry-card-head time { display: block; margin-top: 10px; }.source-registry-meta { display: grid; }
+  .subsidy-entry { gap: 24px; }.subsidy-metrics { grid-template-columns: repeat(2, 1fr); }.subsidy-metrics article:nth-child(2n) { border-right: 0; }.subsidy-card-head { display: block; }.subsidy-card-head .status { margin-top: 14px; }.subsidy-coverage { margin-left: -24px; margin-right: -24px; }.coverage-grid { grid-template-columns: repeat(2, 1fr); }.source-registry-summary { grid-template-columns: repeat(2, 1fr); }.source-registry-summary strong, .source-registry-summary span { border-right: 0; border-bottom: 1px solid var(--line); }.source-registry-method { display: block; }.source-registry-method strong { display: block; margin-bottom: 7px; }.source-registry-card-head { display: block; }.source-registry-card-head time { display: block; margin-top: 10px; }.source-registry-meta { display: grid; }
 }
 
 @media (max-width: 720px) {
+  .policy-analysis-sections .analysis-section { padding-top: 28px; padding-bottom: 32px; }
+  .policy-analysis-sections .analysis-section > .section-heading { margin-bottom: 18px; }
   .subsidy-effective-window { padding-top: 28px; padding-bottom: 32px; }
   .subsidy-action-strip { grid-template-columns: 1fr; gap: 12px; }
   .subsidy-action-strip div + div { padding-left: 0; padding-top: 12px; border-top: 1px solid var(--line); border-left: 0; }
