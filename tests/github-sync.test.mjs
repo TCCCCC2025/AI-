@@ -4,6 +4,8 @@ import { formatCommitMessage, isAllowedPath, parseChangedPaths } from "../script
 
 test("allows site and deployment files but rejects private or unrelated files", () => {
   assert.equal(isAllowedPath("app/policy-data.ts"), true);
+  assert.equal(isAllowedPath("docs/subsidy-radar-update.md"), true);
+  assert.equal(isAllowedPath("tests/subsidy-data.test.mjs"), true);
   assert.equal(isAllowedPath(".github/workflows/pages.yml"), true);
   assert.equal(isAllowedPath(".openai/hosting.json"), true);
   assert.equal(isAllowedPath(".env"), false);

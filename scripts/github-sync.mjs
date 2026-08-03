@@ -15,6 +15,7 @@ const STATIC_ROUTES = [
 
 const ALLOWED_EXACT_PATHS = new Set([
   "README.md",
+  "docs/subsidy-radar-update.md",
   "next.config.ts",
   "package.json",
   "package-lock.json",
@@ -31,6 +32,7 @@ const ALLOWED_PREFIXES = [
   "app/",
   "public/",
   "scripts/",
+  "tests/",
   "db/",
   "examples/",
 ];
@@ -41,7 +43,7 @@ function runGit(args, options = {}) {
     stdio: options.stdio ?? ["ignore", "pipe", "pipe"],
     ...options,
   });
-  return typeof output === "string" ? output.trim() : "";
+  return typeof output === "string" ? output.replace(/\r?\n$/, "") : "";
 }
 
 function runCommand(command, args) {
