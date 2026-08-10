@@ -240,6 +240,72 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     complianceImpact: "优质 OPC 不等于所有个人开发者，当前未检出独立申报批次。",
     action: "先核实 OPC 认定口径和项目落地要求，准备产品、订单及模型/算力使用证明。",
   },
+  {
+    id: "dist-etown-opc-talent-2026",
+    title: "2026年亦城人才·人工智能超级个体（OPC）认定申报",
+    region: "北京经开区",
+    supportDirections: ["OPC 人才认定", "团队奖励", "人才服务与企业合规服务"],
+    mechanism: "人才认定/奖励",
+    beneficiaries: ["人工智能超级个体（OPC）团队负责人", "经开区 AI 创业小团队"],
+    status: "current",
+    applicationWindow: "2026-07-09—2026-08-10（今日截止）",
+    amount: "经认定的 OPC 团队按分类分级可获 7.2 万元—50 万元奖励；具体等级以办事指南和评审结果为准",
+    eligibility: "申报人为 OPC 团队主要负责人；所在主体在经开区依法经营、实地办公，员工总数不超过 10 人；每位申报人只能依托一个主体申报。",
+    applicationUrl: "https://zhengce.beijing.gov.cn",
+    basisPolicyIds: ["dist-etown-ai-city"],
+    sources: [
+      { title: "中共北京市委经济技术开发区工委组织人事部关于开展2026年亦城人才·人工智能超级个体（OPC）认定申报的通知", url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260707_4750995.html", publisher: "北京经开区工委组织人事部", sourceGrade: "official", evidence: "官方通知明确申报期为 2026 年 7 月 9 日至 8 月 10 日、申报入口、单主体申报和咨询电话。" },
+      { title: "超级个体人才纳入亦城人才体系 经济技术开发区启动2026年OPC人才认定申报工作", url: "https://www.beijing.gov.cn/ywdt/gzdt/202607/t20260710_4757039.html", publisher: "北京经开区管委会", sourceGrade: "official_repost", evidence: "北京市政府官方转载披露 OPC 团队奖励区间为 7.2 万元至 50 万元及主体、团队人数等条件。" },
+    ],
+    verifiedAt: "2026-08-10",
+    summary: "经开区首次把人工智能超级个体纳入亦城人才体系，今天是本轮申报截止日。",
+    businessImpact: "适合把 AI 初创团队、OPC 服务站和园区客户纳入人才与企业服务联合清单。",
+    complianceImpact: "奖励金额是分类分级结果，不是普遍定额；主体经营、实地办公和重复申报限制必须逐项核验。",
+    action: "今天优先确认客户是否已提交；未提交的客户应立即联系政策申报窗口，逾期按通知视为自动放弃。",
+  },
+  {
+    id: "dist-etown-data-core-2026",
+    title: "2026年数据领域核心技术攻关补贴申报",
+    region: "北京经开区",
+    supportDirections: ["数据领域核心技术攻关", "数据基础设施与流通", "数据安全与 AI 数据应用"],
+    mechanism: "项目补贴申报",
+    beneficiaries: ["经开区数据产业企业", "数据基础设施与安全企业", "AI 数据应用项目承担单位"],
+    status: "current",
+    applicationWindow: "2026-07-06—2026-08-14",
+    amount: "待核（通知正文未列明，具体支持方向、金额和材料以《办事指南》及政策兑现平台项目页为准）",
+    eligibility: "面向符合经开区政策要求的数据领域核心技术攻关项目，须通过北京市政策兑现专区或经开区政策兑现平台在线申报。",
+    applicationUrl: "https://zhengce.beijing.gov.cn",
+    basisPolicyIds: ["etown-ai-data-measures-2025"],
+    sources: [{ title: "北京市智慧城市基础设施与智能网联汽车协同发展工作办公室关于开展2026年数据领域核心技术攻关补贴申报的通知", url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260703_4745935.html", publisher: "北京经开区管委会相关办公室", sourceGrade: "official", evidence: "官方通知明确申报时间、政策兑现入口、政策咨询电话和办事指南附件；金额正文未列明，保持待核。" }],
+    verifiedAt: "2026-08-10",
+    summary: "经开区数据领域核心技术攻关补贴正在申报，8 月 14 日截止，金额需回到办事指南核验。",
+    businessImpact: "数据基础设施、数据安全和 AI 数据应用企业可寻找项目联合申报、技术服务和材料辅导机会。",
+    complianceImpact: "不能从“补贴申报”标题推断补贴比例或上限，必须以附件指南和平台字段为准。",
+    action: "在 8 月 14 日前核对项目边界、预算、数据合规和申报材料，并联系经开区政策申报窗口。",
+  },
+  {
+    id: "bj-ai-audiovisual-support-2026",
+    title: "北京市促进“人工智能+视听”产业高质量发展重点项目申报指南（2026年）",
+    region: "北京市级",
+    supportDirections: ["视听多模态工具", "视听大模型与智能体", "AIGC 视听内容", "智能修复与视听场景"],
+    mechanism: "项目奖励/事后支持",
+    beneficiaries: ["北京广电视听领域法人和活动单位", "视听技术与内容制作企业", "视听大模型和智能体项目单位"],
+    status: "current",
+    applicationWindow: "2026-06-01—2026-09-30",
+    amount: "技术/场景方向按项目总投资不超过 30%，单项最高 300 万元；内容方向单项最高 300 万元；安全、服务方向按项目总投资不超过 30%，单项最高 100 万元",
+    eligibility: "项目原则上应于 2025 年 1 月至 2026 年 9 月研发、制作或建设完成并投入使用/播出/运营；同一项目只能选择一个支持方向，且不得重复享受同方向市级财政支持。",
+    applicationUrl: "https://zhengce.beijing.gov.cn",
+    basisPolicyIds: ["bj-ai-audiovisual-guide-2026"],
+    sources: [
+      { title: "北京市促进“人工智能+视听”产业高质量发展重点项目申报指南（2026年）", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202605/t20260513_4649184.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "官方指南列明申报期、项目完成时间、五类支持方向及申报材料。" },
+      { title: "北京市促进“人工智能+视听”产业高质量发展重点项目支持管理办法（2026—2029年）", url: "https://gdj.beijing.gov.cn/zwxx/2024zcwj/202605/t20260511_4645308.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "官方管理办法列明技术/场景、内容、安全和服务方向的奖励比例与单项上限。" },
+    ],
+    verifiedAt: "2026-08-10",
+    summary: "视听 AI 项目支持覆盖技术、内容、场景、安全和服务五类方向，申报窗口持续至 9 月 30 日。",
+    businessImpact: "适合把多模态模型、视频理解、数字人、内容生产和智能运维能力与广电视听客户联合包装。",
+    complianceImpact: "需准备知识产权、版权、备案、播出和投资凭证；同一项目不得跨方向或重复申报。",
+    action: "先完成项目方向单选和证据清单，确认政策兑现平台的当期项目入口后再承诺支持金额。",
+  },
 ];
 
 export const subsidyThemes = ["算力", "Token", "数据", "场景", "模型", "OPC"] as const;
@@ -249,7 +315,8 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    return { district, scanStatus: "verified_records", lastScanned: "2026-08-03", channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-08-10" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-08-10" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-08-17" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
     return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-08-10" };

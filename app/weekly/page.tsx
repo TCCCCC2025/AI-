@@ -7,11 +7,11 @@ function WeeklyList({ items }: { items: typeof weeklyChanges }) {
 
 export default function WeeklyPage() {
   return <main>
-    <header className="page-hero"><p className="eyebrow">WEEKLY POLICY UPDATE · 2026-07-20—2026-08-02</p><h1>本周最新政策</h1><p>截至 2026-08-03，分开呈现本周与上周完成官方核验的新增、修订、截止与移出事项。</p></header>
+    <header className="page-hero"><p className="eyebrow">WEEKLY POLICY UPDATE · 2026-08-03—2026-08-09</p><h1>本周最新政策</h1><p>截至 2026-08-10，分开呈现本周与上周完成官方核验的新增、修订、截止与移出事项。</p></header>
     <SiteNav />
     <section className="weekly-page">
-      <section className="weekly-period"><div className="section-heading"><p className="eyebrow">CURRENT WEEK · 2026-07-27—2026-08-02</p><h2>本周最新</h2><p>当前周已完成核验的政策变化。</p></div><WeeklyList items={weeklyChanges} /></section>
-      <section className="weekly-period previous-period"><div className="section-heading"><p className="eyebrow">PREVIOUS WEEK · 2026-07-20—2026-07-26</p><h2>上周政策</h2><p>上周已核验事项继续保留，便于回看政策连续性。</p></div><WeeklyList items={previousWeeklyChanges} /></section>
+      <section className="weekly-period"><div className="section-heading"><p className="eyebrow">CURRENT WEEK · 2026-08-03—2026-08-09</p><h2>本周最新</h2><p>当前周已完成核验的政策变化与申报窗口调整。</p></div><WeeklyList items={weeklyChanges} /></section>
+      <section className="weekly-period previous-period"><div className="section-heading"><p className="eyebrow">PREVIOUS WEEK · 2026-07-27—2026-08-02</p><h2>上周政策</h2><p>上周已核验事项继续保留，便于回看政策连续性。</p></div><WeeklyList items={previousWeeklyChanges} /></section>
     </section>
     <footer>北京 AI 政策情报 · 自动更新计划：每周一 09:00（北京时间）</footer>
   </main>;
