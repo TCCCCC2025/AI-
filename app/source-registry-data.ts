@@ -47,6 +47,11 @@ const policySeeds: SourceSeed[] = [
   ["https://www.bjchp.gov.cn/cpqzf/xxgk2671/zcwj/2026042815575798679/index.html", "昌平区推动人工智能创新发展行动计划", "昌平区政府办", "区级", "dist-changping-ai-plus"],
   ["https://zyk.bjhd.gov.cn/zwdt/zcwj/202604/t20260414_4811721.shtml", "海淀区关于全面打造 OPC 创业生态的若干措施", "中关村科学城管委会", "区级", "dist-haidian-opc"],
   ["https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202601/t20260130_4478660.html", "经开区全域人工智能之城实施方案", "北京经开区管委会", "区级", "dist-etown-ai-city"],
+  ["https://www.beijing.gov.cn/zhengce/zhengcefagui/202607/t20260723_4780574.html", "2026年度智能工厂梯度培育行动", "北京市经济和信息化局", "北京市级", "bj-smart-factory-gradient-2026"],
+  ["https://www.beijing.gov.cn/zhengce/zhengcefagui/202605/t20260513_4649184.html", "人工智能+视听重点项目申报指南（2026年）", "北京市广播电视局", "北京市级", "bj-ai-audiovisual-guide-2026"],
+  ["https://gdj.beijing.gov.cn/zwxx/2024zcwj/202605/t20260511_4645308.html", "人工智能+视听重点项目支持管理办法（2026—2029年）", "北京市广播电视局", "北京市级", "bj-ai-audiovisual-guide-2026"],
+  ["https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260707_4750995.html", "2026年亦城人才·人工智能超级个体（OPC）认定申报通知", "北京经开区工委组织人事部", "区级", "dist-etown-opc-talent-2026"],
+  ["https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260703_4745935.html", "2026年数据领域核心技术攻关补贴申报通知", "北京市智慧城市基础设施与智能网联汽车协同发展工作办公室", "区级", "dist-etown-data-core-2026"],
   ["https://www.miit.gov.cn/zwgk/zcwj/wjfb/yj/art/2026/art_fefdddaaa4ac49edb130c85d048a2933.html", "关于推动互联网基础资源高质量发展的指导意见", "工信部等四部门", "国家", "nat-internet-infrastructure"],
   ["https://www.gov.cn/lianbo/202606/content_7073465.htm", "人工智能智能体互联系列国家标准", "国家市场监管总局、国家标准委", "国家", "nat-agent-standards"],
   ["https://www.gov.cn/zhengce/zhengceku/202606/content_7071755.htm", "人工智能+信息通信创新发展实施意见", "工业和信息化部", "国家", "nat-ai-telecom-2026"],
@@ -74,6 +79,8 @@ const applicationSeeds: SourceSeed[] = [
   { url: "https://kw.beijing.gov.cn", title: "首都科技条件平台/创新券入口", publisher: "北京市科委、中关村管委会", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-08-03", lastVerified: "2026-08-03", verificationStatus: "verified", notes: "创新券批次、开放单位和余额以平台实时状态为准。", nextReview: "2026-08-10" },
   { url: "https://www.smebj.cn", title: "北京市中小企业公共服务平台", publisher: "北京市经济和信息化局", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-08-03", lastVerified: "2026-08-03", verificationStatus: "verified", notes: "服务券产品清单、服务机构和核销信息入口。", nextReview: "2026-08-10" },
   { url: "https://zcdx.kfqgw.beijing.gov.cn", title: "经开区政策兑现综合服务平台", publisher: "北京经开区管委会", sourceType: "application_portal", level: "区级", region: "北京经开区", firstSeen: "2026-08-03", lastVerified: "2026-08-03", verificationStatus: "verified", notes: "经开区政策申报和模型券即时补贴平台入口，需登录后核验实时券包。", nextReview: "2026-08-10" },
+  { url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/index.html", title: "北京经开区政策文件栏目（本周扫描入口）", publisher: "北京经开区管委会", sourceType: "official_policy", level: "区级", region: "北京经开区", firstSeen: "2026-08-10", lastVerified: "2026-08-10", verificationStatus: "verified", notes: "已核验 2026 年 OPC 人才认定和数据领域核心技术攻关申报通知。", nextReview: "2026-08-17" },
+  { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/", title: "首都之窗政策文件栏目（本周扫描入口）", publisher: "北京市人民政府", sourceType: "official_policy", level: "市级", region: "北京市级", firstSeen: "2026-08-10", lastVerified: "2026-08-10", verificationStatus: "verified", notes: "已核验智能工厂梯度培育通知及人工智能+视听项目指南。", nextReview: "2026-08-17" },
 ];
 
 const allSeeds = [...fromSubsidySources, ...policySeeds, ...applicationSeeds];
