@@ -69,7 +69,7 @@ const policyGroupsBase = [
   },
   {
     id: "beijing" as const,
-    title: "北京市级（14 项）",
+    title: "北京市级（15 项）",
     note: "北京本市的政策、实施方案及可与企业行动直接关联的兑现机制。",
     policies: [
       { title: "北京市经济和信息化局关于开展2026年度智能工厂梯度培育行动的通知", issuer: "北京市经济和信息化局", date: "2026-07-23", themes: "AI / 数据 / 算力", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202607/t20260723_4780574.html", status: "滚动核验" },
@@ -84,6 +84,7 @@ const policyGroupsBase = [
       { title: "北京市智能眼镜产业高质量发展行动方案（2026—2030年）", issuer: "北京市经信局", date: "2026-04-01", themes: "AI / 大模型", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202604/t20260403_4574651.html", status: "持续适用" },
       { title: "北京市2026年推动经济稳中有进的若干措施", issuer: "北京市政府办公厅", date: "2026-03-09", themes: "AI / 算力 / 数据", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202603/t20260318_4560553.html", status: "持续适用" },
       { title: "2026年高精尖产业发展项目资金实施指南（第一批）", issuer: "北京市经信局、市财政局", date: "2026-02-14", themes: "AI / 大模型 / 算力 / 数据", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202602/t20260214_4516700.html", status: "滚动核验" },
+      { title: "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）", issuer: "北京市经信局、市财政局", date: "2026-07-30", themes: "AI / 大模型 / Token / 数据", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202607/t20260730_4801241.html", status: "滚动核验" },
       { title: "促进商业卫星遥感数据资源开发利用的若干措施（2026—2030年）", issuer: "北京市经信局等", date: "2026-01-23", themes: "数据", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202601/t20260123_4459532.html", status: "持续适用" },
       { title: "北京人工智能创新高地建设行动计划", issuer: "北京市经信局等", date: "2026-01-05", themes: "AI / 算力", href: "https://jxj.beijing.gov.cn/ztzl/ywzt/hbjh/hbdt/zcwj/rgznzc/202603/t20260316_4557526.html", status: "持续适用" },
     ],
@@ -112,6 +113,7 @@ const tailoredBriefs: Record<string, Pick<PolicyWithBrief, "summary" | "business
   "支持人工智能OPC创新发展行动方案（试行）": { summary: "支持 AI 一人公司社区建设，并配置 Token、算力和数据券等创业支持。", businessImpact: "OPC 企业可关注社区入驻、券类支持、融资和路演机会。", complianceImpact: "支持对象、额度和兑现条件以当期申报要求为准。", action: "核对企业身份与入驻资格，准备产品和融资材料。" },
   "北京市AI赋能工业互联网高质量发展实施方案（2026—2028年）": { summary: "提出工业高质量数据集、工业智能体和解决方案供应商的建设目标。", businessImpact: "行业模型、智能体和软件智能化项目可争取相关支持。", complianceImpact: "项目需满足工业场景、数据质量和验收要求。", action: "围绕制造业客户形成可验收的数据集或智能体方案。" },
   "2026年高精尖产业发展项目资金实施指南（第一批）": { summary: "明确算力券、模型、软件智能化和服务券等资金支持方向。", businessImpact: "可按机构、行业模型、开源和备案模型等路径匹配资助。", complianceImpact: "该类指南具有批次与截止期，须以当期申报通知为准。", action: "核对申报主体、备案情况和项目材料，持续跟踪下一批指南。" },
+  "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）": { summary: "第二批实施指南将人工智能高质量数据集建设奖励、Token 实际使用补贴和 OPC 全栈服务券纳入同一批次。数据集首次交易奖励最高 100 万元、累计最高 200 万元；Token 按认定费用最高 30% 补贴、单项目最高 1000 万元；OPC 三个月 Token、算力、数据消费达到 1000 元后可申请全额补贴，单家最高 10 万元。", businessImpact: "模型应用客户、工业数据集建设单位、OPC 企业和服务商均有明确切入口，适合把 Token 订单、数据交易和服务券产品放进同一客户清单。", complianceImpact: "申报主体须在京且无失信惩戒，同一单位原则上只能获得 2026 年高精尖项目资金一个方向支持；同一项目不得重复获得市级财政支持。", action: "在 8 月 31 日 17:30 前按方向锁定项目，分别准备 Token 账单和非关联方证明、数据集合规交易凭证或 OPC 三个月消费流水，并通过北京市政策兑现专区提交。" },
   "北京经开区：进一步加快建设全域人工智能之城实施方案（2026—2027年）": { summary: "提出建设全域人工智能之城，覆盖企业集聚、开发者、Token 和 OPC 生态。", businessImpact: "经开区落地企业可关注模型券、社区和产业场景机会。", complianceImpact: "需结合注册地、项目落地和区级具体兑现规则判断。", action: "评估亦庄落地可行性，并对接对应园区和场景资源。" },
   "经开区：2026年亦城人才·人工智能超级个体（OPC）认定申报通知": { summary: "经开区将人工智能超级个体纳入亦城人才体系，2026年申报窗口为7月9日至8月10日。", businessImpact: "符合条件的 AI 核心负责人和小团队可获得人才认定、奖励及企业服务配套，适合纳入 OPC 客户筛选。", complianceImpact: "申报人只能依托一个主体，主体须在经开区依法经营并按办事指南提交材料。", action: "今天优先检查申报状态、主体实地办公和团队人数等条件，逾期不再受理。" },
   "经开区：2026年数据领域核心技术攻关补贴申报通知": { summary: "经开区面向数据领域核心技术攻关项目开展2026年申报，窗口为7月6日至8月14日，统一通过政策兑现平台提交。", businessImpact: "数据基础设施、数据流通、数据安全和 AI 数据应用项目可寻找联合申报或交付机会。", complianceImpact: "具体支持方向、材料和金额以附件办事指南及平台项目页为准，不从通知标题推断补贴额度。", action: "在8月14日前核对办事指南、项目边界、预算和数据合规材料，联系经开区政策申报窗口。" },
@@ -148,6 +150,7 @@ const policyIds: Record<string, string> = {
   "北京市智能眼镜产业高质量发展行动方案（2026—2030年）": "bj-smart-glasses",
   "北京市2026年推动经济稳中有进的若干措施": "bj-economic-measures-2026",
   "2026年高精尖产业发展项目资金实施指南（第一批）": "bj-high-tech-fund-202601",
+  "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）": "bj-high-tech-fund-202602",
   "促进商业卫星遥感数据资源开发利用的若干措施（2026—2030年）": "bj-satellite-data",
   "北京人工智能创新高地建设行动计划": "bj-ai-innovation-highland",
   "通州区：支持数字经济高质量发展的若干措施": "dist-tongzhou-digital-economy",
@@ -225,6 +228,17 @@ const tailoredAnalysis: Record<string, Partial<PolicyAnalysis>> = {
     relatedPolicies: [
       { type: "上位依据", policyId: "bj-agent-measures" },
       { type: "同主题", policyId: "bj-ai-innovation-highland" },
+    ],
+  },
+  "bj-high-tech-fund-202602": {
+    opportunityLevel: "高",
+    judgement: "第二批把 Token 消费、大模型应用、高质量数据集和 OPC 服务券集中到同一申报批次，体现市级资金从基础设施支持转向可核验的应用消耗与数据价值。",
+    customerTypes: ["大模型与智能体企业", "软件与信息服务企业", "制造业行业客户", "AI 创业公司与 OPC"],
+    scenarios: ["Token 应用补贴", "工业高质量数据集奖励", "OPC 全栈服务券"],
+    relatedPolicies: [
+      { type: "上位依据", policyId: "bj-agent-measures" },
+      { type: "同主题", policyId: "bj-high-tech-fund-202601" },
+      { type: "同主题", policyId: "bj-ai-industrial-internet" },
     ],
   },
   "dist-etown-ai-city": {
@@ -311,11 +325,12 @@ export const policyMetrics = {
 export type WeeklyChange = { title: string; changeType: "新增" | "修订" | "截止" | "移出"; date: string; detail: string; href?: string; status: Policy["status"] };
 
 export const weeklyChanges: WeeklyChange[] = [
+  { title: "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）", changeType: "新增", date: "2026-08-11", detail: "本周期新增核验的市级申报批次：官方文件发布于2026年7月30日，申报方向1人工智能高质量数据集建设奖励、方向2人工智能大模型应用补贴均于2026年8月31日17:30截止；方向7 OPC专项服务券常态化申报。入口为北京市政策兑现专区。", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202607/t20260730_4801241.html", status: "滚动核验" },
   { title: "经开区：2026年亦城人才·人工智能超级个体（OPC）认定申报", changeType: "截止", date: "2026-08-10", detail: "官方通知确认申报窗口为2026年7月9日至8月10日，申报入口为北京市政策兑现专区或经开区政策兑现平台；今天为截止日，逾期视为自动放弃。", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260707_4750995.html", status: "滚动核验" },
-  { title: "经开区：2026年数据领域核心技术攻关补贴申报", changeType: "截止", date: "2026-08-14", detail: "官方通知确认申报期为2026年7月6日至8月14日，统一通过政策兑现平台提交；需以附件办事指南核对支持方向、条件和材料。", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260703_4745935.html", status: "滚动核验" },
-  { title: "2026年度智能工厂梯度培育行动", changeType: "截止", date: "2026-08-15", detail: "北京市经信局通知明确卓越级、领航级智能工厂项目须于8月15日前完成线上申报并寄送纸质材料；该事项是培育认定，不等同于财政补贴。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202607/t20260723_4780574.html", status: "滚动核验" },
+  { title: "经开区：2026年数据领域核心技术攻关补贴申报", changeType: "截止", date: "2026-08-14", detail: "官方通知确认申报期为2026年7月6日至8月14日，统一通过政策兑现平台提交；本周期已截止，金额和支持方向仍以附件办事指南为准。", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/202607/t20260703_4745935.html", status: "滚动核验" },
+  { title: "2026年度智能工厂梯度培育行动", changeType: "截止", date: "2026-08-15", detail: "北京市经信局通知明确卓越级、领航级智能工厂项目须于8月15日前完成线上申报并寄送纸质材料；本周期已截止，该事项是培育认定，不等同于财政补贴。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202607/t20260723_4780574.html", status: "滚动核验" },
 ]; 
 
 export const previousWeeklyChanges: WeeklyChange[] = [
-  { title: "北京市关于加快智能体引领发展的若干措施", changeType: "新增", date: "2026-07-23", detail: "北京市级政策围绕基础模型、智能体原生应用、Token 经济、算力保障和安全治理形成十项措施；这是上周已核验政策，具体申报以配套通知为准。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202607/t20260723_4781085.html", status: "持续适用" },
+  { title: "北京市关于加快智能体引领发展的若干措施", changeType: "新增", date: "2026-08-03", detail: "北京市级政策围绕基础模型、智能体原生应用、Token 经济、算力保障和安全治理形成十项措施；这是此前已核验政策，具体申报以配套通知为准。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202607/t20260723_4781085.html", status: "持续适用" },
 ];

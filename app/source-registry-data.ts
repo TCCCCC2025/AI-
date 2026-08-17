@@ -32,10 +32,11 @@ const fromSubsidySources: SourceSeed[] = subsidyPolicies.flatMap((policy) => pol
   verificationStatus: "verified",
   relatedPolicyIds: [policy.id],
   notes: source.evidence,
-  nextReview: "2026-08-10",
+  nextReview: "2026-08-24",
 })));
 
 const policySeeds: SourceSeed[] = [
+  ["https://jxj.beijing.gov.cn/zwgk/2024zcwj/202607/t20260730_4801241.html", "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）", "北京市经济和信息化局、北京市财政局", "北京市级", "bj-high-tech-fund-202602"],
   ["https://www.beijing.gov.cn/zhengce/zhengcefagui/202607/t20260723_4781085.html", "北京市关于加快智能体引领发展的若干措施", "北京市发展改革委等四部门", "北京市级", "bj-agent-measures"],
   ["https://zwfwj.beijing.gov.cn/zwgk/2024zcwj/202607/t20260707_4750937.html", "北京市公共数据资源授权运营管理办法", "北京市政数局", "北京市级", "bj-public-data-operation"],
   ["https://www.beijing.gov.cn/zhengce/zhengcefagui/202606/t20260622_4710194.html", "支持人工智能 OPC 创新发展行动方案（试行）", "北京市经济和信息化局", "北京市级", "bj-ai-opc"],
@@ -75,12 +76,12 @@ const policySeeds: SourceSeed[] = [
 }));
 
 const applicationSeeds: SourceSeed[] = [
-  { url: "https://zhengce.beijing.gov.cn", title: "北京市政策兑现专区", publisher: "北京市人民政府", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-08-03", lastVerified: "2026-08-03", verificationStatus: "verified", notes: "市级项目资金和部分区级项目的统一入口，具体项目需在平台内检索。", nextReview: "2026-08-10" },
-  { url: "https://kw.beijing.gov.cn", title: "首都科技条件平台/创新券入口", publisher: "北京市科委、中关村管委会", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-08-03", lastVerified: "2026-08-03", verificationStatus: "verified", notes: "创新券批次、开放单位和余额以平台实时状态为准。", nextReview: "2026-08-10" },
-  { url: "https://www.smebj.cn", title: "北京市中小企业公共服务平台", publisher: "北京市经济和信息化局", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-08-03", lastVerified: "2026-08-03", verificationStatus: "verified", notes: "服务券产品清单、服务机构和核销信息入口。", nextReview: "2026-08-10" },
-  { url: "https://zcdx.kfqgw.beijing.gov.cn", title: "经开区政策兑现综合服务平台", publisher: "北京经开区管委会", sourceType: "application_portal", level: "区级", region: "北京经开区", firstSeen: "2026-08-03", lastVerified: "2026-08-03", verificationStatus: "verified", notes: "经开区政策申报和模型券即时补贴平台入口，需登录后核验实时券包。", nextReview: "2026-08-10" },
-  { url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/index.html", title: "北京经开区政策文件栏目（本周扫描入口）", publisher: "北京经开区管委会", sourceType: "official_policy", level: "区级", region: "北京经开区", firstSeen: "2026-08-10", lastVerified: "2026-08-10", verificationStatus: "verified", notes: "已核验 2026 年 OPC 人才认定和数据领域核心技术攻关申报通知。", nextReview: "2026-08-17" },
-  { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/", title: "首都之窗政策文件栏目（本周扫描入口）", publisher: "北京市人民政府", sourceType: "official_policy", level: "市级", region: "北京市级", firstSeen: "2026-08-10", lastVerified: "2026-08-10", verificationStatus: "verified", notes: "已核验智能工厂梯度培育通知及人工智能+视听项目指南。", nextReview: "2026-08-17" },
+  { url: "https://zhengce.beijing.gov.cn", title: "北京市政策兑现专区", publisher: "北京市人民政府", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-08-03", lastVerified: "2026-08-17", verificationStatus: "verified", notes: "市级项目资金和部分区级项目的统一入口；本周复核第二批高精尖资金方向1、2、7的入口与截止时间。", nextReview: "2026-08-24" },
+  { url: "https://kw.beijing.gov.cn", title: "首都科技条件平台/创新券入口", publisher: "北京市科委、中关村管委会", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-08-03", lastVerified: "2026-08-17", verificationStatus: "verified", notes: "创新券批次、开放单位和余额以平台实时状态为准。", nextReview: "2026-08-24" },
+  { url: "https://www.smebj.cn", title: "北京市中小企业公共服务平台", publisher: "北京市经济和信息化局", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-08-03", lastVerified: "2026-08-17", verificationStatus: "verified", notes: "服务券产品清单、服务机构和核销信息入口。", nextReview: "2026-08-24" },
+  { url: "https://zcdx.kfqgw.beijing.gov.cn", title: "经开区政策兑现综合服务平台", publisher: "北京经开区管委会", sourceType: "application_portal", level: "区级", region: "北京经开区", firstSeen: "2026-08-03", lastVerified: "2026-08-17", verificationStatus: "verified", notes: "经开区政策申报和模型券即时补贴平台入口，需登录后核验实时券包。", nextReview: "2026-08-24" },
+  { url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/index.html", title: "北京经开区政策文件栏目（本周扫描入口）", publisher: "北京经开区管委会", sourceType: "official_policy", level: "区级", region: "北京经开区", firstSeen: "2026-08-10", lastVerified: "2026-08-17", verificationStatus: "verified", notes: "已复核 2026 年 OPC 人才认定和数据领域核心技术攻关申报窗口状态。", nextReview: "2026-08-24" },
+  { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/", title: "首都之窗政策文件栏目（本周扫描入口）", publisher: "北京市人民政府", sourceType: "official_policy", level: "市级", region: "北京市级", firstSeen: "2026-08-10", lastVerified: "2026-08-17", verificationStatus: "verified", notes: "已复核高精尖产业资金第二批窗口、智能工厂梯度培育和人工智能+视听项目指南。", nextReview: "2026-08-24" },
 ];
 
 const allSeeds = [...fromSubsidySources, ...policySeeds, ...applicationSeeds];
