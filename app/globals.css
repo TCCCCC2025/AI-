@@ -291,3 +291,5 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
   .subsidy-action-strip div + div { padding-left: 0; padding-top: 12px; border-top: 1px solid var(--line); border-left: 0; }
   .subsidy-entry-link-card { width: 100%; }
 }
+
+.weekly-note { max-width: 760px; margin-top: 14px; color: var(--signal); font-weight: 700; }
