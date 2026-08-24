@@ -50,3 +50,4 @@ npm run sync:github -- --message "chore: sync subsidy radar YYYY-Www"
 ```
 
 发布后检查 GitHub Actions、`https://tccccc2025.github.io/AI-/subsidies/` 的 HTTP 200、页面标题和“补贴申报雷达”文本。若发布失败，不要把未经核验的信息推送为政策事实。
+最近一次核验版本：2026-W34（截至 2026-08-24）。
