@@ -326,6 +326,118 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     complianceImpact: "需准备知识产权、版权、备案、播出和投资凭证；同一项目不得跨方向或重复申报。",
     action: "先完成项目方向单选和证据清单，确认政策兑现平台的当期项目入口后再承诺支持金额。",
   },
+  {
+    id: "bj-ai-meteorology-bang-2026",
+    title: "2026年度 AI+气象“揭榜挂帅”专项榜单",
+    region: "北京市级",
+    supportDirections: ["0—6小时极端天气短临智能预报", "0—72小时短期数智融合预报", "15—60天次季节极端气候预测"],
+    mechanism: "揭榜挂帅/科技项目支持",
+    beneficiaries: ["人工智能企业", "气象与时空数据企业", "高校和科研院所", "产学研联合团队"],
+    status: "current",
+    applicationWindow: "2026-08-17—2026-09-04 18:00",
+    amount: "待核（榜单通知未列明具体财政科技经费金额）",
+    eligibility: "面向企业、高校、科研院所；联合申报参与单位原则上不超过4家；不设注册时间、年龄、学历和职称门槛；企业配套经费与财政科技经费比例不低于2:1，须覆盖榜单任务并接受真实场景验收。",
+    applicationUrl: "https://pm.kw.beijing.gov.cn",
+    basisPolicyIds: ["bj-ai-meteorology-bang-2026"],
+    sources: [
+      { title: "北京市科委等单位关于发布2026年度AI+气象“揭榜挂帅”专项榜单的通知", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202608/t20260818_4827195.html", publisher: "北京市科委、中关村管委会、北京市气象局", sourceGrade: "official", evidence: "官方通知列明3个榜单任务、申报主体、2:1配套经费要求、申报系统和2026年9月4日18:00截止时间。" },
+      { title: "市级科技项目统筹管理信息系统", url: "https://pm.kw.beijing.gov.cn", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方通知列明AI+气象揭榜材料在线填报入口。" },
+    ],
+    verifiedAt: "2026-08-24",
+    summary: "AI+气象专项将极端天气预报模型与首都及京津冀示范应用绑定，当前窗口至9月4日18:00。",
+    businessImpact: "模型、时空数据、算力平台和气象业务单位可组成联合申报或交付团队。",
+    complianceImpact: "榜单任务须全覆盖，配套经费比例和最终用户验收是硬约束；通知未列明金额，不提前承诺补助数额。",
+    action: "在9月4日18:00前锁定榜单、联合单位和示范用户，完成简表、技术路线和配套经费证明。",
+  },
+  {
+    id: "bj-national-ai-contest-2026",
+    title: "新一代人工智能国家科技重大专项2026年度“以赛代评”公开项目",
+    region: "北京市级",
+    supportDirections: ["国家人工智能重大专项公开赛道", "基础模型与智能体研发", "产学研联合攻关"],
+    mechanism: "国家科技重大专项公开项目",
+    beneficiaries: ["人工智能企业", "高校和科研院所", "产学研联合团队"],
+    status: "current",
+    applicationWindow: "2026-08-10 10:00—2026-09-04 16:00",
+    amount: "待核（北京转发通知未列明项目经费金额，以科技部原指南和系统字段为准）",
+    eligibility: "按照科技部原指南申报，通过国家科技管理信息系统公共服务平台网上填报，全部附件须上传电子扫描件；北京组织推荐单位联系人为牛老师、马老师。",
+    applicationUrl: "https://service.most.gov.cn/kjjh_tztg_all/20260731/5858.html",
+    basisPolicyIds: ["bj-national-ai-contest-2026"],
+    sources: [
+      { title: "北京市科委、中关村管委会关于转发新一代人工智能国家科技重大专项2026年度“以赛代评”公开项目申报指南的通知", url: "https://kw.beijing.gov.cn/zwgk/zcwj/202608/t20260812_4820137.html", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方转发通知列明国家科技管理信息系统填报方式和2026年8月10日至9月4日受理时间。" },
+      { title: "新一代人工智能国家科技重大专项2026年度“以赛代评”公开项目申报指南", url: "https://service.most.gov.cn/kjjh_tztg_all/20260731/5858.html", publisher: "科技部国家科技管理信息系统公共服务平台", sourceGrade: "official", evidence: "北京官方通知指定的科技部原指南入口，具体赛道、资格和资助以该原文为准。" },
+    ],
+    verifiedAt: "2026-08-24",
+    summary: "北京组织推荐国家新一代人工智能重大专项“以赛代评”项目，公开窗口至9月4日16:00。",
+    businessImpact: "适合把基础模型、智能体和行业应用研发团队纳入国家级项目客户清单。",
+    complianceImpact: "不能用北京转发通知替代科技部原指南；申报前必须核对原指南赛道、牵头资格和附件要求。",
+    action: "先回读科技部原指南，再在国家科技管理信息系统完成单位审核、附件上传和提交。",
+  },
+  {
+    id: "bj-ai-new-materials-2026",
+    title: "2026年“人工智能+新材料”创新发展储备课题征集",
+    region: "北京市级",
+    supportDirections: ["新材料智能研发服务能力提升", "AI赋能关键产品开发及应用验证"],
+    mechanism: "事前补助/储备课题征集",
+    beneficiaries: ["新材料与高端装备企业", "材料研发CRO服务商", "大模型与数据服务企业", "高校和科研院所"],
+    status: "closed",
+    applicationWindow: "2026-08-06 12:00—2026-08-20 17:00（本轮已截止）",
+    amount: "待核（官方通知明确拟采取事前补助，但支持周期及科技经费金额须登录平台查看）",
+    eligibility: "企业牵头，每家企业限报1项；应具备材料数据计算、数据治理、专业AI模型、智能实验室或材料研发CRO等能力之一；企业配套经费与科技经费总额比例不低于2:1，不得重复申报已获市级财政支持内容。",
+    applicationUrl: "https://mis.kw.beijing.gov.cn",
+    basisPolicyIds: ["bj-ai-new-materials-2026"],
+    sources: [
+      { title: "申报开始！2026年“人工智能+新材料”创新发展储备课题征集进行中", url: "https://www.beijing.gov.cn/fuwu/lqfw/gggs/202608/t20260807_4812761.html", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方通知列明两类征集方向、企业牵头和2:1配套经费要求、在线入口及2026年8月20日17:00截止时间。" },
+      { title: "北京市科技计划综合管理平台-在线服务系统", url: "https://mis.kw.beijing.gov.cn", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方通知指定的在线填报入口；支持周期和金额以平台项目字段为准。" },
+    ],
+    verifiedAt: "2026-08-24",
+    summary: "AI+新材料储备课题征集本轮已于8月20日17:00截止，支持金额须回到平台字段核验。",
+    businessImpact: "材料专业模型、数据治理、智能实验室和研发CRO服务能力可继续沉淀为下一轮项目底稿。",
+    complianceImpact: "本轮已截止；通知明确拟采取事前补助但未在正文列出金额，不能把平台待核金额写成承诺。",
+    action: "本轮已截止，保存课题方案、知识产权、材料数据与配套经费证明，跟踪后续立项或下一批征集。",
+  },
+  {
+    id: "dist-etown-industry-model-2026",
+    title: "经开区2026年人工智能行业大模型应用落地支持申报",
+    region: "北京经开区",
+    supportDirections: ["行业大模型应用落地", "医疗健康、商业航天、汽车制造等场景", "模型调用与效果验证"],
+    mechanism: "项目支持申报",
+    beneficiaries: ["经开区行业模型企业", "制造业、汽车、新能源企业", "生物医药与商业航天企业"],
+    status: "closed",
+    applicationWindow: "2026-07-31—2026-08-19（本轮已截止）",
+    amount: "待核（官方通知要求以《办事指南》和政策兑现平台项目页为准）",
+    eligibility: "相关企业须在规定期间通过北京市政策兑现专区或经开区政策兑现综合服务平台注册登录并提交项目申请，逾期视为自动放弃。",
+    applicationUrl: ETOWN_PORTAL,
+    basisPolicyIds: ["dist-etown-industry-model-2026", "dist-etown-token-economy-2026"],
+    sources: [
+      { title: "北京经济技术开发区信息技术产业局关于开展2026年人工智能行业大模型应用落地支持申报的通知", url: "https://open.beijing.gov.cn/html/yizhuang/zcqd/2026/8/1785742151631.html", publisher: "北京经济技术开发区信息技术产业局（经开区官网转载）", sourceGrade: "official_repost", evidence: "官方转载列明2026年7月31日至8月19日申报窗口、政策兑现入口、联系方式及办事指南附件。" },
+      { title: "经开区政策兑现综合服务平台", url: ETOWN_PORTAL, publisher: "北京经开区管委会", sourceGrade: "official", evidence: "官方通知指定的项目申报入口；支持方向和金额以平台项目页为准。" },
+    ],
+    verifiedAt: "2026-08-24",
+    summary: "经开区行业大模型应用落地支持本轮已于8月19日截止，金额与方向不能脱离办事指南单独推断。",
+    businessImpact: "行业模型部署、调用消耗和场景验收材料可作为下一轮申报或客户交付底稿。",
+    complianceImpact: "本轮已截止；官方正文未列金额，必须回到办事指南或平台字段核验。",
+    action: "保留项目合同、调用记录、部署证明和场景验收材料，跟踪下一轮行业大模型支持窗口。",
+  },
+  {
+    id: "dist-etown-token-economy-2026",
+    title: "经开区词元驱动智能经济政策支持方向",
+    region: "北京经开区",
+    supportDirections: ["算力费用支持", "数据券", "模型聚合和智能体交付平台", "实际场景词元消耗", "OPC券"],
+    mechanism: "政策支持/按配套细则申报",
+    beneficiaries: ["算力与模型服务商", "数据交易与数据服务企业", "行业场景应用企业", "OPC企业"],
+    status: "effective_waiting_round",
+    applicationWindow: "政策自2026-08-03实施，有效期至2030-12-31；具体批次和入口待兑现细则",
+    amount: "算力租赁费用30%最高2000万元；数据交易金额10%最高100万元；场景词元消耗费用50%最高500万元；多能力聚合服务最高5000万元；OPC单企业累计最高100万元",
+    eligibility: "适用于亦庄新城225平方公里内依法经营、近3年无重大行政处罚和刑事犯罪记录、未列入严重违法失信主体名单的企事业单位及社会组织；同一项目遵循从优不重复。",
+    applicationUrl: ETOWN_PORTAL,
+    basisPolicyIds: ["dist-etown-token-economy-2026"],
+    sources: [{ title: "北京经济技术开发区管理委员会印发《北京经济技术开发区关于支持词元驱动智能经济高质量发展的若干措施（试行）》的通知", url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202608/t20260805_4809951.html", publisher: "北京经济技术开发区管理委员会", sourceGrade: "official", evidence: "官方措施列明算力、数据券、模型聚合、场景词元消耗和OPC支持上限，并规定适用范围及有效期；具体兑现批次仍需配套细则。" }],
+    verifiedAt: "2026-08-24",
+    summary: "经开区词元驱动智能经济政策已生效，支持链条覆盖算力、数据、模型服务、场景和OPC，但具体兑现入口待配套细则。",
+    businessImpact: "可按算力、数据、平台、场景和OPC五类建立客户机会池，提前沉淀合同、消耗和交易凭证。",
+    complianceImpact: "政策金额是上限或比例，不等于自动兑付；同一项目从优不重复，智能体支付和数据流通还需受监管沙盒约束。",
+    action: "先按五类支持方向筛选客户并建立证据清单，待配套细则发布后再确认申报入口和材料。",
+  },
 ];
 
 export const subsidyThemes = ["算力", "Token", "数据", "场景", "模型", "OPC"] as const;
@@ -335,16 +447,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-08-10" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-08-17" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-08-24" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-08-31" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-08-10" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-08-31" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-08-07" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-08-31" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-08-10" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-08-31" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {
