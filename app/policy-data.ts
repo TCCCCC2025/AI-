@@ -432,7 +432,9 @@ export const policyMetrics = {
 
 export type WeeklyChange = { title: string; changeType: "新增" | "修订" | "截止" | "移出"; date: string; detail: string; href?: string; status: Policy["status"] };
 
-export const weeklyChanges: WeeklyChange[] = [
+export const weeklyChanges: WeeklyChange[] = [];
+
+export const priorityRegionWeeklyChanges: WeeklyChange[] = [
   { title: "上海市第一批城市数字化转型（区块链创新应用）拟支持项目", changeType: "新增", date: "2026-08-24", detail: "上海市数据局依据《上海市城市数字化转型专项资金管理办法》公示第一批区块链创新应用申请类项目拟支持单位，公示期为8月24日至8月28日；这是评审结果公示，不是新的申报窗口。", href: "https://sdb.sh.gov.cn/gsgg/20260824/148702e0f0f74443a81b259f4582ce21.html", status: "滚动核验" },
   { title: "上海市第一批算力生态合作伙伴名单公示", changeType: "新增", date: "2026-08-25", detail: "上海市数据局、上海市通信管理局公布第一批算力生态合作伙伴38家，其中算力供给方12家、算力应用方18家、平台共建方8家；公示期为8月25日至9月1日，不等同于财政补贴。", href: "https://sdb.sh.gov.cn/gsgg/20260825/cd1a719b889b4d8584e6cb2d5d0fbbc4.html", status: "滚动核验" },
   { title: "南京市人工智能服务商、智能体开发商征集", changeType: "截止", date: "2026-08-25", detail: "南京市工信局“两商”征集本轮材料于8月25日截止，要求由甲方单位提交盖章申报表、合同关键页、验收报告、上线截图等证据；该项工作为常态化征集，后续新增服务商可按月补报。", href: "https://gxj.nanjing.gov.cn/njsjjhxxhwyh/202608/t20260813_5893091.html", status: "滚动核验" },
