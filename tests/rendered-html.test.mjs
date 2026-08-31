@@ -39,8 +39,8 @@ test("renders the overview, weekly, and policy-category routes", async () => {
   assert.match(homeHtml, /本周最新/);
   assert.match(weeklyHtml, /本周最新政策/);
   assert.match(weeklyHtml, /截止/);
-  assert.match(weeklyHtml, /亦城人才·人工智能超级个体/);
-  assert.match(weeklyHtml, /数据领域核心技术攻关补贴/);
+  assert.match(weeklyHtml, /AI\+气象“揭榜挂帅”专项榜单/);
+  assert.match(weeklyHtml, /南京市人工智能服务商、智能体开发商征集/);
   assert.match(nationalHtml, /国家部委（20 项）/);
   assert.match(nationalHtml, /企业机会/);
   assert.doesNotMatch(nationalHtml, /北京市级（14 项）/);
@@ -123,5 +123,14 @@ test("weekly page includes the previous week section", async () => {
   const html = await (await render("/weekly")).text();
   assert.match(html, /本周最新政策/);
   assert.match(html, /上周政策/);
-  assert.match(html, /北京市关于加快智能体引领发展的若干措施/);
+  assert.match(html, /AI\+气象“揭榜挂帅”专项榜单/);
+});
+
+test("weekly page follows the current site cutoff and verified source note", async () => {
+  const html = await (await render("/weekly")).text();
+  assert.match(html, /2026-08-24—2026-08-30/);
+  assert.match(html, /截至\s*(?:<!-- -->)?2026-08-31/);
+  assert.match(html, /本周期记录/);
+  assert.match(html, /第一批算力生态合作伙伴名单公示/);
+  assert.match(html, /南京市人工智能服务商、智能体开发商征集/);
 });
