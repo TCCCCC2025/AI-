@@ -19,7 +19,8 @@ test("renders the Beijing AI policy intelligence homepage", async () => {
   const html = await response.text();
 
   assert.match(html, /<title>北京 AI 政策情报/);
-  assert.match(html, /2026-08-24/);
+  assert.match(html, /2026-08-31/);
+  assert.match(html, /第\s*(?:<!-- -->)?36(?:<!-- -->)?\s*周/);
   assert.match(html, /经官方核验/);
   assert.match(html, /申报窗口雷达/);
   assert.match(html, /政策全景/);

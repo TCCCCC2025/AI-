@@ -39,6 +39,11 @@ export type PolicyWithBrief = Policy & PolicyAnalysis & {
 
 export type PolicyGroup = { id: "national" | "beijing" | "districts" | "regions"; title: string; note: string; policies: PolicyWithBrief[] };
 
+export const siteCutoff = {
+  date: "2026-08-31",
+  isoWeek: 36,
+} as const;
+
 const policyGroupsBase = [
   {
     id: "national" as const,
