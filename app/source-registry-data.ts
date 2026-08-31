@@ -59,6 +59,8 @@ const policySeeds: SourceSeed[] = [
   ["https://kfqgw.beijing.gov.cn/ywdt/tt/cxzc/202608/t20260819_4828225.html", "经开区支持人工智能原生人才发展若干措施（AI人才八条）", "北京经济技术开发区管理委员会", "区级", "dist-etown-ai-native-talent-2026"],
   ["https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260707_4750995.html", "2026年亦城人才·人工智能超级个体（OPC）认定申报通知", "北京经开区工委组织人事部", "区级", "dist-etown-opc-talent-2026"],
   ["https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260703_4745935.html", "2026年数据领域核心技术攻关补贴申报通知", "北京市智慧城市基础设施与智能网联汽车协同发展工作办公室", "区级", "dist-etown-data-core-2026"],
+  ["https://gxj.sz.gov.cn/gkmlpt/content/12/12956/post_12956819.html?jump=true", "深圳市打造人工智能先锋城市项目扶持计划（第二批）申请指南", "深圳市工业和信息化局", "外省市", "reg-shenzhen-ai-pioneer-2026-batch2"],
+  ["https://gxj.sz.gov.cn/gkmlpt/content/12/12760/post_12760215.html", "深圳市打造人工智能先锋城市项目扶持计划操作规程（2026年修订版）", "深圳市工业和信息化局", "外省市", "reg-shenzhen-ai-pioneer-2026-batch2"],
   ["https://www.miit.gov.cn/zwgk/zcwj/wjfb/yj/art/2026/art_fefdddaaa4ac49edb130c85d048a2933.html", "关于推动互联网基础资源高质量发展的指导意见", "工信部等四部门", "国家", "nat-internet-infrastructure"],
   ["https://www.gov.cn/lianbo/202606/content_7073465.htm", "人工智能智能体互联系列国家标准", "国家市场监管总局、国家标准委", "国家", "nat-agent-standards"],
   ["https://www.gov.cn/zhengce/zhengceku/202606/content_7071755.htm", "人工智能+信息通信创新发展实施意见", "工业和信息化部", "国家", "nat-ai-telecom-2026"],
@@ -72,14 +74,22 @@ const policySeeds: SourceSeed[] = [
   publisher,
   sourceType: "official_policy",
   level,
-  region: level === "国家" ? "国家" : level === "北京市级" ? "北京市级" : "北京各区",
-  firstSeen: "2026-08-03",
-  lastVerified: "2026-08-03",
+  region: level === "国家" ? "国家" : level === "北京市级" ? "北京市级" : level === "外省市" ? "深圳市" : "北京各区",
+  firstSeen: level === "外省市" ? "2026-08-27" : "2026-08-03",
+  lastVerified: level === "外省市" ? "2026-08-31" : "2026-08-03",
   verificationStatus: "verified",
   relatedPolicyIds: [relatedPolicyId],
-  notes: "已纳入政策库来源索引，后续周更优先复核页面及其附件。",
-  nextReview: "2026-08-10",
+  notes: level === "外省市" ? "深圳市官方通知与操作规程已核验；第二批申请指南的附件和统一信息平台受理字段待继续回读。" : "已纳入政策库来源索引，后续周更优先复核页面及其附件。",
+  nextReview: level === "外省市" ? "2026-09-07" : "2026-08-10",
 }));
+
+const externalWeeklySeeds: SourceSeed[] = [
+  { url: "https://sdb.sh.gov.cn/gsgg/20260824/148702e0f0f74443a81b259f4582ce21.html", title: "2026年第一批上海市城市数字化转型（区块链创新应用）申请类项目拟支持情况公示", publisher: "上海市数据局", sourceType: "official_policy", level: "外省市", region: "上海市", firstSeen: "2026-08-24", lastVerified: "2026-08-31", verificationStatus: "verified", relatedPolicyIds: ["reg-shanghai-blockchain-2026-batch1"], notes: "上海市数据局官方拟支持结果公示；依据《上海市城市数字化转型专项资金管理办法》，不等同于新的申报窗口。", nextReview: "2026-09-07" },
+  { url: "https://sdb.sh.gov.cn/gsgg/20260825/cd1a719b889b4d8584e6cb2d5d0fbbc4.html", title: "2026年第一批算力生态合作伙伴名单公示", publisher: "上海市数据局、上海市通信管理局", sourceType: "official_policy", level: "外省市", region: "上海市", firstSeen: "2026-08-25", lastVerified: "2026-08-31", verificationStatus: "verified", relatedPolicyIds: ["reg-shanghai-compute-partners-2026-batch1"], notes: "官方名单公示38家伙伴，公示期8月25日至9月1日；不等同于财政补贴或采购承诺。", nextReview: "2026-09-07" },
+  { url: "https://gxj.nanjing.gov.cn/njsjjhxxhwyh/202608/t20260813_5893091.html", title: "南京市人工智能服务商、智能体开发商征集通知", publisher: "南京市工业和信息化局", sourceType: "official_policy", level: "外省市", region: "南京市", firstSeen: "2026-08-13", lastVerified: "2026-08-31", verificationStatus: "verified", relatedPolicyIds: ["reg-nanjing-ai-two-providers-2026"], notes: "南京市工信局官方通知；本轮截止8月25日，征集为常态化工作，后续可按月补报。", nextReview: "2026-09-07" },
+  { url: "https://zsj.gz.gov.cn/gkmlpt/content/10/10976/post_10976669.html", title: "广州政务人工智能与城市可信数据空间建设答复", publisher: "广州市政务服务和数据管理局", sourceType: "official_policy", level: "外省市", region: "广州市", firstSeen: "2026-08-24", lastVerified: "2026-08-31", verificationStatus: "verified", relatedPolicyIds: ["reg-guangzhou-ai-trusted-space-2026"], notes: "广州市政数局正式提案答复，披露“穗智政”、公共数据授权运营和城市可信数据空间建设方向；不是直接补贴通知。", nextReview: "2026-09-07" },
+  { url: "https://www.nanjing.gov.cn/zgnjsjb/jrtt/202608/t20260828_5900927.html", title: "南京市抢占人工智能发展先机专题部署", publisher: "中共南京市委、南京市人民政府", sourceType: "official_policy", level: "外省市", region: "南京市", firstSeen: "2026-08-28", lastVerified: "2026-08-31", verificationStatus: "verified", relatedPolicyIds: ["reg-nanjing-ai-future-industry-2026"], notes: "南京市政府官方工作部署，作为产业方向信号观察；具体支持政策和申报入口待后续正式通知。", nextReview: "2026-09-07" },
+];
 
 const applicationSeeds: SourceSeed[] = [
   { url: "https://zhengce.beijing.gov.cn", title: "北京市政策兑现专区", publisher: "北京市人民政府", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-08-03", lastVerified: "2026-08-24", verificationStatus: "verified", notes: "市级项目资金和部分区级项目的统一入口；本周复核AI+气象、高精尖资金第二批和AI+新材料窗口状态。", nextReview: "2026-08-31" },
@@ -93,7 +103,7 @@ const applicationSeeds: SourceSeed[] = [
   { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/", title: "首都之窗政策文件栏目（本周扫描入口）", publisher: "北京市人民政府", sourceType: "official_policy", level: "市级", region: "北京市级", firstSeen: "2026-08-10", lastVerified: "2026-08-24", verificationStatus: "verified", notes: "已复核AI+气象榜单、AI+新材料储备课题和市级申报窗口。", nextReview: "2026-08-31" },
 ];
 
-const allSeeds = [...fromSubsidySources, ...policySeeds, ...applicationSeeds];
+const allSeeds = [...fromSubsidySources, ...policySeeds, ...externalWeeklySeeds, ...applicationSeeds];
 const uniqueSeeds = new Map<string, SourceSeed>();
 for (const item of allSeeds) {
   const existing = uniqueSeeds.get(item.url);

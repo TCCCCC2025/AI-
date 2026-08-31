@@ -5,7 +5,7 @@ import { policyGroups, policyMetrics } from "../app/policy-data.ts";
 const policies = policyGroups.flatMap((group) => group.policies);
 
 test("all policies contain actionable intelligence fields", () => {
-  assert.equal(policies.length, 47);
+  assert.equal(policies.length, 53);
   assert.equal(new Set(policies.map((policy) => policy.id)).size, policies.length);
 
   for (const policy of policies) {
