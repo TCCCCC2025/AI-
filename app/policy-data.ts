@@ -37,7 +37,7 @@ export type PolicyWithBrief = Policy & PolicyAnalysis & {
   action: string;
 };
 
-export type PolicyGroup = { id: "national" | "beijing" | "districts"; title: string; note: string; policies: PolicyWithBrief[] };
+export type PolicyGroup = { id: "national" | "beijing" | "districts" | "regions"; title: string; note: string; policies: PolicyWithBrief[] };
 
 const policyGroupsBase = [
   {
@@ -108,6 +108,14 @@ const policyGroupsBase = [
       { title: "北京经开区：进一步加快建设全域人工智能之城实施方案（2026—2027年）", issuer: "北京经开区管委会", date: "2026-01-29", themes: "AI / 大模型 / 算力 / 数据", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202601/t20260130_4478660.html", status: "持续适用" },
     ],
   },
+  {
+    id: "regions" as const,
+    title: "外省市重点（1 项）",
+    note: "优先收录上海、广东、浙江、江苏及重点城市的官方政策；外省市政策不等同于北京主体可申报。",
+    policies: [
+      { title: "深圳市打造人工智能先锋城市项目扶持计划（第二批）申请指南", issuer: "深圳市工业和信息化局", date: "2026-08-27", themes: "AI / 大模型 / 算力", href: "https://gxj.sz.gov.cn/gkmlpt/content/12/12956/post_12956819.html?jump=true", status: "滚动核验" },
+    ],
+  },
 ];
 
 const tailoredBriefs: Record<string, Pick<PolicyWithBrief, "summary" | "businessImpact" | "complianceImpact" | "action">> = {
@@ -129,6 +137,7 @@ const tailoredBriefs: Record<string, Pick<PolicyWithBrief, "summary" | "business
   "经开区：关于支持词元驱动智能经济高质量发展的若干措施（试行）": { summary: "经开区以“词元”作为智能经济政策抓手，覆盖算力、数据券、模型聚合、场景消耗、OPC 券和智能体支付沙盒。", businessImpact: "算力运营、数据交易、模型聚合、智能体交付、具身智能和汽车制造等企业可从基础设施、服务中台和场景应用三条链路切入。", complianceImpact: "政策适用于亦庄新城225平方公里内依法经营主体，有效期至2030年12月31日；同一项目遵循从优不重复，智能体支付和数据流通仍需监管沙盒及合规验证。", action: "按算力、数据、平台、场景和 OPC 五类机会建立客户清单，等待配套兑现细则后再确认申报入口和材料。" },
   "经开区：2026年人工智能行业大模型应用落地支持申报通知": { summary: "经开区面向行业大模型应用落地开展2026年项目支持申报，官方窗口为7月31日至8月19日。", businessImpact: "医疗健康、商业航天、汽车制造等行业模型应用客户可围绕实际部署、调用消耗和场景效果形成申报或交付项目。", complianceImpact: "本轮已截止；支持方向、金额和材料以办事指南及政策兑现平台项目页为准，不能从通知标题推断补贴额度。", action: "本轮已截止；保存项目合同、模型调用和场景验收材料，跟踪经开区下一轮行业模型应用支持。" },
   "经开区：关于支持人工智能原生人才发展的若干措施（AI人才八条）": { summary: "经开区发布 AI 原生人才专项政策，覆盖顶尖科学家、产业精英、OPC、实习生、前沿部署工程师和产业交流生态。", businessImpact: "AI 原生创业团队、模型企业、高校和开发者社区可围绕人才引育、创业启动、算力集群、研发空间和产业场景对接形成服务机会。", complianceImpact: "官方发布信息披露产业精英最高500万元、OPC个人最高50万元和活动支持最高100万元，但具体认定条件、兑现批次和申请入口仍以正式政策文件及通知为准。", action: "先按顶尖人才、产业精英、OPC、实习生和生态活动五类建立客户清单，跟踪正式政策文本和申报批次，不提前承诺金额。" },
+  "深圳市打造人工智能先锋城市项目扶持计划（第二批）申请指南": { summary: "深圳市工信局发布 2026 年人工智能先锋城市扶持计划第二批申请指南，项目包含模型券兑现、国产人工智能生态源头创新中心服务费用兑现。", businessImpact: "深圳本地模型应用企业可围绕已备案模型服务、智能体开发和应用迁移适配形成兑现项目；模型服务商、国产软硬件适配中心也有服务费用资助机会。", complianceImpact: "申报主体和项目实施地须在深圳市（含深汕特别合作区）；模型券兑现要求模型服务已完成且购买模型服务总费用不低于50万元，具体受理时间、材料和入口以官方附件及统一信息平台为准。该政策不直接适用于北京主体。", action: "将深圳客户单独建档，先核对模型备案、非关联方服务机构、合同、发票、支付凭证和项目验收材料；待官方附件可访问后再确认申报截止日与平台入口。" },
 };
 
 const policyIds: Record<string, string> = {
@@ -179,6 +188,7 @@ const policyIds: Record<string, string> = {
   "经开区：关于支持词元驱动智能经济高质量发展的若干措施（试行）": "dist-etown-token-economy-2026",
   "经开区：2026年人工智能行业大模型应用落地支持申报通知": "dist-etown-industry-model-2026",
   "经开区：关于支持人工智能原生人才发展的若干措施（AI人才八条）": "dist-etown-ai-native-talent-2026",
+  "深圳市打造人工智能先锋城市项目扶持计划（第二批）申请指南": "reg-shenzhen-ai-pioneer-2026-batch2",
 };
 
 const themeCustomers: Record<string, string[]> = {
@@ -324,6 +334,13 @@ const tailoredAnalysis: Record<string, Partial<PolicyAnalysis>> = {
     customerTypes: ["AI 创业公司与 OPC", "大模型与智能体企业", "园区、科研机构和高校", "产业协会与开发者社区"],
     scenarios: ["AI 原生人才认定", "OPC 创业与实习", "开发者赛事和产业交流"],
     relatedPolicies: [{ type: "同主题", policyId: "dist-etown-opc-talent-2026" }, { type: "同主题", policyId: "dist-etown-token-economy-2026" }],
+  },
+  "reg-shenzhen-ai-pioneer-2026-batch2": {
+    opportunityLevel: "高",
+    judgement: "深圳已把模型服务消费与国产适配服务纳入第二批兑现窗口，体现地方政策从模型供给转向可核验的应用支出和生态服务交付。",
+    customerTypes: ["深圳市内大模型与智能体企业", "模型服务机构与算力服务商", "国产软硬件适配中心", "制造业与现代服务业应用客户"],
+    scenarios: ["模型券兑现", "智能体开发应用", "国产模型迁移与适配"],
+    relatedPolicies: [{ type: "上位依据", policyId: "nat-agent-development" }, { type: "同主题", policyId: "bj-agent-measures" }],
   },
 };
 

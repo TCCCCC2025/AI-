@@ -59,6 +59,8 @@ const policySeeds: SourceSeed[] = [
   ["https://kfqgw.beijing.gov.cn/ywdt/tt/cxzc/202608/t20260819_4828225.html", "经开区支持人工智能原生人才发展若干措施（AI人才八条）", "北京经济技术开发区管理委员会", "区级", "dist-etown-ai-native-talent-2026"],
   ["https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260707_4750995.html", "2026年亦城人才·人工智能超级个体（OPC）认定申报通知", "北京经开区工委组织人事部", "区级", "dist-etown-opc-talent-2026"],
   ["https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260703_4745935.html", "2026年数据领域核心技术攻关补贴申报通知", "北京市智慧城市基础设施与智能网联汽车协同发展工作办公室", "区级", "dist-etown-data-core-2026"],
+  ["https://gxj.sz.gov.cn/gkmlpt/content/12/12956/post_12956819.html?jump=true", "深圳市打造人工智能先锋城市项目扶持计划（第二批）申请指南", "深圳市工业和信息化局", "外省市", "reg-shenzhen-ai-pioneer-2026-batch2"],
+  ["https://gxj.sz.gov.cn/gkmlpt/content/12/12760/post_12760215.html", "深圳市打造人工智能先锋城市项目扶持计划操作规程（2026年修订版）", "深圳市工业和信息化局", "外省市", "reg-shenzhen-ai-pioneer-2026-batch2"],
   ["https://www.miit.gov.cn/zwgk/zcwj/wjfb/yj/art/2026/art_fefdddaaa4ac49edb130c85d048a2933.html", "关于推动互联网基础资源高质量发展的指导意见", "工信部等四部门", "国家", "nat-internet-infrastructure"],
   ["https://www.gov.cn/lianbo/202606/content_7073465.htm", "人工智能智能体互联系列国家标准", "国家市场监管总局、国家标准委", "国家", "nat-agent-standards"],
   ["https://www.gov.cn/zhengce/zhengceku/202606/content_7071755.htm", "人工智能+信息通信创新发展实施意见", "工业和信息化部", "国家", "nat-ai-telecom-2026"],
@@ -72,13 +74,13 @@ const policySeeds: SourceSeed[] = [
   publisher,
   sourceType: "official_policy",
   level,
-  region: level === "国家" ? "国家" : level === "北京市级" ? "北京市级" : "北京各区",
-  firstSeen: "2026-08-03",
-  lastVerified: "2026-08-03",
+  region: level === "国家" ? "国家" : level === "北京市级" ? "北京市级" : level === "外省市" ? "深圳市" : "北京各区",
+  firstSeen: level === "外省市" ? "2026-08-27" : "2026-08-03",
+  lastVerified: level === "外省市" ? "2026-08-31" : "2026-08-03",
   verificationStatus: "verified",
   relatedPolicyIds: [relatedPolicyId],
-  notes: "已纳入政策库来源索引，后续周更优先复核页面及其附件。",
-  nextReview: "2026-08-10",
+  notes: level === "外省市" ? "深圳市官方通知与操作规程已核验；第二批申请指南的附件和统一信息平台受理字段待继续回读。" : "已纳入政策库来源索引，后续周更优先复核页面及其附件。",
+  nextReview: level === "外省市" ? "2026-09-07" : "2026-08-10",
 }));
 
 const applicationSeeds: SourceSeed[] = [

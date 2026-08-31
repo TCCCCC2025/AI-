@@ -7,6 +7,7 @@ const links = [
   { href: "/national", label: "国家" },
   { href: "/beijing", label: "北京市级" },
   { href: "/districts", label: "区级" },
+  { href: "/regions", label: "外省市" },
 ];
 
 export function SiteNav() {
