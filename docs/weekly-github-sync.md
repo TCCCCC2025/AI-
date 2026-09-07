@@ -9,14 +9,21 @@ npm run sync:github -- --message "chore: sync policy intelligence week 32"
 命令会依次完成：
 
 1. 确认当前分支为 `github-pages`，且 `origin` 指向 `TCCCCC2025/AI-`；
-2. 检查变更只来自站点和部署允许目录；
-3. 运行 `npm run lint`、`npm test` 和 GitHub Pages 静态产物检查；
-4. 创建可追踪提交并推送 `origin/github-pages`；
-5. 回读远程提交 SHA，确认 GitHub 已接收该提交。
+2. 根据已核验政策数据生成微信可复制的群发摘要 `public/weekly-share.txt`；
+3. 检查变更只来自站点和部署允许目录；
+4. 运行 `npm run lint`、`npm test` 和 GitHub Pages 静态产物检查；
+5. 创建可追踪提交并推送 `origin/github-pages`；
+6. 回读远程提交 SHA，确认 GitHub 已接收该提交。
 
 推送成功后，GitHub Actions 工作流 **Publish policy site to GitHub Pages** 会自动构建并发布，公开地址为：
 
 <https://tccccc2025.github.io/AI-/> 
+
+群发摘要会同步发布为纯文本文件，复制到微信时不使用 Markdown 链接：
+
+<https://tccccc2025.github.io/AI-/weekly-share.txt>
+
+GitHub Actions 也会在每次 Pages 构建前重新生成该文件，避免手工推送时摘要落后于政策库。
 
 ## 预演检查
 

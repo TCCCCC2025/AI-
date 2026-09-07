@@ -32,7 +32,7 @@ const fromSubsidySources: SourceSeed[] = subsidyPolicies.flatMap((policy) => pol
   verificationStatus: "verified",
   relatedPolicyIds: [policy.id],
   notes: source.evidence,
-  nextReview: "2026-08-24",
+  nextReview: "2026-09-14",
 })));
 
 const policySeeds: SourceSeed[] = [
@@ -103,7 +103,16 @@ const applicationSeeds: SourceSeed[] = [
   { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/", title: "首都之窗政策文件栏目（本周扫描入口）", publisher: "北京市人民政府", sourceType: "official_policy", level: "市级", region: "北京市级", firstSeen: "2026-08-10", lastVerified: "2026-08-24", verificationStatus: "verified", notes: "已复核AI+气象榜单、AI+新材料储备课题和市级申报窗口。", nextReview: "2026-08-31" },
 ];
 
-const allSeeds = [...fromSubsidySources, ...policySeeds, ...externalWeeklySeeds, ...applicationSeeds];
+const currentWeekSeeds: SourceSeed[] = [
+  { url: "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_6fbc038bf15c445ab53b2a94a3f9d4e4.html", title: "人工智能应用服务商培育专项行动", publisher: "工业和信息化部办公厅", sourceType: "official_policy", level: "国家", region: "国家", firstSeen: "2026-08-31", lastVerified: "2026-09-07", verificationStatus: "verified", relatedPolicyIds: ["nat-ai-service-providers-2026"], notes: "工信部官方通知；建立服务商资源池和服务团，要求各地区于2026年12月1日前报送资源池信息。", nextReview: "2026-09-14" },
+  { url: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260904_4851307.html", title: "2026年度“AI+”方向揭榜挂帅及AI赋能生物育种储备课题", publisher: "北京市科委、中关村管委会等部门", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-09-04", lastVerified: "2026-09-07", verificationStatus: "verified", relatedPolicyIds: ["bj-ai-plus-bang-breeding-2026"], notes: "北京官方申报日历页面；申报系统9月4日开通，9月23日18:00截止。", nextReview: "2026-09-14" },
+  { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260901_4845849.html", title: "部分新兴领域信息采集（含人工智能）", publisher: "北京市军民融合发展促进中心", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-09-01", lastVerified: "2026-09-07", verificationStatus: "verified", notes: "官方通知要求持营业执照、身份证复印件及法人授权书到各区查阅工作通知；不构成补贴或公开申报。", nextReview: "2026-09-14" },
+  { url: "https://njna.nanjing.gov.cn/njsjbxqglwyh/202607/t20260731_5887148.html", title: "南京江北新区促进软件产业高质量发展的若干政策措施", publisher: "南京江北新区管理委员会", sourceType: "official_policy", level: "外省市", region: "南京市江北新区", firstSeen: "2026-09-01", lastVerified: "2026-09-07", verificationStatus: "verified", relatedPolicyIds: ["reg-nanjing-jiangbei-software-2026"], notes: "官方政策自2026年9月1日起施行，覆盖AI+软件、智算、信创适配和产教融合。", nextReview: "2026-09-14" },
+  { url: "https://gxj.gz.gov.cn/yw/tzgg/content/post_10987433.html", title: "广东省人工智能与机器人技能大赛（2026年）通知", publisher: "广州市工业和信息化局转发", sourceType: "official_repost", level: "外省市", region: "广州市", firstSeen: "2026-09-01", lastVerified: "2026-09-07", verificationStatus: "verified", relatedPolicyIds: ["reg-guangdong-ai-robot-skills-2026"], notes: "广州工信局官方转发；赛事和人才生态事项，不是财政补贴。", nextReview: "2026-09-14" },
+  { url: "https://doc.jiangsu.gov.cn/art/2026/9/3/art_78712_11824614.html", title: "江苏省增补2026年贸易促进计划及重点展会资金", publisher: "江苏省商务厅", sourceType: "official_policy", level: "外省市", region: "江苏省", firstSeen: "2026-09-01", lastVerified: "2026-09-07", verificationStatus: "verified", relatedPolicyIds: ["reg-jiangsu-ai-ecommerce-expo-2026"], notes: "江苏省商务厅官方通知；支持江苏数智电商展展位费，申报截止11月19日17:00。", nextReview: "2026-09-14" },
+];
+
+const allSeeds = [...fromSubsidySources, ...policySeeds, ...externalWeeklySeeds, ...applicationSeeds, ...currentWeekSeeds];
 const uniqueSeeds = new Map<string, SourceSeed>();
 for (const item of allSeeds) {
   const existing = uniqueSeeds.get(item.url);

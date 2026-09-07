@@ -95,8 +95,8 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["大模型应用", "Token 计费资源包", "企业 AI 应用平台", "云端模型和智能化工具"],
     mechanism: "服务券",
     beneficiaries: ["中小企业", "需要 Token/API 的软件企业", "传统企业 AI 应用试点"],
-    status: "current",
-    applicationWindow: "服务券产品上架后至额度发完，最晚不超过 2026-08-31",
+    status: "closed",
+    applicationWindow: "服务券产品上架后至 2026-08-31（Token 资源包本轮已截止）",
     amount: "已评审上架服务合同金额最高 30%；单个企业年度最高补贴 20 万元",
     eligibility: "符合中小企业划型标准，购买已评审上架的 Token 资源包、模型充值包或企业 AI 应用平台；服务机构申请兑付。",
     applicationUrl: "https://www.smebj.cn",
@@ -106,7 +106,7 @@ export const subsidyPolicies: SubsidyPolicy[] = [
       { title: "2026 年度北京市中小企业服务券拟配券产品名单", url: "https://jxj.beijing.gov.cn/jxdt/tzgg/202604/P020260403686838324257.pdf", publisher: "北京市经济和信息化局", sourceGrade: "official", evidence: "官方附件列出 Token 计费资源包、大模型产品现金充值包和企业 AI 应用平台等产品。" },
     ],
     verifiedAt: "2026-08-03",
-    summary: "市级服务券把 Token 消费和企业 AI 应用平台纳入配券产品，窗口接近年度最晚期限。",
+    summary: "市级服务券把 Token 消费和企业 AI 应用平台纳入配券产品，Token资源包本轮已于8月31日截止。",
     businessImpact: "模型服务商可以通过上架产品触达中小企业客户，客户经理应先匹配产品清单再谈补贴。",
     complianceImpact: "未上架服务、非实际使用费用和缺少订单留痕的支出不能直接作为服务券核销依据。",
     action: "先在产品清单锁定服务商和 Token 产品，核对企业类型、年度额度和订单留痕。",
@@ -290,18 +290,38 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["人工智能赋能新型工业化高质量数据集建设奖励", "人工智能大模型应用 Token 补贴", "OPC 全栈资源包服务券"],
     mechanism: "项目奖励/费用补贴/服务券",
     beneficiaries: ["在京信息软件业企业", "在京工业企业", "高质量数据集建设单位", "OPC 企业"],
-    status: "current",
-    applicationWindow: "2026-07-31—2026-08-31 17:30；OPC专项服务券常态化申报",
+    status: "closed",
+    applicationWindow: "人工智能大模型应用/数据集方向截至 2026-08-31 17:30（OPC专项服务券另按常态化入口申报）",
     amount: "数据集首次交易奖励最高 100 万元、每次复卖增加最高 20 万元、单个数据集累计最高 200 万元，单企业年度累计最高 500 万元；Token 按补贴期内认定费用最高 30% 补贴，单项目最高 1000 万元；OPC 三个月 Token、算力、数据消费达到 1000 元后全额补贴，单家最高 10 万元",
     eligibility: "申报单位须在京且无失信惩戒；数据集须完成合规交易并有应用价值；Token 补贴面向购买非关联方 Token 的信息软件业、工业企业；OPC 服务券需通过 OPC 成长社区并满足三个月累计消费额 1000 元；同一单位原则上只能获得 2026 年高精尖项目资金一个方向支持。",
     applicationUrl: BEIJING_REDEMPTION,
     basisPolicyIds: ["bj-high-tech-fund-202602", "bj-agent-measures", "bj-ai-industrial-internet"],
     sources: [{ title: "北京市经济和信息化局 北京市财政局 关于印发2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）的通知", url: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202607/t20260730_4801241.html", publisher: "北京市经济和信息化局、北京市财政局", sourceGrade: "official", evidence: "官方文件明确数据集奖励、Token费用最高30%补贴、OPC服务券条件、8月31日17:30截止时间和北京市政策兑现专区入口。" }],
     verifiedAt: "2026-08-17",
-    summary: "市级第二批高精尖资金把数据集交易奖励、Token实际使用补贴和 OPC 全栈服务券放入同一申报批次。",
+    summary: "市级第二批高精尖资金把数据集交易奖励、Token实际使用补贴和 OPC 全栈服务券放入同一政策批次，其中数据集和Token方向本轮已于8月31日截止。",
     businessImpact: "模型应用客户、工业数据集建设单位、OPC 企业和服务商均可形成明确项目切入口，适合做 Token 订单、数据交易和服务券的组合式客户清单。",
     complianceImpact: "同一单位原则上只能选择一个高精尖项目资金方向，且已获市级财政支持的相同实施内容原则上不重复支持；材料需对费用、交易、主体资格和消费流水负责。",
-    action: "在 8 月 31 日 17:30 前按方向锁定项目，分别准备 Token 账单和非关联方证明、数据集合规交易凭证或 OPC 三个月消费流水，通过北京市政策兑现专区提交。",
+    action: "Token 和数据集方向本轮已截止；OPC专项服务券请转至常态化入口，继续保留 Token 账单、数据交易凭证和消费流水作为后续核验材料。",
+  },
+  {
+    id: "bj-opc-service-voucher-2026",
+    title: "2026年北京市中小企业服务券（OPC专项）常态化申报",
+    region: "北京市级",
+    supportDirections: ["OPC全栈服务", "Token、算力和数据消费", "AI原生创业服务"],
+    mechanism: "服务券/常态化申报",
+    beneficiaries: ["北京OPC企业", "AI原生创业团队", "OPC成长社区服务商"],
+    status: "current",
+    applicationWindow: "常态化申报；按平台产品上架、额度和核验规则动态开放",
+    amount: "OPC三个月Token、算力、数据消费达到1000元后可申请全额补贴，单家企业最高10万元",
+    eligibility: "申报主体须在京且符合中小企业划型标准，通过OPC成长社区或北京市政策兑现专区选择上架服务，并保留三个月消费流水、订单和服务凭证。",
+    applicationUrl: BEIJING_REDEMPTION,
+    basisPolicyIds: ["bj-high-tech-fund-202602", "bj-ai-opc"],
+    sources: [{ title: "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）", url: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202607/t20260730_4801241.html", publisher: "北京市经济和信息化局、北京市财政局", sourceGrade: "official", evidence: "实施指南明确OPC专项服务券常态化申报、三个月累计消费额1000元及单家10万元上限。" }],
+    verifiedAt: "2026-09-07",
+    summary: "Token和数据集方向本轮截止后，OPC专项服务券仍按常态化入口开放，适合持续关注产品上架和额度。",
+    businessImpact: "可把OPC团队、模型服务商、算力服务商和数据服务商纳入持续转化链路，先以小额消费验证再扩大服务。",
+    complianceImpact: "常态化不等于额度永久可用，实际产品、消费流水和平台核验规则动态变化，不能用已截止批次替代当前入口。",
+    action: "先核对OPC成长社区上架服务、企业类型和三个月消费流水，确认平台实时额度后再提交。",
   },
   {
     id: "bj-ai-audiovisual-support-2026",
@@ -327,13 +347,36 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     action: "先完成项目方向单选和证据清单，确认政策兑现平台的当期项目入口后再承诺支持金额。",
   },
   {
+    id: "bj-ai-plus-bang-breeding-2026",
+    title: "2026年度“AI+”方向“揭榜挂帅”专项榜单及AI赋能生物育种储备课题",
+    region: "北京市级",
+    supportDirections: ["智慧感知安检", "视频物联网络安全风险感知大模型", "人力资源和科技项目管理智能体", "AI赋能生物育种科学智能"],
+    mechanism: "揭榜挂帅/储备课题",
+    beneficiaries: ["大模型与智能体企业", "视频物联与网络安全服务商", "科研机构和高校", "生物育种与农业科技企业"],
+    status: "current",
+    applicationWindow: "2026-09-04—2026-09-23 18:00",
+    amount: "揭榜项目财政科技经费金额以任务指南和申报系统字段为准；企业配套经费与财政科技经费比例不低于2:1",
+    eligibility: "面向企业、高校、科研院所，鼓励产学研联合申报且参与单位原则上不超过4家；揭榜任务需全覆盖并具备可考可量化指标，接受真实场景验收。生物育种储备课题周期原则上不超过2年。",
+    applicationUrl: "https://pm.kw.beijing.gov.cn",
+    basisPolicyIds: ["bj-ai-plus-bang-breeding-2026", "bj-ai-industrial-internet"],
+    sources: [
+      { title: "北京市科学技术委员会、中关村科技园区管理委员会等部门关于发布2026年度“AI+”方向“揭榜挂帅”专项榜单及公开征集AI赋能生物育种方向储备课题的通知", url: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260904_4851307.html", publisher: "北京市科委、中关村管委会等部门", sourceGrade: "official", evidence: "官方通知列明榜单方向、联合申报单位数量、2:1配套经费要求、申报系统和2026年9月23日18:00截止时间。" },
+      { title: "市级科技项目统筹管理信息系统", url: "https://pm.kw.beijing.gov.cn", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方通知指定揭榜挂帅项目在线填报入口。" },
+    ],
+    verifiedAt: "2026-09-07",
+    summary: "北京“AI+”揭榜挂帅和生物育种储备课题形成新的场景化申报窗口，重点考核真实业务效果和数据模型能力。",
+    businessImpact: "视频物联安全、智能运维、科研智能体、农业 AI 和数据治理服务商可与牵头单位组建联合攻关团队。",
+    complianceImpact: "通知未列明具体财政金额，不能把经费上限写成承诺；项目须全覆盖任务、满足配套比例并接受用户和第三方验收。",
+    action: "在9月23日18:00前选择榜单方向，核对牵头资格、联合单位、数据合规和配套经费，上传盖章简表与实施方案。",
+  },
+  {
     id: "bj-ai-meteorology-bang-2026",
     title: "2026年度 AI+气象“揭榜挂帅”专项榜单",
     region: "北京市级",
     supportDirections: ["0—6小时极端天气短临智能预报", "0—72小时短期数智融合预报", "15—60天次季节极端气候预测"],
     mechanism: "揭榜挂帅/科技项目支持",
     beneficiaries: ["人工智能企业", "气象与时空数据企业", "高校和科研院所", "产学研联合团队"],
-    status: "current",
+    status: "closed",
     applicationWindow: "2026-08-17—2026-09-04 18:00",
     amount: "待核（榜单通知未列明具体财政科技经费金额）",
     eligibility: "面向企业、高校、科研院所；联合申报参与单位原则上不超过4家；不设注册时间、年龄、学历和职称门槛；企业配套经费与财政科技经费比例不低于2:1，须覆盖榜单任务并接受真实场景验收。",
@@ -344,10 +387,10 @@ export const subsidyPolicies: SubsidyPolicy[] = [
       { title: "市级科技项目统筹管理信息系统", url: "https://pm.kw.beijing.gov.cn", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方通知列明AI+气象揭榜材料在线填报入口。" },
     ],
     verifiedAt: "2026-08-24",
-    summary: "AI+气象专项将极端天气预报模型与首都及京津冀示范应用绑定，当前窗口至9月4日18:00。",
+    summary: "AI+气象专项将极端天气预报模型与首都及京津冀示范应用绑定，本轮申报已于9月4日18:00截止。",
     businessImpact: "模型、时空数据、算力平台和气象业务单位可组成联合申报或交付团队。",
     complianceImpact: "榜单任务须全覆盖，配套经费比例和最终用户验收是硬约束；通知未列明金额，不提前承诺补助数额。",
-    action: "在9月4日18:00前锁定榜单、联合单位和示范用户，完成简表、技术路线和配套经费证明。",
+    action: "本轮已截止；保留榜单方案、联合单位、示范用户和配套经费证明，跟踪下一年度或同类 AI+ 场景榜单。",
   },
   {
     id: "bj-national-ai-contest-2026",
@@ -356,7 +399,7 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["国家人工智能重大专项公开赛道", "基础模型与智能体研发", "产学研联合攻关"],
     mechanism: "国家科技重大专项公开项目",
     beneficiaries: ["人工智能企业", "高校和科研院所", "产学研联合团队"],
-    status: "current",
+    status: "closed",
     applicationWindow: "2026-08-10 10:00—2026-09-04 16:00",
     amount: "待核（北京转发通知未列明项目经费金额，以科技部原指南和系统字段为准）",
     eligibility: "按照科技部原指南申报，通过国家科技管理信息系统公共服务平台网上填报，全部附件须上传电子扫描件；北京组织推荐单位联系人为牛老师、马老师。",
@@ -367,10 +410,10 @@ export const subsidyPolicies: SubsidyPolicy[] = [
       { title: "新一代人工智能国家科技重大专项2026年度“以赛代评”公开项目申报指南", url: "https://service.most.gov.cn/kjjh_tztg_all/20260731/5858.html", publisher: "科技部国家科技管理信息系统公共服务平台", sourceGrade: "official", evidence: "北京官方通知指定的科技部原指南入口，具体赛道、资格和资助以该原文为准。" },
     ],
     verifiedAt: "2026-08-24",
-    summary: "北京组织推荐国家新一代人工智能重大专项“以赛代评”项目，公开窗口至9月4日16:00。",
+    summary: "北京组织推荐国家新一代人工智能重大专项“以赛代评”项目，本轮公开窗口已于9月4日16:00截止。",
     businessImpact: "适合把基础模型、智能体和行业应用研发团队纳入国家级项目客户清单。",
     complianceImpact: "不能用北京转发通知替代科技部原指南；申报前必须核对原指南赛道、牵头资格和附件要求。",
-    action: "先回读科技部原指南，再在国家科技管理信息系统完成单位审核、附件上传和提交。",
+    action: "本轮已截止；保留科技部原指南、赛道资格和附件底稿，跟踪下一年度国家重大专项公开项目。",
   },
   {
     id: "bj-ai-new-materials-2026",
@@ -447,16 +490,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-08-24" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-08-31" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-09-07" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-09-14" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-08-31" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-09-14" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-08-31" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-09-14" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-08-31" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-09-14" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {

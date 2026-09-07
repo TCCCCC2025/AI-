@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -12,10 +12,12 @@ const STATIC_ROUTES = [
   "beijing/index.html",
   "districts/index.html",
 ];
+const WEEKLY_SHARE_PATH = "public/weekly-share.txt";
 
 const ALLOWED_EXACT_PATHS = new Set([
   "README.md",
   "docs/subsidy-radar-update.md",
+  "docs/weekly-github-sync.md",
   "next.config.ts",
   "package.json",
   "package-lock.json",
@@ -48,6 +50,20 @@ function runGit(args, options = {}) {
 
 function runCommand(command, args) {
   execFileSync(command, args, { stdio: "inherit" });
+}
+
+function readWeeklyShare() {
+  if (!existsSync(WEEKLY_SHARE_PATH)) {
+    throw new Error(`Weekly share artifact is missing: ${WEEKLY_SHARE_PATH}`);
+  }
+  return readFileSync(WEEKLY_SHARE_PATH, "utf8").trim();
+}
+
+function reportWeeklyShare() {
+  console.log(`Weekly share artifact: ${path.resolve(WEEKLY_SHARE_PATH)}`);
+  console.log("----- BEGIN WEEKLY SHARE -----");
+  console.log(readWeeklyShare());
+  console.log("----- END WEEKLY SHARE -----");
 }
 
 function unquoteGitPath(value) {
@@ -142,6 +158,14 @@ function assertStaticArtifact() {
 
 export function run({ dryRun = false, message } = {}) {
   assertTargetRepository();
+
+  // Generate the WeChat-compatible weekly summary before taking the change
+  // snapshot so the text artifact is included in the same publish commit.
+  runCommand(process.execPath, ["--experimental-strip-types", "scripts/generate-weekly-share.mjs"]);
+  // Always print the generated copy so the person running the sync can paste
+  // it into a group immediately, even when the summary happens to be
+  // unchanged and no new Git commit is needed.
+  reportWeeklyShare();
   const changedPaths = parseChangedPaths(runGit(["status", "--porcelain=v1"]));
 
   runCommand("npm", ["run", "lint"]);
