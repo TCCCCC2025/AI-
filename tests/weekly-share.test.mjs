@@ -14,8 +14,8 @@ test("generates a WeChat-copyable summary with plain URLs", () => {
     subsidies: subsidyPolicies,
   });
 
-  assert.match(output, /【北京 AI 政策情报周更新｜2026年9月7日】/);
-  assert.match(output, /本周（2026-08-31—2026-09-06）北京范围内有新的官方核验政策变化/);
+  assert.match(output, /【北京 AI 政策情报周更新｜2026年9月14日】/);
+  assert.match(output, /本周（2026-09-07—2026-09-13）北京范围内有新的官方核验政策变化/);
   assert.match(output, /https:\/\/jxj\.beijing\.gov\.cn\/zwgk\/2024zcwj\/202607\/t20260730_4801241\.html/);
   assert.match(output, /申报入口：\nhttps:\/\/zhengce\.beijing\.gov\.cn/);
   assert.doesNotMatch(output, /\]\(/);

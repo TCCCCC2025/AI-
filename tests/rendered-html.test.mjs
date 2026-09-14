@@ -19,8 +19,8 @@ test("renders the Beijing AI policy intelligence homepage", async () => {
   const html = await response.text();
 
   assert.match(html, /<title>北京 AI 政策情报/);
-  assert.match(html, /2026-09-07/);
-  assert.match(html, /第\s*(?:<!-- -->)?37(?:<!-- -->)?\s*周/);
+  assert.match(html, /2026-09-14/);
+  assert.match(html, /第\s*(?:<!-- -->)?38(?:<!-- -->)?\s*周/);
   assert.match(html, /经官方核验/);
   assert.match(html, /申报窗口雷达/);
   assert.match(html, /政策全景/);
@@ -39,8 +39,8 @@ test("renders the overview, weekly, and policy-category routes", async () => {
   assert.match(homeHtml, /本周最新/);
   assert.match(weeklyHtml, /本周最新政策/);
   assert.match(weeklyHtml, /截止/);
-  assert.match(weeklyHtml, /AI\+”方向“揭榜挂帅/);
-  assert.match(nationalHtml, /国家部委（21 项）/);
+  assert.match(weeklyHtml, /科技服务业专项企业效能提升项目/);
+  assert.match(nationalHtml, /国家部委（22 项）/);
   assert.match(nationalHtml, /企业机会/);
   assert.doesNotMatch(nationalHtml, /北京市级（14 项）/);
   assert.match(beijingHtml, /合规与业务影响/);
@@ -127,15 +127,15 @@ test("weekly page includes the previous week section", async () => {
 
 test("weekly page follows the current site cutoff and verified source note", async () => {
   const html = await (await render("/weekly")).text();
-  assert.match(html, /2026-08-31—2026-09-06/);
-  assert.match(html, /截至\s*(?:<!-- -->)?2026-09-07/);
+  assert.match(html, /2026-09-07—2026-09-13/);
+  assert.match(html, /截至\s*(?:<!-- -->)?2026-09-14/);
   assert.match(html, /仅展示北京/);
-  assert.match(html, /AI\+气象“揭榜挂帅”专项榜单/);
+  assert.match(html, /数据要素×”大赛全国总决赛/);
 });
 
 test("weekly current section only displays Beijing policy changes", async () => {
   const html = await (await render("/weekly")).text();
-  assert.match(html, /工业和信息化部人工智能应用服务商培育专项行动/);
+  assert.match(html, /科技服务业专项企业效能提升项目/);
   assert.doesNotMatch(html, /上海市第一批算力生态合作伙伴名单公示/);
   assert.doesNotMatch(html, /南京市人工智能服务商、智能体开发商征集/);
   assert.doesNotMatch(html, /广州政务人工智能与城市可信数据空间建设答复/);

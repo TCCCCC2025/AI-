@@ -40,8 +40,8 @@ export type PolicyWithBrief = Policy & PolicyAnalysis & {
 export type PolicyGroup = { id: "national" | "beijing" | "districts" | "regions"; title: string; note: string; policies: PolicyWithBrief[] };
 
 export const siteCutoff = {
-  date: "2026-09-07",
-  isoWeek: 37,
+  date: "2026-09-14",
+  isoWeek: 38,
 } as const;
 
 function shiftDate(date: string, days: number) {
@@ -58,7 +58,7 @@ export const weeklyPeriods = {
 const policyGroupsBase = [
   {
     id: "national" as const,
-    title: "国家部委（21 项）",
+    title: "国家部委（22 项）",
     note: "与北京企业机会、合规或基础设施直接相关的国家政策基线。",
     policies: [
       { title: "工业和信息化部办公厅关于开展人工智能应用服务商培育专项行动的通知", issuer: "工业和信息化部办公厅", date: "2026-08-31", themes: "AI / 大模型 / 算力 / 数据 / 安全", href: "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_6fbc038bf15c445ab53b2a94a3f9d4e4.html", status: "持续适用" },
@@ -82,11 +82,12 @@ const policyGroupsBase = [
       { title: "人工智能科技伦理审查与服务办法（试行）", issuer: "工信部等十部门", date: "2026-03-20", themes: "AI", href: "https://www.miit.gov.cn/jgsj/kjs/wjfb/art/2026/art_2995f16b28504ddcbb604e918eb15759.html", status: "持续适用" },
       { title: "关于组织开展国家算力互联互通节点建设工作的通知", issuer: "工信部办公厅", date: "2026-01-27", themes: "算力", href: "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_1e5f954ec70a44499acf63655c34b35e.html", status: "持续适用" },
       { title: "“人工智能+制造”专项行动实施意见", issuer: "工信部等八部门", date: "2026-01-07", themes: "AI", href: "https://www.gov.cn/zhengce/zhengceku/202601/content_7054201.htm", status: "持续适用" },
+      { title: "2026年“数据要素×”大赛全国总决赛通知", issuer: "国家数据局等部门", date: "2026-09-08", themes: "数据 / AI / 场景", href: "https://www.nda.gov.cn/sjj/zwgk/tzgg/0908/20260908100236590767189_mobile.html", status: "滚动核验" },
     ],
   },
   {
     id: "beijing" as const,
-    title: "北京市级（19 项）",
+    title: "北京市级（21 项）",
     note: "北京本市的政策、实施方案及可与企业行动直接关联的兑现机制。",
     policies: [
       { title: "北京市科学技术委员会、中关村科技园区管理委员会等部门关于发布2026年度“AI+”方向“揭榜挂帅”专项榜单及公开征集AI赋能生物育种方向储备课题的通知", issuer: "北京市科委、中关村管委会等部门", date: "2026-09-04", themes: "AI / 大模型 / 数据 / 场景", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260904_4851307.html", status: "滚动核验" },
@@ -108,6 +109,8 @@ const policyGroupsBase = [
       { title: "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）", issuer: "北京市经信局、市财政局", date: "2026-07-30", themes: "AI / 大模型 / Token / 数据", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202607/t20260730_4801241.html", status: "滚动核验" },
       { title: "促进商业卫星遥感数据资源开发利用的若干措施（2026—2030年）", issuer: "北京市经信局等", date: "2026-01-23", themes: "数据", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202601/t20260123_4459532.html", status: "持续适用" },
       { title: "北京人工智能创新高地建设行动计划", issuer: "北京市经信局等", date: "2026-01-05", themes: "AI / 算力", href: "https://jxj.beijing.gov.cn/ztzl/ywzt/hbjh/hbdt/zcwj/rgznzc/202603/t20260316_4557526.html", status: "持续适用" },
+      { title: "关于征集2026年科技服务业专项企业效能提升项目（第二批）的通知", issuer: "北京市科委、中关村管委会", date: "2026-09-01", themes: "AI / 大模型 / 数据 / 算力 / 安全", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260901_4845672.html", status: "滚动核验" },
+      { title: "关于征集北京市住房城乡建设领域创新应用场景的通知", issuer: "北京市住房和城乡建设委员会", date: "2026-09-02", themes: "AI / 数据 / 场景 / 智能运维", href: "https://zjw.beijing.gov.cn/bjjs/kjcxytg/znjz/zjtz76/744118225/index.shtml", status: "滚动核验" },
     ],
   },
   {
@@ -128,7 +131,7 @@ const policyGroupsBase = [
   },
   {
     id: "regions" as const,
-    title: "外省市重点（9 项）",
+    title: "外省市重点（14 项）",
     note: "优先收录上海、广东、浙江、江苏及重点城市的官方政策；外省市政策不等同于北京主体可申报。",
     policies: [
       { title: "深圳市打造人工智能先锋城市项目扶持计划（第二批）申请指南", issuer: "深圳市工业和信息化局", date: "2026-08-27", themes: "AI / 大模型 / 算力", href: "https://gxj.sz.gov.cn/gkmlpt/content/12/12956/post_12956819.html?jump=true", status: "滚动核验" },
@@ -140,6 +143,11 @@ const policyGroupsBase = [
       { title: "关于印发《南京江北新区促进软件产业高质量发展的若干政策措施》的通知", issuer: "南京江北新区管理委员会", date: "2026-07-29", themes: "AI / 软件 / 算力 / 安全", href: "https://njna.nanjing.gov.cn/njsjbxqglwyh/202607/t20260731_5887148.html", status: "持续适用" },
       { title: "广东省人工智能与机器人技能大赛（2026年）通知", issuer: "广东省工业和信息化厅等部门", date: "2026-09-01", themes: "AI / 机器人 / 人才", href: "https://gxj.gz.gov.cn/yw/tzgg/content/post_10987433.html", status: "滚动核验" },
       { title: "江苏省增补2026年贸易促进计划及重点展会资金（江苏数智电商展）", issuer: "江苏省商务厅", date: "2026-09-01", themes: "AI / 产业应用 / 资金", href: "https://doc.jiangsu.gov.cn/art/2026/9/3/art_78712_11824614.html", status: "滚动核验" },
+      { title: "上海市经济信息化委关于组织开展人工智能应用服务商征集工作的通知", issuer: "上海市经济和信息化委员会", date: "2026-09-11", themes: "AI / 安全 / 智能运维", href: "https://sheitc.sh.gov.cn/cyfz/20260911/efa1c634559c44d7a61e9400a63acdb8.html", status: "滚动核验" },
+      { title: "关于征集2026年上海市行业高质量数据集案例的通知", issuer: "上海市数据局", date: "2026-09-07", themes: "数据 / AI / 具身智能", href: "https://dt.sheitc.sh.gov.cn/cms/slddt/2861.jhtml", status: "滚动核验" },
+      { title: "市工业和信息化局关于发布2026年模型券（申领）项目（第二批）申请指南的通知", issuer: "深圳市工业和信息化局", date: "2026-09-07", themes: "AI / 大模型 / 算力 / 资金", href: "https://gxj.sz.gov.cn/szsgyhxxhjwzgkml/szsgyhxxhjwzgkml/qt/tzgg/content/post_12970192.html", status: "滚动核验" },
+      { title: "深圳市工业和信息化局等关于印发《深圳市推动人工智能与应用发展行动计划（2026—2028年）》的通知", issuer: "深圳市工业和信息化局、发展改革委、科技创新局", date: "2026-09-04", themes: "AI / 大模型 / 数据 / 算力 / 安全 / 视联网", href: "https://gxj.sz.gov.cn/gkmlpt/content/12/12965/post_12965466.html", status: "持续适用" },
+      { title: "深圳市龙岗区人工智能（机器人）署关于延长2026年龙岗区场景应用揭榜项目榜单征集申报受理时限的通知", issuer: "深圳市龙岗区人工智能（机器人）署", date: "2026-09-03", themes: "AI / 场景 / 机器人", href: "https://www.lg.gov.cn/xxgk/zwgk/tzgg/content/post_12966833.html", status: "滚动核验" },
     ],
   },
 ];
@@ -174,6 +182,14 @@ const tailoredBriefs: Record<string, Pick<PolicyWithBrief, "summary" | "business
   "关于印发《南京江北新区促进软件产业高质量发展的若干政策措施》的通知": { summary: "南京江北新区自9月1日起实施软件产业政策，覆盖 AI+软件攻关、智算使用、首版次/首台套、国产操作系统适配和产教融合。", businessImpact: "泛行业 IT 运维、云网集成、信创适配、AI 软件和安全软件服务商可围绕最高200万元智算补贴、项目配套和适配改造形成客户机会。", complianceImpact: "政策适用于江北新区软件产业主导平台和街道，项目需就地运营或产业转化；同类政策按就高不重复执行。", action: "筛选南京及江北新区软件、信创和运维客户，核对注册/运营属地、智算使用凭证、适配投入和项目验收材料。" },
   "广东省人工智能与机器人技能大赛（2026年）通知": { summary: "广东省组织人工智能与机器人技能大赛，广州工信部门于9月1日转发，面向相关企业和个人开展宣传报名。", businessImpact: "可作为 AI、机器人、智能运维和人才生态的品牌展示与人才发现入口，适合连接广东本地客户及生态伙伴。", complianceImpact: "该事项为赛事通知，不是财政补贴或项目申报；报名资格、赛程和奖励以省级赛事原通知为准。", action: "关注省级赛事原文和报名入口，评估公司 AI、机器人及运维团队参赛或联合宣传机会。" },
   "江苏省增补2026年贸易促进计划及重点展会资金（江苏数智电商展）": { summary: "江苏省商务厅将江苏数智电商展增补纳入贸易促进计划，支持参展单位展位费，申报截止11月19日17:00。", businessImpact: "AI 软件、数据服务、智能制造和电商技术企业可借展会获取客户线索并申请展位费支持，适合与江苏本地渠道联合参展。", complianceImpact: "主体须在江苏省注册且信用良好；仅支持展位费，面积和单价有上限，补贴比例按统筹结果确定，不含运输、人员和会刊费用。", action: "在江苏政务服务完成法人注册，准备展位合同、发票和付款材料，11月19日17:00前通过省商务在线系统提交。" },
+  "2026年“数据要素×”大赛全国总决赛通知": { summary: "国家数据局公布“数据要素×”大赛全国总决赛安排，入围团队须在9月16日24:00前通过赛事系统提交最终材料。", businessImpact: "数据产品、行业数据集和 AI 场景团队可借全国总决赛展示可复制成果，获得后续供需对接和推广机会。", complianceImpact: "该事项是赛事遴选，不等同于财政补贴；提交后材料不能修改，团队须确保数据权属、个人信息保护和知识产权证明完整。", action: "在9月16日24:00前完成 dataelementx.cn 线上提交，提前锁定参赛团队、案例数据和授权证明。" },
+  "关于征集2026年科技服务业专项企业效能提升项目（第二批）的通知": { summary: "北京面向科技服务业企业征集效能提升项目，支持 AI、医疗健康、新材料、智能制造及大数据/大模型服务平台建设，申报截止9月23日18:00。", businessImpact: "公司 AI、数据、算力、安全和智能运维服务能力均可包装为科技服务平台、咨询交付或运营治理项目，适合与行业客户联合申报。", complianceImpact: "申报单位须为科技服务业法人，项目周期不超过1年且企业配套经费与科技经费不低于2:1；该项目金额以平台字段为准，不能预先承诺。", action: "在9月23日18:00前核对企业类型、项目周期、2:1配套经费和非关联交易材料，线上从北京市科技计划系统提交。" },
+  "关于征集北京市住房城乡建设领域创新应用场景的通知": { summary: "北京住建领域公开征集 AI 视觉识别、智能规划设计、智能建造、设备预测性维护和建筑安全检测等创新应用场景，材料截止10月10日17:00。", businessImpact: "视联网、智能运维、云网集成和大模型团队可与建筑企业、物业和城市治理单位联合打造可落地示范场景。", complianceImpact: "这是场景征集与入选清单工作，不是直接财政补贴；申报主体须具备知识产权、完整解决方案和真实项目部署能力。", action: "在10月10日17:00前准备盖章申报材料、部署案例和数据安全说明，按通知邮箱提交。" },
+  "上海市经济信息化委关于组织开展人工智能应用服务商征集工作的通知": { summary: "上海组织征集人工智能应用服务商和服务团，覆盖咨询规划、交付实施、运营管理、安全治理和测试评估，材料截止9月30日。", businessImpact: "公司泛行业 IT 集成、云网算力、安全和智能运维能力可按服务商或服务团形式进入上海资源池，形成跨区域项目机会。", complianceImpact: "服务商须为境内正常经营法人或非法人组织，服务团原则上由1家牵头并联合不少于2家成员；该事项是资源池征集，不是直接补贴。", action: "在9月30日前准备营业执照、信用记录、服务手册、团队证明、案例和资质材料，并提交所在区主管部门。" },
+  "关于征集2026年上海市行业高质量数据集案例的通知": { summary: "上海征集已完成并经真实业务验证的行业高质量数据集案例，覆盖医疗、教育、城市治理、制造和具身智能等领域，材料截止9月24日17:00。", businessImpact: "数据治理、可信空间、模型训练和具身智能项目可用案例申报建立行业标杆，入选后有国家项目推荐和供需对接机会。", complianceImpact: "申报单位须为数据集权属单位并承担质量、安全合规和长期维护责任，需完成上海数据集开源社区登记；不属于直接财政补贴。", action: "在9月24日17:00前完成数据集登记，取得行业主管部门或区数据局推荐，并发送 Word 与盖章 PDF。" },
+  "市工业和信息化局关于发布2026年模型券（申领）项目（第二批）申请指南的通知": { summary: "深圳发布2026年模型券申领项目第二批申请指南，具体申报要求、窗口和材料以官方附件为准，建议至少提前2个工作日提交。", businessImpact: "深圳本地模型服务机构、应用企业和算力服务商可围绕 Token/API 试用和模型消费券形成客户转化。", complianceImpact: "官方通知仅确认项目启动，金额、资格和截止时间仍需回到申请指南附件核验；该政策不直接适用于北京主体。", action: "先下载并核对附件指南和企业申报端指引，确认申报截止日、统一平台、模型清单与合同发票要求后再承诺。" },
+  "深圳市工业和信息化局等关于印发《深圳市推动人工智能与应用发展行动计划（2026—2028年）》的通知": { summary: "深圳发布 AI 与应用发展行动计划，提出到2028年推动 AI 与科研、产业、消费、民生、治理和全球合作六大领域深度融合。", businessImpact: "先进制造、软件服务、专业服务、视联网/城市治理、智能运维和数据平台将持续出现 AI 改造、集成与运营需求。", complianceImpact: "行动计划是发展导向文件，不等同于当前可申报资金；具体补贴和项目入口需以后续专项指南为准。", action: "按六大领域建立深圳客户与生态伙伴清单，跟踪模型券、场景示范和行业专项配套通知。" },
+  "深圳市龙岗区人工智能（机器人）署关于延长2026年龙岗区场景应用揭榜项目榜单征集申报受理时限的通知": { summary: "龙岗将 2026 年 AI 与机器人场景揭榜项目材料提交截止时间由9月4日延长至9月21日18:00。", businessImpact: "AI、机器人、视联网和智能运维方案商可利用延长期与龙岗场景方联合打磨方案，争取进入区级示范项目。", complianceImpact: "延长通知仅调整材料提交时间，其他申报事项仍以龙岗区人工智能产业扶持项目指南和实施细则为准。", action: "在9月21日18:00前回读龙岗项目指南，锁定场景方、技术指标、预算和部署证明后提交。" },
 };
 
 const policyIds: Record<string, string> = {
@@ -198,6 +214,7 @@ const policyIds: Record<string, string> = {
   "人工智能科技伦理审查与服务办法（试行）": "nat-ai-ethics-review",
   "关于组织开展国家算力互联互通节点建设工作的通知": "nat-compute-interconnection",
   "“人工智能+制造”专项行动实施意见": "nat-ai-manufacturing",
+  "2026年“数据要素×”大赛全国总决赛通知": "nat-data-factor-finals-2026",
   "北京市关于加快智能体引领发展的若干措施": "bj-agent-measures",
   "北京市公共数据资源授权运营管理办法": "bj-public-data-operation",
   "2026智慧城市场景创新需求（第四批）及智慧教育专项揭榜": "bj-smart-city-demand-202604",
@@ -211,6 +228,8 @@ const policyIds: Record<string, string> = {
   "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）": "bj-high-tech-fund-202602",
   "促进商业卫星遥感数据资源开发利用的若干措施（2026—2030年）": "bj-satellite-data",
   "北京人工智能创新高地建设行动计划": "bj-ai-innovation-highland",
+  "关于征集2026年科技服务业专项企业效能提升项目（第二批）的通知": "bj-tech-service-efficiency-2026-batch2",
+  "关于征集北京市住房城乡建设领域创新应用场景的通知": "bj-housing-ai-scenes-2026",
   "通州区：支持数字经济高质量发展的若干措施": "dist-tongzhou-digital-economy",
   "昌平区：推动“人工智能+”创新发展行动计划（2026—2028年）": "dist-changping-ai-plus",
   "海淀区：关于全面打造OPC创业生态的若干措施": "dist-haidian-opc",
@@ -235,6 +254,11 @@ const policyIds: Record<string, string> = {
   "关于印发《南京江北新区促进软件产业高质量发展的若干政策措施》的通知": "reg-nanjing-jiangbei-software-2026",
   "广东省人工智能与机器人技能大赛（2026年）通知": "reg-guangdong-ai-robot-skills-2026",
   "江苏省增补2026年贸易促进计划及重点展会资金（江苏数智电商展）": "reg-jiangsu-ai-ecommerce-expo-2026",
+  "上海市经济信息化委关于组织开展人工智能应用服务商征集工作的通知": "reg-shanghai-ai-service-providers-2026",
+  "关于征集2026年上海市行业高质量数据集案例的通知": "reg-shanghai-quality-dataset-cases-2026",
+  "市工业和信息化局关于发布2026年模型券（申领）项目（第二批）申请指南的通知": "reg-shenzhen-model-voucher-claim-2026-batch2",
+  "深圳市工业和信息化局等关于印发《深圳市推动人工智能与应用发展行动计划（2026—2028年）》的通知": "reg-shenzhen-ai-application-plan-2026",
+  "深圳市龙岗区人工智能（机器人）署关于延长2026年龙岗区场景应用揭榜项目榜单征集申报受理时限的通知": "reg-shenzhen-longgang-ai-scenes-2026",
 };
 
 const themeCustomers: Record<string, string[]> = {
@@ -431,6 +455,62 @@ const tailoredAnalysis: Record<string, Partial<PolicyAnalysis>> = {
     scenarios: ["展位费补贴申报", "AI+电商产品展示", "渠道与客户线索拓展"],
     relatedPolicies: [{ type: "同主题", policyId: "nat-ai-service-providers-2026" }],
   },
+  "nat-data-factor-finals-2026": {
+    opportunityLevel: "高",
+    judgement: "国家数据局把地方赛成果汇聚到全国总决赛，继续用赛事遴选数据开发利用和 AI 场景化应用，体现数据要素从资源登记走向可验证成果推广。",
+    customerTypes: ["数据服务与数据运营机构", "大模型与智能体企业", "央国企与大型企业数字化部门", "科研机构和高校"],
+    scenarios: ["数据要素×大赛全国总决赛", "行业数据集与 AI 应用展示", "数据产品供需对接"],
+    relatedPolicies: [{ type: "上位依据", policyId: "nat-industry-datasets" }, { type: "同主题", policyId: "bj-public-data-operation" }],
+  },
+  "bj-tech-service-efficiency-2026-batch2": {
+    opportunityLevel: "高",
+    judgement: "北京市把科技服务业企业效能提升项目单独列出，支持 AI、数据和智能制造服务能力进入可验收项目，政策重点从单一技术补贴转向专业服务交付能力。",
+    customerTypes: ["泛行业 IT 集成与智能运维服务商", "大模型与智能体企业", "云网算力与数据服务商", "网络安全与合规服务机构"],
+    scenarios: ["AI 技术服务平台建设", "行业数字化咨询与交付", "服务运营和安全治理"],
+    relatedPolicies: [{ type: "上位依据", policyId: "nat-ai-service-providers-2026" }, { type: "同主题", policyId: "bj-ai-industrial-internet" }],
+  },
+  "bj-housing-ai-scenes-2026": {
+    opportunityLevel: "高",
+    judgement: "住建领域创新场景把 AI 视觉、规划设计、智能建造、设备预测性维护和建筑安全检测转化为公开场景征集，适合以试点项目切入而非等待单一补贴。",
+    customerTypes: ["智能运维和云网集成服务商", "视频物联与网络安全服务商", "大模型与智能体企业", "建筑业及城市治理客户"],
+    scenarios: ["施工现场视觉识别", "建筑设备预测性维护", "工程质量与安全检测", "建筑能耗优化"],
+    relatedPolicies: [{ type: "同主题", policyId: "bj-ai-industrial-internet" }, { type: "同主题", policyId: "bj-smart-city-demand-202604" }],
+  },
+  "reg-shanghai-ai-service-providers-2026": {
+    opportunityLevel: "高",
+    judgement: "上海将 AI 服务商和服务团纳入市级资源池，覆盖咨询规划、系统集成、运营管理、安全治理和测试评估，体现地方对可交付服务生态的标准化建设。",
+    customerTypes: ["泛行业 IT 集成与智能运维服务商", "网络安全与合规服务机构", "大模型与智能体企业", "云网算力与数据服务商"],
+    scenarios: ["上海 AI 服务商资源池", "服务团联合申报", "AI 平台交付与运维"],
+    relatedPolicies: [{ type: "上位依据", policyId: "nat-ai-service-providers-2026" }],
+  },
+  "reg-shanghai-quality-dataset-cases-2026": {
+    opportunityLevel: "高",
+    judgement: "上海以已完成、真实场景验证的行业高质量数据集案例作为遴选对象，并要求权属、合规和长期维护责任清晰，说明数据集正从建设任务转向可复制案例资产。",
+    customerTypes: ["数据服务与数据运营机构", "大模型与智能体企业", "制造、医疗和城市治理客户", "具身智能企业"],
+    scenarios: ["行业高质量数据集案例", "数据集登记与开源社区", "数据集与模型协同应用"],
+    relatedPolicies: [{ type: "上位依据", policyId: "nat-industry-datasets" }, { type: "同主题", policyId: "bj-public-data-operation" }],
+  },
+  "reg-shenzhen-model-voucher-claim-2026-batch2": {
+    opportunityLevel: "高",
+    judgement: "深圳模型券第二批重新开放申领项目，地方政策继续用模型消费券降低企业试用和应用成本；具体额度和截止时间需回到官方申请指南附件核验。",
+    customerTypes: ["深圳市内大模型与智能体企业", "模型服务机构与算力服务商", "制造业和现代服务业应用客户", "国产软硬件适配中心"],
+    scenarios: ["模型券申领", "多模型 API/Token 试用", "行业应用模型消费"],
+    relatedPolicies: [{ type: "同主题", policyId: "reg-shenzhen-ai-pioneer-2026-batch2" }, { type: "上位依据", policyId: "nat-inclusive-compute-sme" }],
+  },
+  "reg-shenzhen-ai-application-plan-2026": {
+    opportunityLevel: "高",
+    judgement: "深圳将 AI 应用扩展到科研、先进制造、软件服务、专业服务、住房建设、交通物流和治理等全域场景，形成从模型、数据到行业交付的长期需求信号。",
+    customerTypes: ["大模型与智能体企业", "泛行业 IT 集成与智能运维服务商", "视频物联与网络安全服务商", "制造业与城市治理客户"],
+    scenarios: ["智能制造与工业软件", "AI+专业服务", "住房建设与城市治理智能化"],
+    relatedPolicies: [{ type: "上位依据", policyId: "nat-agent-development" }, { type: "同主题", policyId: "reg-shenzhen-ai-pioneer-2026-batch2" }],
+  },
+  "reg-shenzhen-longgang-ai-scenes-2026": {
+    opportunityLevel: "高",
+    judgement: "龙岗区将 AI 与机器人场景揭榜申报期限延长，说明区级政策正在通过真实应用场景吸引解决方案供给，适合客户经理围绕部署效果组织联合申报。",
+    customerTypes: ["AI 与机器人企业", "视频物联与网络安全服务商", "智能运维和集成服务商", "制造业及园区客户"],
+    scenarios: ["龙岗 AI/机器人场景揭榜", "机器人应用示范", "行业解决方案联合申报"],
+    relatedPolicies: [{ type: "同主题", policyId: "reg-shenzhen-ai-application-plan-2026" }],
+  },
 };
 
 function unique<T>(values: T[]): T[] {
@@ -491,15 +571,18 @@ export const policyMetrics = {
 export type WeeklyChange = { title: string; changeType: "新增" | "修订" | "截止" | "移出"; date: string; detail: string; href?: string; status: Policy["status"] };
 
 export const weeklyChanges: WeeklyChange[] = [
-  { title: "工业和信息化部人工智能应用服务商培育专项行动", changeType: "新增", date: "2026-08-31", detail: "工信部启动服务商培育专项行动，建立全国人工智能应用服务商资源池和服务团，要求各地区于12月1日前报送资源池信息；重点覆盖方案咨询、交付实施、运营管理、安全治理、算力对接和行业场景。该文件是资源池培育与信息报送安排，不是直接财政补贴。", href: "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_6fbc038bf15c445ab53b2a94a3f9d4e4.html", status: "持续适用" },
-  { title: "关于开展部分新兴领域信息采集工作的通知（含人工智能）", changeType: "新增", date: "2026-09-01", detail: "北京市军民融合发展促进中心面向全市采集人工智能、无人/反无、量子科技和商业航天等新兴领域信息，要求相关单位持营业执照、身份证复印件及法人授权书到各区有关部门查阅工作通知；这是信息采集事项，不构成补贴或公开申报。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260901_4845849.html", status: "滚动核验" },
-  { title: "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）", changeType: "截止", date: "2026-08-31", detail: "人工智能高质量数据集建设奖励、人工智能大模型应用补贴等方向本批次申报截止时间为8月31日17:30；OPC专项服务券为常态化申报，数字化营销方向截止9月16日17:30。", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202607/t20260730_4801241.html", status: "滚动核验" },
-  { title: "2026年度AI+气象“揭榜挂帅”专项榜单", changeType: "截止", date: "2026-09-04", detail: "AI+气象揭榜申报窗口于9月4日18:00截止；项目覆盖短临、短期和次季节预测，企业配套经费与财政科技经费比例不低于2:1。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202608/t20260818_4827195.html", status: "滚动核验" },
-  { title: "新一代人工智能国家科技重大专项2026年度“以赛代评”公开项目", changeType: "截止", date: "2026-09-04", detail: "北京转发的国家重大专项公开项目申报窗口于9月4日16:00截止，具体赛道、牵头资格和资助方式以科技部原指南为准。", href: "https://kw.beijing.gov.cn/zwgk/zcwj/202608/t20260812_4820137.html", status: "滚动核验" },
-  { title: "2026年度“AI+”方向“揭榜挂帅”专项榜单及AI赋能生物育种储备课题", changeType: "新增", date: "2026-09-04", detail: "北京发布“AI+”方向揭榜挂帅榜单并公开征集AI赋能生物育种储备课题，覆盖智慧感知安检、视频物联网络安全、人力资源管理智能体、科技项目全周期管理和生物育种科学智能；系统于9月4日开通，9月23日18:00截止。", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260904_4851307.html", status: "滚动核验" },
-];
+  { title: "关于征集2026年科技服务业专项企业效能提升项目（第二批）的通知", changeType: "新增", date: "2026-09-01", detail: "北京面向科技服务业企业征集效能提升项目，支持 AI、医疗健康、新材料、智能制造及大数据/大模型服务平台建设；项目周期不超过1年，企业配套经费与科技经费比例不低于2:1，申报截止9月23日18:00。", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260901_4845672.html", status: "滚动核验" },
+  { title: "关于征集北京市住房城乡建设领域创新应用场景的通知", changeType: "新增", date: "2026-09-02", detail: "北京住建领域公开征集 AI 视觉识别、规划设计、智能建造、设备预测性维护、建筑安全检测、能耗优化和行业大模型等场景，材料提交截止10月10日17:00；该事项为场景征集，不是直接财政补贴。", href: "https://zjw.beijing.gov.cn/bjjs/kjcxytg/znjz/zjtz76/744118225/index.shtml", status: "滚动核验" },
+  { title: "2026年“数据要素×”大赛全国总决赛通知", changeType: "新增", date: "2026-09-08", detail: "国家数据局公布全国总决赛安排，入围团队须在9月16日24:00前通过 dataelementx.cn 提交最终材料，提交后不能修改；赛事不是直接财政补贴。", href: "https://www.nda.gov.cn/sjj/zwgk/tzgg/0908/20260908100236590767189_mobile.html", status: "滚动核验" },
+  { title: "2026年度“AI+”方向“揭榜挂帅”专项榜单及AI赋能生物育种储备课题", changeType: "修订", date: "2026-09-07", detail: "本周复核后，AI+方向揭榜挂帅/生物育种储备课题仍处于申报期，截止时间为9月23日18:00；补充确认参与单位原则上不超过4家、企业配套经费与财政科技经费比例不低于2:1。", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260904_4851307.html", status: "滚动核验" },
+]; 
 
 export const priorityRegionWeeklyChanges: WeeklyChange[] = [
+  { title: "上海市经济信息化委关于组织开展人工智能应用服务商征集工作的通知", changeType: "新增", date: "2026-09-11", detail: "上海面向境内正常经营法人或非法人组织征集人工智能服务商和服务团，覆盖咨询规划、交付实施、运营管理、安全治理和测试评估；申报材料须于9月30日前提交所在区主管部门。", href: "https://sheitc.sh.gov.cn/cyfz/20260911/efa1c634559c44d7a61e9400a63acdb8.html", status: "滚动核验" },
+  { title: "关于征集2026年上海市行业高质量数据集案例的通知", changeType: "新增", date: "2026-09-07", detail: "上海征集已完成并经真实业务验证的行业高质量数据集案例，覆盖医疗、教育、城市治理、高端制造和具身智能等领域；材料须于9月24日17:00发送至指定邮箱，并完成数据集登记。", href: "https://dt.sheitc.sh.gov.cn/cms/slddt/2861.jhtml", status: "滚动核验" },
+  { title: "市工业和信息化局关于发布2026年模型券（申领）项目（第二批）申请指南的通知", changeType: "新增", date: "2026-09-07", detail: "深圳启动2026年模型券（申领）项目第二批申报，具体资格、金额、截止时间和平台以申请指南附件为准，官方建议至少提前2个工作日提交。", href: "https://gxj.sz.gov.cn/szsgyhxxhjwzgkml/szsgyhxxhjwzgkml/qt/tzgg/content/post_12970192.html", status: "滚动核验" },
+  { title: "深圳市推动人工智能与应用发展行动计划（2026—2028年）", changeType: "新增", date: "2026-09-04", detail: "深圳发布 AI 与应用发展行动计划，提出到2028年推动人工智能与科研、产业、消费、民生、治理和全球合作六大领域深度融合，形成长期场景和生态需求信号。", href: "https://gxj.sz.gov.cn/gkmlpt/content/12/12965/post_12965466.html", status: "持续适用" },
+  { title: "深圳市龙岗区人工智能（机器人）署关于延长2026年龙岗区场景应用揭榜项目榜单征集申报受理时限的通知", changeType: "修订", date: "2026-09-03", detail: "龙岗区将 AI 与机器人场景应用揭榜项目材料提交截止时间由9月4日延长至9月21日18:00，其他申报事项仍按原申请指南和实施细则执行。", href: "https://www.lg.gov.cn/xxgk/zwgk/tzgg/content/post_12966833.html", status: "滚动核验" },
   { title: "江苏省增补2026年贸易促进计划及重点展会资金（江苏数智电商展）", changeType: "新增", date: "2026-09-01", detail: "江苏省商务厅将江苏数智电商展增补纳入贸易促进计划，支持参展单位展位费；申报截止2026年11月19日17:00，主体须在江苏省注册，补贴比例按统筹结果确定。", href: "https://doc.jiangsu.gov.cn/art/2026/9/3/art_78712_11824614.html", status: "滚动核验" },
   { title: "广东省人工智能与机器人技能大赛（2026年）通知", changeType: "新增", date: "2026-09-01", detail: "广州市工信局转发广东省人工智能与机器人技能大赛通知，面向相关企业和个人开展报名宣传；该事项为赛事和人才生态信号，不是财政补贴。", href: "https://gxj.gz.gov.cn/yw/tzgg/content/post_10987433.html", status: "滚动核验" },
   { title: "南京江北新区促进软件产业高质量发展的若干政策措施", changeType: "新增", date: "2026-09-01", detail: "南京江北新区政策自9月1日起施行，支持AI+软件攻关、智算使用、国产操作系统适配、首版次/首台套和产教融合；软件企业智算业务单个企业每年最高200万元补贴，具体申报由经济发展局指导。", href: "https://njna.nanjing.gov.cn/njsjbxqglwyh/202607/t20260731_5887148.html", status: "持续适用" },
@@ -511,4 +594,10 @@ export const priorityRegionWeeklyChanges: WeeklyChange[] = [
 ];
 
 export const previousWeeklyChanges: WeeklyChange[] = [
-];
+  { title: "工业和信息化部人工智能应用服务商培育专项行动", changeType: "新增", date: "2026-08-31", detail: "工信部启动服务商培育专项行动，建立全国人工智能应用服务商资源池和服务团，要求各地区于12月1日前报送资源池信息；重点覆盖方案咨询、交付实施、运营管理、安全治理、算力对接和行业场景。该文件是资源池培育与信息报送安排，不是直接财政补贴。", href: "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_6fbc038bf15c445ab53b2a94a3f9d4e4.html", status: "持续适用" },
+  { title: "关于开展部分新兴领域信息采集工作的通知（含人工智能）", changeType: "新增", date: "2026-09-01", detail: "北京市军民融合发展促进中心面向全市采集人工智能、无人/反无、量子科技和商业航天等新兴领域信息，要求相关单位持营业执照、身份证复印件及法人授权书到各区有关部门查阅工作通知；这是信息采集事项，不构成补贴或公开申报。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260901_4845849.html", status: "滚动核验" },
+  { title: "2026年北京市高精尖产业发展项目资金和支持中小企业发展资金实施指南（第二批）", changeType: "截止", date: "2026-08-31", detail: "人工智能高质量数据集建设奖励、人工智能大模型应用补贴等方向本批次申报截止时间为8月31日17:30；OPC专项服务券为常态化申报，数字化营销方向截止9月16日17:30。", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202607/t20260730_4801241.html", status: "滚动核验" },
+  { title: "2026年度AI+气象“揭榜挂帅”专项榜单", changeType: "截止", date: "2026-09-04", detail: "AI+气象揭榜申报窗口于9月4日18:00截止；项目覆盖短临、短期和次季节预测，企业配套经费与财政科技经费比例不低于2:1。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202608/t20260818_4827195.html", status: "滚动核验" },
+  { title: "新一代人工智能国家科技重大专项2026年度“以赛代评”公开项目", changeType: "截止", date: "2026-09-04", detail: "北京转发的国家重大专项公开项目申报窗口于9月4日16:00截止，具体赛道、牵头资格和资助方式以科技部原指南为准。", href: "https://kw.beijing.gov.cn/zwgk/zcwj/202608/t20260812_4820137.html", status: "滚动核验" },
+  { title: "2026年度“AI+”方向“揭榜挂帅”专项榜单及AI赋能生物育种储备课题", changeType: "新增", date: "2026-09-04", detail: "北京发布“AI+”方向揭榜挂帅榜单并公开征集AI赋能生物育种储备课题，覆盖智慧感知安检、视频物联网络安全、人力资源管理智能体、科技项目全周期管理和生物育种科学智能；系统于9月4日开通，9月23日18:00截止。", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260904_4851307.html", status: "滚动核验" },
+]; 

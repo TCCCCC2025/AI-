@@ -462,6 +462,65 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     action: "保留项目合同、调用记录、部署证明和场景验收材料，跟踪下一轮行业大模型支持窗口。",
   },
   {
+    id: "bj-tech-service-efficiency-2026-batch2",
+    title: "2026年科技服务业专项企业效能提升项目（第二批）",
+    region: "北京市级",
+    supportDirections: ["AI与大模型技术服务平台", "医疗健康、新材料和智能制造服务", "科技服务咨询、交付、运营和安全治理"],
+    mechanism: "科技项目申报/事前支持",
+    beneficiaries: ["科技服务业企业", "AI与数据服务商", "智能制造和行业数字化服务商"],
+    status: "current",
+    applicationWindow: "2026-09-01—2026-09-23 18:00",
+    amount: "待核（支持额度以北京市科技计划综合管理平台项目字段为准）",
+    eligibility: "在京注册的科技服务业企业，具备较强科技服务能力、良好经营状况和成长性；项目周期不超过1年，企业配套经费与科技经费比例不低于2:1，每家单位限报1项，项目须非涉密且信用良好。",
+    applicationUrl: "https://mis.kw.beijing.gov.cn/",
+    basisPolicyIds: ["bj-tech-service-efficiency-2026-batch2", "nat-ai-service-providers-2026"],
+    sources: [{ title: "关于征集2026年科技服务业专项企业效能提升项目（第二批）的通知", url: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260901_4845672.html", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方通知列明AI、大数据/大模型、智能制造等支持方向，申报时间为9月1日至9月23日18:00，项目周期不超过1年且企业配套经费与科技经费比例不低于2:1。" }],
+    verifiedAt: "2026-09-14",
+    summary: "北京科技服务业专项第二批把 AI、数据、智能制造服务平台纳入项目申报，当前窗口至9月23日18:00。",
+    businessImpact: "公司可将 AI、大数据、算力、安全和智能运维服务能力包装为科技服务平台或行业数字化交付项目，与客户联合申报。",
+    complianceImpact: "该通知未在正文承诺具体补贴金额；须满足科技服务业主体口径、2:1配套经费、项目周期和非关联交易要求。",
+    action: "立即筛选科技服务业客户，准备营业执照、服务案例、技术方案、预算及2:1配套经费证明，9月23日18:00前在线提交。",
+  },
+  {
+    id: "bj-housing-ai-scenes-2026",
+    title: "北京市住房城乡建设领域创新应用场景征集",
+    region: "北京市级",
+    supportDirections: ["施工现场视觉识别", "AI规划设计与智能建造", "建筑设备预测性维护", "建筑安全检测与能耗优化"],
+    mechanism: "场景征集/入选清单",
+    beneficiaries: ["建筑业及城市治理客户", "视频物联与安全服务商", "智能运维和云网集成服务商", "大模型与行业应用企业"],
+    status: "current",
+    applicationWindow: "2026-09-02—2026-10-10 17:00",
+    amount: "不涉及直接财政补贴（入选场景及后续供需对接以主管部门安排为准）",
+    eligibility: "申报主体应具备相关知识产权、完整解决方案和真实项目部署能力，能够提供可复制的 AI+住房城乡建设场景及实施成效；电子版和盖章 PDF 按通知要求提交。",
+    basisPolicyIds: ["bj-housing-ai-scenes-2026", "bj-ai-industrial-internet"],
+    sources: [{ title: "关于征集北京市住房城乡建设领域创新应用场景的通知", url: "https://zjw.beijing.gov.cn/bjjs/kjcxytg/znjz/zjtz76/744118225/index.shtml", publisher: "北京市住房和城乡建设委员会", sourceGrade: "official", evidence: "官方通知列明 AI 视觉、规划设计、智能建造、设备预测性维护、建筑安全检测等方向，材料提交截止2026年10月10日17:00。" }],
+    verifiedAt: "2026-09-14",
+    summary: "住建领域 AI 场景征集把视联网、智能运维和行业大模型转成可落地示范入口，材料截止10月10日17:00。",
+    businessImpact: "适合与建筑、物业、园区和城市治理客户联合打磨示范场景，带动视频感知、云网集成、设备维保和模型应用交付。",
+    complianceImpact: "场景征集不等同于补贴承诺；需确认知识产权、数据授权、个人信息保护和现场安全责任边界。",
+    action: "在10月10日17:00前准备盖章材料、部署案例、指标和数据安全说明，按通知邮箱提交并保留回执。",
+  },
+  {
+    id: "nat-data-factor-finals-2026",
+    title: "2026年“数据要素×”大赛全国总决赛（北京参赛团队）",
+    region: "北京市级",
+    supportDirections: ["行业数据集与数据产品", "AI场景应用成果", "数据开发利用创新案例"],
+    mechanism: "赛事/项目遴选",
+    beneficiaries: ["数据服务与数据运营机构", "大模型与智能体企业", "央国企和大型企业数字化部门", "科研机构和高校"],
+    status: "current",
+    applicationWindow: "2026-09-11—2026-09-16 24:00",
+    amount: "非财政补贴（具体奖励、资助或后续推广以大赛规则为准）",
+    eligibility: "入围团队按全国总决赛通知，通过 dataelementx.cn 赛事入口提交最终材料；提交后不能修改，需确保数据权属、个人信息保护、知识产权和案例成效证明完整。",
+    applicationUrl: "https://dataelementx.cn",
+    basisPolicyIds: ["nat-data-factor-finals-2026", "nat-industry-datasets"],
+    sources: [{ title: "2026年“数据要素×”大赛全国总决赛通知", url: "https://www.nda.gov.cn/sjj/zwgk/tzgg/0908/20260908100236590767189_mobile.html", publisher: "国家数据局等部门", sourceGrade: "official", evidence: "国家数据局官方通知明确全国总决赛在线提交时间为2026年9月11日至9月16日24:00，入口为dataelementx.cn赛事入口。" }],
+    verifiedAt: "2026-09-14",
+    summary: "数据要素×大赛全国总决赛进入材料提交窗口，适合用高质量数据集与 AI 场景案例做全国展示。",
+    businessImpact: "可把数据集、可信空间、模型应用和行业解决方案组合成案例，拓展全国供需对接和客户品牌机会。",
+    complianceImpact: "赛事不是直接财政补贴；材料提交后不可修改，必须先完成数据权属、授权、脱敏和知识产权核验。",
+    action: "在9月16日24:00前完成线上提交，提前锁定案例文本、数据集登记信息、授权证明和团队材料。",
+  },
+  {
     id: "dist-etown-token-economy-2026",
     title: "经开区词元驱动智能经济政策支持方向",
     region: "北京经开区",
@@ -490,16 +549,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-09-07" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-09-14" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-09-14" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-09-21" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-09-14" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-09-21" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-09-14" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-09-21" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-09-14" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-09-21" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {
