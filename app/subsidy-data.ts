@@ -540,6 +540,92 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     complianceImpact: "政策金额是上限或比例，不等于自动兑付；同一项目从优不重复，智能体支付和数据流通还需受监管沙盒约束。",
     action: "先按五类支持方向筛选客户并建立证据清单，待配套细则发布后再确认申报入口和材料。",
   },
+  {
+    id: "bj-ai-service-provider-pool-2026",
+    title: "北京市人工智能应用服务商资源池征集",
+    region: "北京市级",
+    supportDirections: ["AI 咨询规划与方案设计", "交付实施与运营管理", "安全治理、培训和测试评估"],
+    mechanism: "资源池征集/服务团培育",
+    beneficiaries: ["大模型与智能体企业", "泛行业 IT 集成与智能运维服务商", "网络安全与合规服务机构", "云网算力与数据服务商"],
+    status: "current",
+    applicationWindow: "2026-09-18—2026-10-15（向所在区经信主管部门提交）",
+    amount: "非直接财政补贴（资源池/服务团认定）",
+    eligibility: "在京注册的独立法人或机构；具备稳定人工智能服务团队（直接服务人员不少于3人）、服务案例和良好信用。成立3年以上原则上有不少于30个服务案例，成立不足3年原则上有不少于10个案例。",
+    applicationUrl: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260918_4869487.html",
+    basisPolicyIds: ["bj-ai-service-provider-pool-2026", "nat-ai-service-providers-2026"],
+    sources: [{ title: "北京市人工智能应用服务商资源池征集通知", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260918_4869930.html", publisher: "北京市经济和信息化局", sourceGrade: "official", evidence: "官方通知明确服务商范围、团队和案例条件，材料于10月15日前提交所在区经信主管部门，后续进行区级推荐和专家评审。" }],
+    verifiedAt: "2026-09-21",
+    summary: "北京首次以资源池和服务团方式集中识别可交付的 AI 服务能力，适合把五条产线的案例和安全治理能力打包申报。",
+    businessImpact: "有助于把 AI、大数据、安全、视联网和智能运维的交付能力转化为市级服务商背书和后续场景线索。",
+    complianceImpact: "资源池不等同于财政补贴或项目中标；服务案例、合同验收、团队人数和信用记录需真实可追溯。",
+    action: "在10月15日前按所在区要求准备公司简介、团队、30/10个项目案例、合同验收和安全治理材料，先由区经信部门确认提交方式。",
+  },
+  {
+    id: "bj-city-science-fine-management-bang-2026",
+    title: "北京市城市科技与精细化管理领域第二批揭榜挂帅任务",
+    region: "北京市级",
+    supportDirections: ["城市科技与精细化管理", "视联网与城市安全感知", "智能运维和数据平台"],
+    mechanism: "揭榜挂帅/科技项目支持",
+    beneficiaries: ["智能运维和云网集成服务商", "视频物联与网络安全服务商", "大模型与智能体企业", "高校和科研院所"],
+    status: "current",
+    applicationWindow: "2026-09-17—2026-10-13 17:00",
+    amount: "待核（具体科技经费以榜单任务和系统字段为准）",
+    eligibility: "企业牵头，联合高校、科研院所或其他单位开展攻关；参与单位原则上不超过4家；企业配套经费与财政科技经费比例不低于2:1，项目需落地真实场景并承担两年维护和验收责任。",
+    applicationUrl: "https://pm.kw.beijing.gov.cn",
+    basisPolicyIds: ["bj-city-science-fine-management-bang-2026", "bj-housing-ai-scenes-2026"],
+    sources: [{ title: "北京市城市科技与精细化管理领域第二批揭榜挂帅任务榜单", url: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260917_4868421.html", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方通知列明企业牵头、联合单位数量、2:1配套经费、真实场景部署、两年维护和10月13日17:00申报截止时间。" }],
+    verifiedAt: "2026-09-21",
+    summary: "城市精细化管理揭榜任务将视联网、智能运维、数据平台和安全治理转化为可验收的联合攻关入口。",
+    businessImpact: "可与城管、住建、园区和公共服务客户联合打包方案，形成研发、集成实施和两年运维的完整订单。",
+    complianceImpact: "需锁定真实场景用户、技术指标和配套经费；榜单任务不等同于自动获得财政资金。",
+    action: "在10月13日17:00前确认榜单方向、牵头主体、联合单位和场景用户，完成盖章材料与预算后线上提交。",
+  },
+  {
+    id: "bj-ai-audiovisual-2026-extension",
+    title: "北京市“人工智能+视听”重点项目（延期窗口）",
+    region: "北京市级",
+    supportDirections: ["视听大模型与智能体", "AIGC 内容和智能修复", "视听场景应用"],
+    mechanism: "重点项目申报/项目补助",
+    beneficiaries: ["视听内容和技术企业", "大模型与智能体企业", "视频物联与内容安全服务商"],
+    status: "current",
+    applicationWindow: "延期至 2026-10-31",
+    amount: "部分方向按项目投资额不超过30%、单项最高300万元（以指南和审核结果为准）",
+    eligibility: "项目需符合视听技术、视听内容或视听场景支持方向，准备知识产权、投资凭证、版权、备案和播出/上线证明等材料。",
+    applicationUrl: BEIJING_REDEMPTION,
+    basisPolicyIds: ["bj-ai-audiovisual-guide-2026"],
+    sources: [
+      { title: "北京市促进“人工智能+视听”产业高质量发展重点项目申报指南（2026年）", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202605/t20260513_4649184.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "指南明确支持方向、材料和兑现入口。" },
+      { title: "关于延长北京市“人工智能+视听”重点项目申报时间的通知", url: "https://gdj.beijing.gov.cn/zwxx/tzgg2/202609/t20260920_4871956.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "官方延期通知将截止时间由9月30日延至10月31日，其他要求不变。" },
+    ],
+    verifiedAt: "2026-09-21",
+    summary: "人工智能+视听项目申报窗口延长至10月31日，为视听大模型、智能体和内容安全方案保留了补报时间。",
+    businessImpact: "适合把视联网、内容安全、模型应用和智能运维能力与广电视听客户的真实项目打包。",
+    complianceImpact: "延期不改变项目边界和材料要求；单一项目只能选择一个支持方向，补贴比例和金额需以审核结果为准。",
+    action: "在10月31日前完成方向选择、投资凭证、版权/备案和上线证明归档，通过北京市政策兑现专区提交并保留回执。",
+  },
+  {
+    id: "bj-innovation-voucher-2026-current",
+    title: "首都科技创新券（2026年9月常态化申领）",
+    region: "北京市级",
+    supportDirections: ["模型训练与推理算力", "检验检测和研发服务", "科技型中小微企业创新服务"],
+    mechanism: "电子券/实时抵扣",
+    beneficiaries: ["科技型中小微企业", "孵化器在孵 AI 企业", "智能体和数据研发团队"],
+    status: "current",
+    applicationWindow: "2026-09-21 起常态化申领，额度发完即止",
+    amount: "服务合同实际发生额最高25%；标杆/省部级以上孵化器在孵企业年上限50万元，其他科技型中小微企业年上限20万元",
+    eligibility: "符合科技型中小微企业或创业团队条件，购买开放单位提供的分析、测试、检测、研发或算力服务，并按平台要求完成服务和凭证留存。",
+    applicationUrl: "https://banshi.beijing.gov.cn/pubtask/task/1/110000000000/27d7b212-d995-4ca7-8883-93ea4dce387a.html?locationCode=110000000000",
+    basisPolicyIds: ["bj-high-tech-fund-202601"],
+    sources: [
+      { title: "2026年首都科技创新券启动申领通知", url: "https://kw.beijing.gov.cn/zwgk/zcwj/202609/t20260920_4871770.html", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方通知明确常态化申领、先到先得、服务范围和申领入口。" },
+      { title: "首都科技条件平台与科技创新券实施办法（2026年修订版）", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260916_4866655.html", publisher: "北京市人民政府", sourceGrade: "official", evidence: "修订办法明确创新券支持比例、年度上限和服务类型。" },
+    ],
+    verifiedAt: "2026-09-21",
+    summary: "首都科技创新券于9月21日启动新一轮常态化申领，企业可用电子券购买研发、检测和算力服务，额度发完即止。",
+    businessImpact: "可将模型、数据、算力和测试服务纳入客户创新成本方案，帮助科技型中小企业低成本验证产品。",
+    complianceImpact: "创新券不是现金补贴，必须在开放单位和平台规则内使用，服务合同、发票、日志和验收凭证要完整。",
+    action: "优先核验客户企业类型、开放单位和服务产品，直接通过办事入口申领并记录额度、合同和实际使用情况。",
+  },
 ];
 
 export const subsidyThemes = ["算力", "Token", "数据", "场景", "模型", "OPC"] as const;
@@ -549,16 +635,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-09-14" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-09-21" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-09-21" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-09-28" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-09-21" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-09-28" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-09-21" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-09-28" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-09-21" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-09-28" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {

@@ -19,8 +19,8 @@ test("renders the Beijing AI policy intelligence homepage", async () => {
   const html = await response.text();
 
   assert.match(html, /<title>北京 AI 政策情报/);
-  assert.match(html, /2026-09-14/);
-  assert.match(html, /第\s*(?:<!-- -->)?38(?:<!-- -->)?\s*周/);
+  assert.match(html, /2026-09-21/);
+  assert.match(html, /第\s*(?:<!-- -->)?39(?:<!-- -->)?\s*周/);
   assert.match(html, /经官方核验/);
   assert.match(html, /申报窗口雷达/);
   assert.match(html, /政策全景/);
@@ -122,13 +122,13 @@ test("weekly page includes the previous week section", async () => {
   const html = await (await render("/weekly")).text();
   assert.match(html, /本周最新政策/);
   assert.match(html, /上周政策/);
-  assert.match(html, /AI\+气象“揭榜挂帅”专项榜单/);
+  assert.match(html, /数据要素×”大赛全国总决赛通知/);
 });
 
 test("weekly page follows the current site cutoff and verified source note", async () => {
   const html = await (await render("/weekly")).text();
-  assert.match(html, /2026-09-07—2026-09-13/);
-  assert.match(html, /截至\s*(?:<!-- -->)?2026-09-14/);
+  assert.match(html, /2026-09-14—2026-09-20/);
+  assert.match(html, /截至\s*(?:<!-- -->)?2026-09-21/);
   assert.match(html, /仅展示北京/);
   assert.match(html, /数据要素×”大赛全国总决赛/);
 });
