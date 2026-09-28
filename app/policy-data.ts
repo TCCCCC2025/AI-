@@ -641,6 +641,8 @@ export type WeeklyChange = { title: string; changeType: "新增" | "修订" | "�
 export const weeklyChanges: WeeklyChange[] = [
   { title: "北京市促进“人工智能+视听”产业高质量发展重点项目支持管理办法（2026—2029年）", changeType: "修订", date: "2026-09-24", detail: "北京市广播电视局发布修订后的人工智能+视听重点项目支持管理办法，覆盖视听技术、内容、场景、安全和服务五个方向，明确年度申报和事后支持，并废止原京广发〔2026〕27号。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260924_4879514.html", status: "持续适用" },
   { title: "北京市关于征集2027年市重点工程的通知", changeType: "新增", date: "2026-09-22", detail: "北京市发展改革委等部门征集2027年市重点工程，人工智能、算力基础设施、机器人、智能制造和安全应急等方向可纳入项目储备；线上填报系统为 https://project.fgw.beijing.gov.cn/zdgcddfw，具体节点以通知及系统为准。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260923_4878231.html", status: "滚动核验" },
+  { title: "2026年度“AI+”方向“揭榜挂帅”专项榜单及AI赋能生物育种储备课题", changeType: "截止", date: "2026-09-23", detail: "本轮在线申报于9月23日18:00截止，政策方向继续保留在库，后续等待立项结果或下一批榜单，不再作为当前有效申报入口。", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260904_4851307.html", status: "滚动核验" },
+  { title: "2026年科技服务业专项企业效能提升项目（第二批）", changeType: "截止", date: "2026-09-23", detail: "本轮在线申报于9月23日18:00截止，AI、大数据/大模型、智能制造服务等支持方向继续作为政策线索留存，后续关注立项结果和下一批通知。", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260901_4845672.html", status: "滚动核验" },
 ]; 
 
 export const priorityRegionWeeklyChanges: WeeklyChange[] = [
