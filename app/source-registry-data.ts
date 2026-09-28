@@ -32,7 +32,7 @@ const fromSubsidySources: SourceSeed[] = subsidyPolicies.flatMap((policy) => pol
   verificationStatus: "verified",
   relatedPolicyIds: [policy.id],
   notes: source.evidence,
-  nextReview: "2026-09-21",
+  nextReview: "2026-10-05",
 })));
 
 const policySeeds: SourceSeed[] = [
@@ -121,6 +121,9 @@ const currentWeekSeeds: SourceSeed[] = [
 ];
 
 const currentWeekAdditions: SourceSeed[] = [
+  { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260924_4879514.html", title: "北京市促进“人工智能+视听”产业高质量发展重点项目支持管理办法（2026—2029年）", publisher: "北京市广播电视局", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-09-24", lastVerified: "2026-09-28", verificationStatus: "verified", relatedPolicyIds: ["bj-ai-audiovisual-management-2026"], notes: "北京市广播电视局正式发布修订管理办法，覆盖技术、内容、场景、安全、服务五个方向；原京广发〔2026〕27号废止，具体项目按年度申报指南执行。", nextReview: "2026-10-05" },
+  { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260923_4878231.html", title: "北京市关于征集2027年市重点工程的通知", publisher: "北京市发展和改革委员会、北京市住房和城乡建设委员会", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-09-22", lastVerified: "2026-09-28", verificationStatus: "verified", relatedPolicyIds: ["bj-key-projects-2027"], notes: "北京市官方通知，将人工智能、算力基础设施、机器人、智能制造和安全应急等方向纳入2027年市重点工程项目储备。", nextReview: "2026-10-05" },
+  { url: "https://fzggw.jiangsu.gov.cn/art/2026/9/20/art_51012_11832454.html", title: "江苏省促进词元经济高质量发展行动方案（2026年）", publisher: "江苏省发展和改革委员会、江苏省数据局", sourceType: "official_policy", level: "外省市", region: "江苏省", firstSeen: "2026-09-20", lastVerified: "2026-09-28", verificationStatus: "verified", relatedPolicyIds: ["reg-jiangsu-token-economy-2026"], notes: "江苏省级行动方案，覆盖高质量数据集、可信数据空间、算力调度、词元工厂、模型/智能体服务、OPC和词元治理；地方兑现需以后续配套政策为准。", nextReview: "2026-10-05" },
   { url: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260918_4870474.html", title: "北京市加快词元经济发展的行动方案（2026—2028年）", publisher: "北京市经济和信息化局、北京市发展和改革委员会", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-09-18", lastVerified: "2026-09-21", verificationStatus: "verified", relatedPolicyIds: ["bj-token-economy-action-2026"], notes: "官方行动方案；支持 Token 工厂、模型芯片适配、算力、数据产品、智能体和工程师生态，具体兑现以配套通知为准。", nextReview: "2026-09-28" },
   { url: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260918_4869487.html", title: "北京市人工智能应用服务商资源池征集通知", publisher: "北京市经济和信息化局", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-09-18", lastVerified: "2026-09-21", verificationStatus: "verified", relatedPolicyIds: ["bj-ai-service-provider-pool-2026"], notes: "北京经信部门官方通知；材料须于10月15日前提交所在区经信主管部门，资源池征集不等同于直接补贴。", nextReview: "2026-09-28" },
   { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260918_4869930.html", title: "北京市人工智能应用服务商资源池征集通知（首都之窗）", publisher: "北京市人民政府", sourceType: "official_repost", level: "北京市级", region: "北京市级", firstSeen: "2026-09-18", lastVerified: "2026-09-21", verificationStatus: "verified", relatedPolicyIds: ["bj-ai-service-provider-pool-2026"], notes: "首都之窗官方转载页，与市经信局原文交叉核验。", nextReview: "2026-09-28" },

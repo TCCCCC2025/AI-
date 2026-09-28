@@ -19,8 +19,8 @@ test("renders the Beijing AI policy intelligence homepage", async () => {
   const html = await response.text();
 
   assert.match(html, /<title>北京 AI 政策情报/);
-  assert.match(html, /2026-09-21/);
-  assert.match(html, /第\s*(?:<!-- -->)?39(?:<!-- -->)?\s*周/);
+  assert.match(html, /2026-09-28/);
+  assert.match(html, /第\s*(?:<!-- -->)?40(?:<!-- -->)?\s*周/);
   assert.match(html, /经官方核验/);
   assert.match(html, /申报窗口雷达/);
   assert.match(html, /政策全景/);
@@ -39,7 +39,7 @@ test("renders the overview, weekly, and policy-category routes", async () => {
   assert.match(homeHtml, /本周最新/);
   assert.match(weeklyHtml, /本周最新政策/);
   assert.match(weeklyHtml, /截止/);
-  assert.match(weeklyHtml, /科技服务业专项企业效能提升项目/);
+  assert.match(weeklyHtml, /北京市加快词元经济发展的行动方案/);
   assert.match(nationalHtml, /国家部委（22 项）/);
   assert.match(nationalHtml, /企业机会/);
   assert.doesNotMatch(nationalHtml, /北京市级（14 项）/);
@@ -122,20 +122,20 @@ test("weekly page includes the previous week section", async () => {
   const html = await (await render("/weekly")).text();
   assert.match(html, /本周最新政策/);
   assert.match(html, /上周政策/);
-  assert.match(html, /数据要素×”大赛全国总决赛通知/);
+  assert.match(html, /北京市人工智能应用服务商资源池征集通知/);
 });
 
 test("weekly page follows the current site cutoff and verified source note", async () => {
   const html = await (await render("/weekly")).text();
-  assert.match(html, /2026-09-14—2026-09-20/);
-  assert.match(html, /截至\s*(?:<!-- -->)?2026-09-21/);
+  assert.match(html, /2026-09-21—2026-09-27/);
+  assert.match(html, /截至\s*(?:<!-- -->)?2026-09-28/);
   assert.match(html, /仅展示北京/);
-  assert.match(html, /数据要素×”大赛全国总决赛/);
+  assert.match(html, /北京市关于征集2027年市重点工程的通知/);
 });
 
 test("weekly current section only displays Beijing policy changes", async () => {
   const html = await (await render("/weekly")).text();
-  assert.match(html, /科技服务业专项企业效能提升项目/);
+  assert.match(html, /北京市促进“人工智能\+视听”产业高质量发展重点项目支持管理办法/);
   assert.doesNotMatch(html, /上海市第一批算力生态合作伙伴名单公示/);
   assert.doesNotMatch(html, /南京市人工智能服务商、智能体开发商征集/);
   assert.doesNotMatch(html, /广州政务人工智能与城市可信数据空间建设答复/);
