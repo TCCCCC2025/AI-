@@ -335,13 +335,14 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     amount: "技术/场景方向按项目总投资不超过 30%，单项最高 300 万元；内容方向单项最高 300 万元；安全、服务方向按项目总投资不超过 30%，单项最高 100 万元",
     eligibility: "项目原则上应于 2025 年 1 月至 2026 年 9 月研发、制作或建设完成并投入使用/播出/运营；同一项目只能选择一个支持方向，且不得重复享受同方向市级财政支持。",
     applicationUrl: "https://zhengce.beijing.gov.cn",
-    basisPolicyIds: ["bj-ai-audiovisual-guide-2026"],
+    basisPolicyIds: ["bj-ai-audiovisual-guide-2026", "bj-ai-audiovisual-management-2026"],
     sources: [
       { title: "北京市促进“人工智能+视听”产业高质量发展重点项目申报指南（2026年）", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202605/t20260513_4649184.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "官方指南列明申报期、项目完成时间、五类支持方向及申报材料。" },
       { title: "北京市促进“人工智能+视听”产业高质量发展重点项目支持管理办法（2026—2029年）", url: "https://gdj.beijing.gov.cn/zwxx/2024zcwj/202605/t20260511_4645308.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "官方管理办法列明技术/场景、内容、安全和服务方向的奖励比例与单项上限。" },
+      { title: "北京市促进“人工智能+视听”产业高质量发展重点项目支持管理办法（2026—2029年）修订发布页", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260924_4879514.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "2026年9月修订发布页确认五个支持方向、年度申报机制及原京广发〔2026〕27号废止。" },
       { title: "关于延长北京市“人工智能+视听”重点项目申报时间的通知", url: "https://gdj.beijing.gov.cn/zwxx/tzgg2/202609/t20260920_4871956.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "官方延期通知将截止时间由9月30日延至10月31日，其他要求不变。" },
     ],
-    verifiedAt: "2026-09-21",
+    verifiedAt: "2026-09-28",
     summary: "视听 AI 项目支持覆盖技术、内容、场景、安全和服务五类方向，官方已将本轮申报窗口延长至 10 月 31 日。",
     businessImpact: "适合把多模态模型、视频理解、数字人、内容生产和智能运维能力与广电视听客户联合包装。",
     complianceImpact: "需准备知识产权、版权、备案、播出和投资凭证；同一项目不得跨方向或重复申报。",
@@ -613,16 +614,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-09-21" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-09-28" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-09-28" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-10-05" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-09-28" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-10-05" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-09-28" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-10-05" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-09-28" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-10-05" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {

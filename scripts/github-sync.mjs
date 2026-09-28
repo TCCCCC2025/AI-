@@ -17,6 +17,7 @@ const WEEKLY_SHARE_PATH = "public/weekly-share.txt";
 const ALLOWED_EXACT_PATHS = new Set([
   "README.md",
   "docs/subsidy-radar-update.md",
+  "docs/token-policy.md",
   "docs/weekly-github-sync.md",
   "next.config.ts",
   "package.json",

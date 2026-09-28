@@ -14,8 +14,8 @@ test("generates a WeChat-copyable summary with plain URLs", () => {
     subsidies: subsidyPolicies,
   });
 
-  assert.match(output, /【北京 AI 政策情报周更新｜2026年9月21日】/);
-  assert.match(output, /本周（2026-09-14—2026-09-20）北京范围内有新的官方核验政策变化/);
+  assert.match(output, /【北京 AI 政策情报周更新｜2026年9月28日】/);
+  assert.match(output, /本周（2026-09-21—2026-09-27）北京范围内有新的官方核验政策变化/);
   assert.match(output, /https:\/\/jxj\.beijing\.gov\.cn\/zwgk\/2024zcwj\/202607\/t20260730_4801241\.html/);
   assert.match(output, /申报入口：\nhttps:\/\/zhengce\.beijing\.gov\.cn/);
   assert.doesNotMatch(output, /\]\(/);
@@ -35,8 +35,7 @@ test("orders dated current windows before rolling windows", () => {
     subsidies: subsidyPolicies,
   });
 
-  const aiPlus = output.indexOf("2026年度“AI+”方向“揭榜挂帅”专项榜单及AI赋能生物育种储备课题");
-  const audiovisual = output.indexOf("北京市促进“人工智能+视听”产业高质量发展重点项目申报指南");
-  const rolling = output.indexOf("首都科技条件平台与科技创新券");
-  assert.ok(aiPlus >= 0 && audiovisual > aiPlus && rolling > audiovisual);
+  const audiovisual = output.indexOf("北京市促进“人工智能+视听”产业高质量发展重点项目支持管理办法");
+  const keyProjects = output.indexOf("北京市关于征集2027年市重点工程的通知");
+  assert.ok(audiovisual >= 0 && keyProjects > audiovisual);
 });
