@@ -605,6 +605,26 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     complianceImpact: "创新券不是现金补贴，必须在开放单位和平台规则内使用，服务合同、发票、日志和验收凭证要完整。",
     action: "优先核验客户企业类型、开放单位和服务产品，直接通过办事入口申领并记录额度、合同和实际使用情况。",
   },
+  {
+    id: "bj-etown-embodied-intelligence-2026",
+    title: "经开区2026年具身智能产业政策相关事项申报",
+    region: "北京经开区",
+    supportDirections: ["机器人首试首用与首台套", "具身智能实训场", "人形机器人整机推广与租赁", "核心部组件流通", "二次开发社区", "整机投保保费"],
+    mechanism: "政策兑现/项目奖励",
+    beneficiaries: ["具身智能与机器人企业", "机器人核心部组件企业", "实训场和场景运营机构", "机器人智能运维与集成服务商"],
+    status: "current",
+    applicationWindow: "2026-09-23—2026-10-12",
+    amount: "待核（八项办事指南分别明确支持标准）",
+    eligibility: "按事项分别核验经开区主体、产品/项目认定、场景应用、合同发票、保险凭证、测试报告和首台套等条件；具体以办事指南和政策兑现平台字段为准。",
+    applicationUrl: "https://zcdx.kfqgw.beijing.gov.cn",
+    basisPolicyIds: ["dist-etown-embodied-intelligence-2026"],
+    sources: [{ title: "北京经济技术开发区机器人和智能制造产业局关于开展2026年经开区具身智能产业政策相关事项申报的通知", url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202609/t20260921_4874528.html", publisher: "北京经济技术开发区机器人和智能制造产业局", sourceGrade: "official", evidence: "官方通知明确申报时间为2026年9月23日至10月12日，列出八项申报事项、平台入口和分项咨询电话；金额和条件以附件办事指南为准。" }],
+    verifiedAt: "2026-10-05",
+    summary: "经开区具身智能政策开放八类年度申报事项，覆盖产品首用、实训、推广、租赁、核心部件、社区、保险和首台套。",
+    businessImpact: "可把机器人本体、核心部组件、实训场、场景集成、保险和智能运维能力组合成客户申报与交付方案。",
+    complianceImpact: "八项事项的金额、认定条件和材料不同，不能从总通知推断统一补贴比例；提交前必须回读对应办事指南和平台字段。",
+    action: "在10月12日前按八项事项建立材料清单，核验主体、产品、场景、合同、发票、保险和测试证据，完成政策兑现平台提交并留存回执。",
+  },
 ];
 
 export const subsidyThemes = ["算力", "Token", "数据", "场景", "模型", "OPC"] as const;
@@ -614,16 +634,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-09-28" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-10-05" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-10-05" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-10-12" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-10-05" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-10-12" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-10-05" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-10-12" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-10-05" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-10-12" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {
