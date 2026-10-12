@@ -40,8 +40,8 @@ export type PolicyWithBrief = Policy & PolicyAnalysis & {
 export type PolicyGroup = { id: "national" | "beijing" | "districts" | "regions"; title: string; note: string; policies: PolicyWithBrief[] };
 
 export const siteCutoff = {
-  date: "2026-10-05",
-  isoWeek: 41,
+  date: "2026-10-12",
+  isoWeek: 42,
 } as const;
 
 function shiftDate(date: string, days: number) {
@@ -123,12 +123,13 @@ const policyGroupsBase = [
   },
   {
     id: "districts" as const,
-    title: "北京各区（10 项）",
+    title: "北京各区（11 项）",
     note: "区级支持政策应结合注册地、项目落地地和当期申报要求使用。",
     policies: [
       { title: "经开区：关于支持词元驱动智能经济高质量发展的若干措施（试行）", issuer: "北京经济技术开发区管理委员会", date: "2026-08-03", themes: "AI / 大模型 / 算力 / 数据 / 场景", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202608/t20260805_4809951.html", status: "持续适用" },
       { title: "经开区：2026年人工智能行业大模型应用落地支持申报通知", issuer: "北京经济技术开发区信息技术产业局", date: "2026-07-31", themes: "AI / 大模型 / 场景", href: "https://open.beijing.gov.cn/html/yizhuang/zcqd/2026/8/1785742151631.html", status: "滚动核验" },
       { title: "经开区：关于支持人工智能原生人才发展的若干措施（AI人才八条）", issuer: "北京经济技术开发区管理委员会", date: "2026-08-18", themes: "AI / 大模型 / 人才", href: "https://kfqgw.beijing.gov.cn/ywdt/tt/cxzc/202608/t20260819_4828225.html", status: "滚动核验" },
+      { title: "经开区：关于开展2026年亦城人才备案认定申报的通知", issuer: "中共北京市委经济技术开发区工委组织人事部", date: "2026-10-08", themes: "AI / 大模型 / 人才", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202610/t20261008_4892665.html", status: "滚动核验" },
       { title: "经开区：2026年亦城人才·人工智能超级个体（OPC）认定申报通知", issuer: "北京经开区工委组织人事部", date: "2026-07-08", themes: "AI / 大模型 / 人才", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260707_4750995.html", status: "滚动核验" },
       { title: "经开区：2026年数据领域核心技术攻关补贴申报通知", issuer: "北京市智慧城市基础设施与智能网联汽车协同发展工作办公室", date: "2026-07-03", themes: "数据 / AI", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202607/t20260703_4745935.html", status: "滚动核验" },
       { title: "通州区：支持数字经济高质量发展的若干措施", issuer: "通州区经信局", date: "2026-06-22", themes: "AI / 算力 / 数据", href: "https://www.bjtzh.gov.cn/bjtz/xxfb/202606/1792651.shtml", status: "持续适用" },
@@ -145,6 +146,7 @@ const policyGroupsBase = [
     policies: [
       { title: "杭州市滨江区加快推进人工智能产业高质量发展的若干政策", issuer: "杭州市滨江区人民政府", date: "2026-09-11", themes: "AI / 大模型 / Token / 算力 / 数据", href: "https://www.hzbjzx.gov.cn/data/2026/09/t20260902105056841.htm", status: "持续适用" },
       { title: "江苏省促进词元经济高质量发展行动方案（2026年）", issuer: "江苏省发展改革委、江苏省数据局", date: "2026-09-20", themes: "AI / 大模型 / Token / 算力 / 数据 / 安全", href: "https://fzggw.jiangsu.gov.cn/art/2026/9/20/art_51012_11832454.html", status: "持续适用" },
+      { title: "江苏省支持人工智能创新发展有关实施方案", issuer: "江苏省发展改革委、省委网信办、省工业和信息化厅、省财政厅、省数据局", date: "2026-10-09", themes: "AI / 大模型 / Token / 算力 / 数据", href: "https://fzggw.jiangsu.gov.cn/art/2026/10/9/art_84097_11839356.html", status: "持续适用" },
       { title: "深圳市打造人工智能先锋城市项目扶持计划（第二批）申请指南", issuer: "深圳市工业和信息化局", date: "2026-08-27", themes: "AI / 大模型 / 算力", href: "https://gxj.sz.gov.cn/gkmlpt/content/12/12956/post_12956819.html?jump=true", status: "滚动核验" },
       { title: "2026年第一批上海市城市数字化转型（区块链创新应用）申请类项目拟支持情况公示", issuer: "上海市数据局", date: "2026-08-24", themes: "数据 / 安全", href: "https://sdb.sh.gov.cn/gsgg/20260824/148702e0f0f74443a81b259f4582ce21.html", status: "滚动核验" },
       { title: "2026年第一批算力生态合作伙伴名单公示", issuer: "上海市数据局、上海市通信管理局", date: "2026-08-25", themes: "算力 / 数据", href: "https://sdb.sh.gov.cn/gsgg/20260825/cd1a719b889b4d8584e6cb2d5d0fbbc4.html", status: "滚动核验" },
@@ -210,6 +212,8 @@ const tailoredBriefs: Record<string, Pick<PolicyWithBrief, "summary" | "business
   "市工业和信息化局关于发布2026年模型券（申领）项目（第二批）申请指南的通知": { summary: "深圳发布2026年模型券申领项目第二批申请指南，具体申报要求、窗口和材料以官方附件为准，建议至少提前2个工作日提交。", businessImpact: "深圳本地模型服务机构、应用企业和算力服务商可围绕 Token/API 试用和模型消费券形成客户转化。", complianceImpact: "官方通知仅确认项目启动，金额、资格和截止时间仍需回到申请指南附件核验；该政策不直接适用于北京主体。", action: "先下载并核对附件指南和企业申报端指引，确认申报截止日、统一平台、模型清单与合同发票要求后再承诺。" },
   "深圳市工业和信息化局等关于印发《深圳市推动人工智能与应用发展行动计划（2026—2028年）》的通知": { summary: "深圳发布 AI 与应用发展行动计划，提出到2028年推动 AI 与科研、产业、消费、民生、治理和全球合作六大领域深度融合。", businessImpact: "先进制造、软件服务、专业服务、视联网/城市治理、智能运维和数据平台将持续出现 AI 改造、集成与运营需求。", complianceImpact: "行动计划是发展导向文件，不等同于当前可申报资金；具体补贴和项目入口需以后续专项指南为准。", action: "按六大领域建立深圳客户与生态伙伴清单，跟踪模型券、场景示范和行业专项配套通知。" },
   "深圳市龙岗区人工智能（机器人）署关于延长2026年龙岗区场景应用揭榜项目榜单征集申报受理时限的通知": { summary: "龙岗将 2026 年 AI 与机器人场景揭榜项目材料提交截止时间由9月4日延长至9月21日18:00。", businessImpact: "AI、机器人、视联网和智能运维方案商可利用延长期与龙岗场景方联合打磨方案，争取进入区级示范项目。", complianceImpact: "延长通知仅调整材料提交时间，其他申报事项仍以龙岗区人工智能产业扶持项目指南和实施细则为准。", action: "在9月21日18:00前回读龙岗项目指南，锁定场景方、技术指标、预算和部署证明后提交。" },
+  "经开区：关于开展2026年亦城人才备案认定申报的通知": { summary: "经开区启动2026年亦城人才备案认定申报，窗口为10月9日至11月20日，认定标准和支持内容以配套办事指南为准。", businessImpact: "AI、模型、算力和智能运维企业可将核心人才备案与项目落地、OPC培育和园区客户拓展结合，形成长期人才与产业服务机会。", complianceImpact: "通知明确申报平台和时间，但不直接承诺统一补贴金额；人才类别、材料、认定标准和支持内容必须以办事指南及平台字段为准。", action: "在11月20日前核对人才类别、任职/项目证明、主体注册和推荐材料，通过北京市政策兑现专区或经开区平台提交并留存回执。" },
+  "江苏省支持人工智能创新发展有关实施方案": { summary: "江苏以省市联动方式支持企业、高校、科研机构和 OPC 购买智能算力及模型/人工智能服务，原则上省市支持总额不超过实际支付费用50%，单主体上限原则上不超过500万元。", businessImpact: "算力服务、Token/API、模型部署、数据服务和行业应用团队可围绕江苏主体客户设计算力消费、模型服务和联合申报方案。", complianceImpact: "适用对象和项目须在江苏省内，合同、发票、支付凭证、服务使用证明和模型登记等证据需完整；该方案不直接适用于北京主体。", action: "筛选江苏省内客户，按智能算力服务、模型/人工智能服务分别建立合同、发票、支付和使用日志台账，等待当地配套申报细则。" },
 };
 
 const policyIds: Record<string, string> = {
@@ -274,6 +278,7 @@ const policyIds: Record<string, string> = {
   "经开区：关于支持词元驱动智能经济高质量发展的若干措施（试行）": "dist-etown-token-economy-2026",
   "经开区：2026年人工智能行业大模型应用落地支持申报通知": "dist-etown-industry-model-2026",
   "经开区：关于支持人工智能原生人才发展的若干措施（AI人才八条）": "dist-etown-ai-native-talent-2026",
+  "经开区：关于开展2026年亦城人才备案认定申报的通知": "dist-etown-yicheng-talent-2026",
   "深圳市打造人工智能先锋城市项目扶持计划（第二批）申请指南": "reg-shenzhen-ai-pioneer-2026-batch2",
   "2026年第一批上海市城市数字化转型（区块链创新应用）申请类项目拟支持情况公示": "reg-shanghai-blockchain-2026-batch1",
   "2026年第一批算力生态合作伙伴名单公示": "reg-shanghai-compute-partners-2026-batch1",
@@ -285,6 +290,7 @@ const policyIds: Record<string, string> = {
   "杭州市滨江区加快推进人工智能产业高质量发展的若干政策": "reg-hangzhou-binjiang-ai-2026",
   "江苏省增补2026年贸易促进计划及重点展会资金（江苏数智电商展）": "reg-jiangsu-ai-ecommerce-expo-2026",
   "江苏省促进词元经济高质量发展行动方案（2026年）": "reg-jiangsu-token-economy-2026",
+  "江苏省支持人工智能创新发展有关实施方案": "reg-jiangsu-ai-innovation-2026",
   "上海市经济信息化委关于组织开展人工智能应用服务商征集工作的通知": "reg-shanghai-ai-service-providers-2026",
   "关于征集2026年上海市行业高质量数据集案例的通知": "reg-shanghai-quality-dataset-cases-2026",
   "市工业和信息化局关于发布2026年模型券（申领）项目（第二批）申请指南的通知": "reg-shenzhen-model-voucher-claim-2026-batch2",
@@ -619,6 +625,20 @@ const tailoredAnalysis: Record<string, Partial<PolicyAnalysis>> = {
     scenarios: ["机器人首试首用", "实训场和二次开发社区", "整机推广与租赁", "核心部组件和首台套"],
     relatedPolicies: [{ type: "上位依据", policyId: "dist-etown-ai-city" }, { type: "同主题", policyId: "bj-key-projects-2027" }],
   },
+  "dist-etown-yicheng-talent-2026": {
+    opportunityLevel: "高",
+    judgement: "经开区把亦城人才备案认定作为产业人才进入政策兑现体系的正式入口，AI、模型、算力和智能运维团队可通过人才认定提前建立项目与人才绑定关系。",
+    customerTypes: ["大模型与智能体企业", "AI 创业公司与 OPC", "云网算力与智能运维服务商", "园区、科研机构和高校"],
+    scenarios: ["亦城人才备案认定", "AI 项目人才引进", "OPC 与产业团队发展"],
+    relatedPolicies: [{ type: "同主题", policyId: "dist-etown-ai-native-talent-2026" }, { type: "同主题", policyId: "dist-etown-opc-talent-2026" }],
+  },
+  "reg-jiangsu-ai-innovation-2026": {
+    opportunityLevel: "高",
+    judgement: "江苏将词元券、智能算力服务和模型/人工智能服务纳入省市联动实施方案，补贴从单纯建设投入转向可核验的算力和模型消费。",
+    customerTypes: ["江苏省内模型与智能体企业", "算力与云服务商", "数据服务与可信空间运营机构", "制造业和行业应用客户"],
+    scenarios: ["智能算力服务词元券", "模型服务和 Token 消费", "省市联动产业应用"],
+    relatedPolicies: [{ type: "同主题", policyId: "reg-jiangsu-token-economy-2026" }, { type: "同主题", policyId: "bj-token-economy-action-2026" }],
+  },
 };
 
 function unique<T>(values: T[]): T[] {
@@ -679,10 +699,12 @@ export const policyMetrics = {
 export type WeeklyChange = { title: string; changeType: "新增" | "修订" | "截止" | "移出"; date: string; detail: string; href?: string; status: Policy["status"] };
 
 export const weeklyChanges: WeeklyChange[] = [
-  { title: "北京市经济和信息化局关于组织开展2026年度北京市先进级智能工厂（第三批）申报工作的通知", changeType: "新增", date: "2026-09-28", detail: "北京启动先进级智能工厂第三批申报，申报主体须为在京规上工业企业并已完成基础级智能工厂备案，智能制造能力成熟度达到二级及以上；市级通知要求各区于11月6日前报送推荐名单，企业节点以所在区安排为准。", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260928_4883264.html", status: "滚动核验" },
+  { title: "经开区：关于开展2026年亦城人才备案认定申报的通知", changeType: "新增", date: "2026-10-08", detail: "经开区启动2026年亦城人才备案认定申报，申报期为10月9日至11月20日，可通过北京市政策兑现专区或经开区政策兑现综合服务平台提交；认定标准、支持内容和材料以配套办事指南为准。", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202610/t20261008_4892665.html", status: "滚动核验" },
+  { title: "北京市住房城乡建设领域创新应用场景征集", changeType: "截止", date: "2026-10-10", detail: "本轮场景材料提交已于10月10日17:00截止，政策方向继续保留为场景线索，后续关注入选名单、供需对接和下一批征集通知。", href: "https://zjw.beijing.gov.cn/bjjs/kjcxytg/znjz/zjtz76/744118225/index.shtml", status: "滚动核验" },
 ]; 
 
 export const priorityRegionWeeklyChanges: WeeklyChange[] = [
+  { title: "江苏省支持人工智能创新发展有关实施方案", changeType: "新增", date: "2026-10-09", detail: "江苏省发布人工智能创新发展实施方案，支持江苏省内企业、高校、科研机构和 OPC 购买智能算力服务及模型/人工智能服务；省市支持原则上不超过实际支付费用50%，单个主体上限原则上不超过500万元，合同、发票、支付及服务使用证明需完整。该事项仅适用于江苏省内主体，不作为北京申报依据。", href: "https://fzggw.jiangsu.gov.cn/art/2026/10/9/art_84097_11839356.html", status: "持续适用" },
   { title: "杭州市滨江区加快推进人工智能产业高质量发展的若干政策", changeType: "新增", date: "2026-09-11", detail: "杭州滨江区新政策自9月11日起施行，组合支持研发、开源、算力券、Token券、数据券和模型采购，研发支持最高5000万元、算力券最高2000万元；政策仅适用于滨江区主体，具体兑现以区级细则和申报通知为准。", href: "https://www.hzbjzx.gov.cn/data/2026/09/t20260902105056841.htm", status: "持续适用" },
   { title: "上海市经济信息化委关于组织开展人工智能应用服务商征集工作的通知", changeType: "新增", date: "2026-09-11", detail: "上海面向境内正常经营法人或非法人组织征集人工智能服务商和服务团，覆盖咨询规划、交付实施、运营管理、安全治理和测试评估；申报材料须于9月30日前提交所在区主管部门。", href: "https://sheitc.sh.gov.cn/cyfz/20260911/efa1c634559c44d7a61e9400a63acdb8.html", status: "滚动核验" },
   { title: "关于征集2026年上海市行业高质量数据集案例的通知", changeType: "新增", date: "2026-09-07", detail: "上海征集已完成并经真实业务验证的行业高质量数据集案例，覆盖医疗、教育、城市治理、高端制造和具身智能等领域；材料须于9月24日17:00发送至指定邮箱，并完成数据集登记。", href: "https://dt.sheitc.sh.gov.cn/cms/slddt/2861.jhtml", status: "滚动核验" },
@@ -701,6 +723,7 @@ export const priorityRegionWeeklyChanges: WeeklyChange[] = [
 ];
 
 export const previousWeeklyChanges: WeeklyChange[] = [
+  { title: "北京市经济和信息化局关于组织开展2026年度北京市先进级智能工厂（第三批）申报工作的通知", changeType: "新增", date: "2026-09-28", detail: "北京启动先进级智能工厂第三批申报，申报主体须为在京规上工业企业并已完成基础级智能工厂备案，智能制造能力成熟度达到二级及以上；市级通知要求各区于11月6日前报送推荐名单，企业节点以所在区安排为准。", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260928_4883264.html", status: "滚动核验" },
   { title: "经开区：2026年具身智能产业政策相关事项申报通知", changeType: "新增", date: "2026-09-22", detail: "经开区围绕具身智能机器人十条开放八类年度申报事项，覆盖首试首用、实训场、整机推广、租赁、核心部组件流通、二次开发社区、整机保险和首台套；申报期为9月23日至10月12日。", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202609/t20260921_4874528.html", status: "滚动核验" },
   { title: "北京市经济和信息化局关于印发《北京市软件和信息服务业企业重点领域安全工作指引》的通知", changeType: "新增", date: "2026-09-23", detail: "北京发布软件和信息服务业重点领域安全工作指引，统筹实体安全、网络安全、数据安全和灾害防范，2016年安全指导意见同时废止。", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260930_4886656.html", status: "持续适用" },
   { title: "北京市促进“人工智能+视听”产业高质量发展重点项目支持管理办法（2026—2029年）", changeType: "修订", date: "2026-09-24", detail: "北京市广播电视局发布修订后的人工智能+视听重点项目支持管理办法，覆盖视听技术、内容、场景、安全和服务五个方向，明确年度申报和事后支持，并废止原京广发〔2026〕27号。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260924_4879514.html", status: "持续适用" },

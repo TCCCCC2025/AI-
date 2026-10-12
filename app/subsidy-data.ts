@@ -490,7 +490,7 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["施工现场视觉识别", "AI规划设计与智能建造", "建筑设备预测性维护", "建筑安全检测与能耗优化"],
     mechanism: "场景征集/入选清单",
     beneficiaries: ["建筑业及城市治理客户", "视频物联与安全服务商", "智能运维和云网集成服务商", "大模型与行业应用企业"],
-    status: "current",
+    status: "closed",
     applicationWindow: "2026-09-02—2026-10-10 17:00",
     amount: "不涉及直接财政补贴（入选场景及后续供需对接以主管部门安排为准）",
     eligibility: "申报主体应具备相关知识产权、完整解决方案和真实项目部署能力，能够提供可复制的 AI+住房城乡建设场景及实施成效；电子版和盖章 PDF 按通知要求提交。",
@@ -625,6 +625,26 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     complianceImpact: "八项事项的金额、认定条件和材料不同，不能从总通知推断统一补贴比例；提交前必须回读对应办事指南和平台字段。",
     action: "在10月12日前按八项事项建立材料清单，核验主体、产品、场景、合同、发票、保险和测试证据，完成政策兑现平台提交并留存回执。",
   },
+  {
+    id: "bj-etown-yicheng-talent-2026",
+    title: "经开区2026年亦城人才备案认定申报",
+    region: "北京经开区",
+    supportDirections: ["顶尖/杰出/领军/优秀人才备案认定", "AI、模型与算力产业人才", "人才项目与园区服务"],
+    mechanism: "人才认定/政策兑现",
+    beneficiaries: ["大模型与智能体企业", "AI 创业公司与 OPC", "算力、数据和智能运维团队", "园区及科研机构"],
+    status: "current",
+    applicationWindow: "2026-10-09—2026-11-20",
+    amount: "待核（认定标准及支持内容以《2026年亦城人才备案认定办事指南》为准）",
+    eligibility: "按亦城人才类别核验申报主体、人才任职/项目证明、推荐材料和经开区属地条件；具体认定标准、材料及支持内容以配套办事指南和平台字段为准。",
+    applicationUrl: ETOWN_PORTAL,
+    basisPolicyIds: ["dist-etown-yicheng-talent-2026", "dist-etown-ai-native-talent-2026"],
+    sources: [{ title: "中共北京市委经济技术开发区工委组织人事部关于开展2026年亦城人才备案认定申报的通知", url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202610/t20261008_4892665.html", publisher: "中共北京市委经济技术开发区工委组织人事部", sourceGrade: "official", evidence: "官方通知明确申报时间为2026年10月9日至11月20日，入口为北京市政策兑现专区或经开区政策兑现综合服务平台，认定标准和支持内容以办事指南为准。" }],
+    verifiedAt: "2026-10-12",
+    summary: "经开区开放2026年亦城人才备案认定申报，覆盖AI及相关产业人才，申报窗口为10月9日至11月20日。",
+    businessImpact: "可把核心人才备案与AI项目落地、OPC培育和园区客户服务结合，形成客户经理长期跟进入口。",
+    complianceImpact: "人才类别、认定标准和支持内容不能从通知标题推断，须以办事指南和平台字段为准，完整留存任职、项目和推荐材料。",
+    action: "在11月20日前核对人才类别与材料，先通过北京市政策兑现专区或经开区平台确认入口，再提交并留存回执。",
+  },
 ];
 
 export const subsidyThemes = ["算力", "Token", "数据", "场景", "模型", "OPC"] as const;
@@ -634,16 +654,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-10-05" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-10-12" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-10-12" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-10-19" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-10-12" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-10-19" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-10-12" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-10-19" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-10-12" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-10-19" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {

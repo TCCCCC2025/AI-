@@ -32,7 +32,7 @@ const fromSubsidySources: SourceSeed[] = subsidyPolicies.flatMap((policy) => pol
   verificationStatus: "verified",
   relatedPolicyIds: [policy.id],
   notes: source.evidence,
-  nextReview: "2026-10-12",
+  nextReview: "2026-10-19",
 })));
 
 const policySeeds: SourceSeed[] = [
@@ -140,6 +140,8 @@ const currentWeekAdditions: SourceSeed[] = [
   { url: "https://kw.beijing.gov.cn/zwgk/zcwj/202609/t20260920_4871770.html", title: "2026年首都科技创新券启动申领通知", publisher: "北京市科委、中关村管委会", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-09-21", lastVerified: "2026-09-21", verificationStatus: "verified", relatedPolicyIds: ["bj-innovation-voucher-2026-current"], notes: "当前日启动的常态化创新券入口，先到先得、额度发完即止；不纳入上周周报变化，作为当前申报入口维护。", nextReview: "2026-09-28" },
   { url: "https://banshi.beijing.gov.cn/pubtask/task/1/110000000000/27d7b212-d995-4ca7-8883-93ea4dce387a.html?locationCode=110000000000", title: "首都科技创新券在线申领入口", publisher: "北京市政务服务平台", sourceType: "application_portal", level: "市级", region: "北京市级", firstSeen: "2026-09-21", lastVerified: "2026-09-21", verificationStatus: "verified", relatedPolicyIds: ["bj-innovation-voucher-2026-current"], notes: "首都科技创新券办理入口；服务类型、额度和余额以登录后平台字段为准。", nextReview: "2026-09-28" },
   { url: "https://www.hzbjzx.gov.cn/data/2026/09/t20260902105056841.htm", title: "杭州市滨江区加快推进人工智能产业高质量发展的若干政策", publisher: "杭州市滨江区人民政府", sourceType: "official_policy", level: "外省市", region: "杭州市滨江区", firstSeen: "2026-09-02", lastVerified: "2026-09-21", verificationStatus: "verified", relatedPolicyIds: ["reg-hangzhou-binjiang-ai-2026"], notes: "滨江区官方发布页面；政策自9月11日起施行，组合支持研发、算力、Token、数据和模型采购。", nextReview: "2026-09-28" },
+  { url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202610/t20261008_4892665.html", title: "经开区2026年亦城人才备案认定申报通知", publisher: "中共北京市委经济技术开发区工委组织人事部", sourceType: "official_policy", level: "区级", region: "北京经开区", firstSeen: "2026-10-08", lastVerified: "2026-10-12", verificationStatus: "verified", relatedPolicyIds: ["dist-etown-yicheng-talent-2026"], notes: "官方通知明确申报窗口为2026年10月9日至11月20日，平台为北京市政策兑现专区或经开区政策兑现综合服务平台；认定标准和支持内容以办事指南为准。", nextReview: "2026-10-19" },
+  { url: "https://fzggw.jiangsu.gov.cn/art/2026/10/9/art_84097_11839356.html", title: "江苏省支持人工智能创新发展有关实施方案", publisher: "江苏省发展改革委、省委网信办、省工业和信息化厅、省财政厅、省数据局", sourceType: "official_policy", level: "外省市", region: "江苏省", firstSeen: "2026-10-09", lastVerified: "2026-10-12", verificationStatus: "verified", relatedPolicyIds: ["reg-jiangsu-ai-innovation-2026"], notes: "江苏省官方实施方案；支持江苏主体购买智能算力及模型/人工智能服务，省市支持原则上不超过实际支付费用50%，单主体上限原则上不超过500万元；不作为北京申报依据。", nextReview: "2026-10-19" },
 ];
 
 const allSeeds = [...fromSubsidySources, ...policySeeds, ...externalWeeklySeeds, ...applicationSeeds, ...currentWeekSeeds, ...currentWeekAdditions];
