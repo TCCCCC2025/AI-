@@ -87,7 +87,7 @@ const policyGroupsBase = [
   },
   {
     id: "beijing" as const,
-    title: "北京市级（27 项）",
+    title: "北京市级（29 项）",
     note: "北京本市的政策、实施方案及可与企业行动直接关联的兑现机制。",
     policies: [
       { title: "北京市加快词元经济发展的行动方案（2026—2028年）", issuer: "北京市经济和信息化局、北京市发展和改革委员会", date: "2026-09-18", themes: "AI / 大模型 / Token / 算力 / 数据", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260918_4870474.html", status: "持续适用" },
@@ -141,7 +141,7 @@ const policyGroupsBase = [
   },
   {
     id: "regions" as const,
-    title: "外省市重点（15 项）",
+    title: "外省市重点（17 项）",
     note: "优先收录上海、广东、浙江、江苏及重点城市的官方政策；外省市政策不等同于北京主体可申报。",
     policies: [
       { title: "杭州市滨江区加快推进人工智能产业高质量发展的若干政策", issuer: "杭州市滨江区人民政府", date: "2026-09-11", themes: "AI / 大模型 / Token / 算力 / 数据", href: "https://www.hzbjzx.gov.cn/data/2026/09/t20260902105056841.htm", status: "持续适用" },
@@ -704,7 +704,7 @@ export const weeklyChanges: WeeklyChange[] = [
 ]; 
 
 export const priorityRegionWeeklyChanges: WeeklyChange[] = [
-  { title: "江苏省支持人工智能创新发展有关实施方案", changeType: "新增", date: "2026-10-09", detail: "江苏省发布人工智能创新发展实施方案，支持江苏省内企业、高校、科研机构和 OPC 购买智能算力服务及模型/人工智能服务；省市支持原则上不超过实际支付费用50%，单个主体上限原则上不超过500万元，合同、发票、支付及服务使用证明需完整。该事项仅适用于江苏省内主体，不作为北京申报依据。", href: "https://fzggw.jiangsu.gov.cn/art/2026/10/9/art_84097_11839356.html", status: "持续适用" },
+  { title: "江苏省支持人工智能创新发展有关实施方案", changeType: "新增", date: "2026-10-09", detail: "江苏省发布人工智能创新发展实施方案，支持江苏省内企业、高校、科研机构和 OPC 购买智能算力服务及模型/人工智能服务；省市支持原则上不超过实际支付费用50%，单个主体上限原则上不超过500万元，合同、发票、支付及服务使用证明需完整。", href: "https://fzggw.jiangsu.gov.cn/art/2026/10/9/art_84097_11839356.html", status: "持续适用" },
   { title: "杭州市滨江区加快推进人工智能产业高质量发展的若干政策", changeType: "新增", date: "2026-09-11", detail: "杭州滨江区新政策自9月11日起施行，组合支持研发、开源、算力券、Token券、数据券和模型采购，研发支持最高5000万元、算力券最高2000万元；政策仅适用于滨江区主体，具体兑现以区级细则和申报通知为准。", href: "https://www.hzbjzx.gov.cn/data/2026/09/t20260902105056841.htm", status: "持续适用" },
   { title: "上海市经济信息化委关于组织开展人工智能应用服务商征集工作的通知", changeType: "新增", date: "2026-09-11", detail: "上海面向境内正常经营法人或非法人组织征集人工智能服务商和服务团，覆盖咨询规划、交付实施、运营管理、安全治理和测试评估；申报材料须于9月30日前提交所在区主管部门。", href: "https://sheitc.sh.gov.cn/cyfz/20260911/efa1c634559c44d7a61e9400a63acdb8.html", status: "滚动核验" },
   { title: "关于征集2026年上海市行业高质量数据集案例的通知", changeType: "新增", date: "2026-09-07", detail: "上海征集已完成并经真实业务验证的行业高质量数据集案例，覆盖医疗、教育、城市治理、高端制造和具身智能等领域；材料须于9月24日17:00发送至指定邮箱，并完成数据集登记。", href: "https://dt.sheitc.sh.gov.cn/cms/slddt/2861.jhtml", status: "滚动核验" },
