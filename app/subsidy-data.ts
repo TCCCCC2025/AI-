@@ -549,18 +549,18 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["AI 咨询规划与方案设计", "交付实施与运营管理", "安全治理、培训和测试评估"],
     mechanism: "资源池征集/服务团培育",
     beneficiaries: ["大模型与智能体企业", "泛行业 IT 集成与智能运维服务商", "网络安全与合规服务机构", "云网算力与数据服务商"],
-    status: "current",
-    applicationWindow: "2026-09-18—2026-10-15（向所在区经信主管部门提交）",
+    status: "closed",
+    applicationWindow: "2026-09-18—2026-10-15（向所在区经信主管部门提交，本轮已截止）",
     amount: "非直接财政补贴（资源池/服务团认定）",
     eligibility: "在京注册的独立法人或机构；具备稳定人工智能服务团队（直接服务人员不少于3人）、服务案例和良好信用。成立3年以上原则上有不少于30个服务案例，成立不足3年原则上有不少于10个案例。",
     applicationUrl: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260918_4869487.html",
     basisPolicyIds: ["bj-ai-service-provider-pool-2026", "nat-ai-service-providers-2026"],
     sources: [{ title: "北京市人工智能应用服务商资源池征集通知", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260918_4869930.html", publisher: "北京市经济和信息化局", sourceGrade: "official", evidence: "官方通知明确服务商范围、团队和案例条件，材料于10月15日前提交所在区经信主管部门，后续进行区级推荐和专家评审。" }],
-    verifiedAt: "2026-09-21",
+    verifiedAt: "2026-10-19",
     summary: "北京首次以资源池和服务团方式集中识别可交付的 AI 服务能力，适合把五条产线的案例和安全治理能力打包申报。",
     businessImpact: "有助于把 AI、大数据、安全、视联网和智能运维的交付能力转化为市级服务商背书和后续场景线索。",
     complianceImpact: "资源池不等同于财政补贴或项目中标；服务案例、合同验收、团队人数和信用记录需真实可追溯。",
-    action: "在10月15日前按所在区要求准备公司简介、团队、30/10个项目案例、合同验收和安全治理材料，先由区经信部门确认提交方式。",
+    action: "本轮材料提交已截止；保留公司简介、团队、30/10个项目案例、合同验收和安全治理材料，跟踪区级推荐、市级评审和下一批征集。",
   },
   {
     id: "bj-city-science-fine-management-bang-2026",
@@ -569,18 +569,18 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["城市科技与精细化管理", "视联网与城市安全感知", "智能运维和数据平台"],
     mechanism: "揭榜挂帅/科技项目支持",
     beneficiaries: ["智能运维和云网集成服务商", "视频物联与网络安全服务商", "大模型与智能体企业", "高校和科研院所"],
-    status: "current",
-    applicationWindow: "2026-09-17—2026-10-13 17:00",
+    status: "closed",
+    applicationWindow: "2026-09-17—2026-10-13 17:00（本轮已截止）",
     amount: "待核（具体科技经费以榜单任务和系统字段为准）",
     eligibility: "企业牵头，联合高校、科研院所或其他单位开展攻关；参与单位原则上不超过4家；企业配套经费与财政科技经费比例不低于2:1，项目需落地真实场景并承担两年维护和验收责任。",
     applicationUrl: "https://pm.kw.beijing.gov.cn",
     basisPolicyIds: ["bj-city-science-fine-management-bang-2026", "bj-housing-ai-scenes-2026"],
     sources: [{ title: "北京市城市科技与精细化管理领域第二批揭榜挂帅任务榜单", url: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260917_4868421.html", publisher: "北京市科委、中关村管委会", sourceGrade: "official", evidence: "官方通知列明企业牵头、联合单位数量、2:1配套经费、真实场景部署、两年维护和10月13日17:00申报截止时间。" }],
-    verifiedAt: "2026-09-21",
+    verifiedAt: "2026-10-19",
     summary: "城市精细化管理揭榜任务将视联网、智能运维、数据平台和安全治理转化为可验收的联合攻关入口。",
     businessImpact: "可与城管、住建、园区和公共服务客户联合打包方案，形成研发、集成实施和两年运维的完整订单。",
     complianceImpact: "需锁定真实场景用户、技术指标和配套经费；榜单任务不等同于自动获得财政资金。",
-    action: "在10月13日17:00前确认榜单方向、牵头主体、联合单位和场景用户，完成盖章材料与预算后线上提交。",
+    action: "本轮榜单申报已截止；保留真实场景用户、技术指标、联合单位和配套经费材料，跟踪立项结果和下一批揭榜任务。",
   },
   {
     id: "bj-innovation-voucher-2026-current",
@@ -612,18 +612,18 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["机器人首试首用与首台套", "具身智能实训场", "人形机器人整机推广与租赁", "核心部组件流通", "二次开发社区", "整机投保保费"],
     mechanism: "政策兑现/项目奖励",
     beneficiaries: ["具身智能与机器人企业", "机器人核心部组件企业", "实训场和场景运营机构", "机器人智能运维与集成服务商"],
-    status: "current",
-    applicationWindow: "2026-09-23—2026-10-12",
+    status: "closed",
+    applicationWindow: "2026-09-23—2026-10-12（本轮已截止）",
     amount: "待核（八项办事指南分别明确支持标准）",
     eligibility: "按事项分别核验经开区主体、产品/项目认定、场景应用、合同发票、保险凭证、测试报告和首台套等条件；具体以办事指南和政策兑现平台字段为准。",
     applicationUrl: "https://zcdx.kfqgw.beijing.gov.cn",
     basisPolicyIds: ["dist-etown-embodied-intelligence-2026"],
     sources: [{ title: "北京经济技术开发区机器人和智能制造产业局关于开展2026年经开区具身智能产业政策相关事项申报的通知", url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202609/t20260921_4874528.html", publisher: "北京经济技术开发区机器人和智能制造产业局", sourceGrade: "official", evidence: "官方通知明确申报时间为2026年9月23日至10月12日，列出八项申报事项、平台入口和分项咨询电话；金额和条件以附件办事指南为准。" }],
-    verifiedAt: "2026-10-05",
+    verifiedAt: "2026-10-19",
     summary: "经开区具身智能政策开放八类年度申报事项，覆盖产品首用、实训、推广、租赁、核心部件、社区、保险和首台套。",
     businessImpact: "可把机器人本体、核心部组件、实训场、场景集成、保险和智能运维能力组合成客户申报与交付方案。",
     complianceImpact: "八项事项的金额、认定条件和材料不同，不能从总通知推断统一补贴比例；提交前必须回读对应办事指南和平台字段。",
-    action: "在10月12日前按八项事项建立材料清单，核验主体、产品、场景、合同、发票、保险和测试证据，完成政策兑现平台提交并留存回执。",
+    action: "本轮八项申报已截止；保留主体、产品、场景、合同、发票、保险和测试证据，关注下一批办事指南与兑现通知。",
   },
   {
     id: "bj-etown-yicheng-talent-2026",
@@ -639,7 +639,7 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     applicationUrl: ETOWN_PORTAL,
     basisPolicyIds: ["dist-etown-yicheng-talent-2026", "dist-etown-ai-native-talent-2026"],
     sources: [{ title: "中共北京市委经济技术开发区工委组织人事部关于开展2026年亦城人才备案认定申报的通知", url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202610/t20261008_4892665.html", publisher: "中共北京市委经济技术开发区工委组织人事部", sourceGrade: "official", evidence: "官方通知明确申报时间为2026年10月9日至11月20日，入口为北京市政策兑现专区或经开区政策兑现综合服务平台，认定标准和支持内容以办事指南为准。" }],
-    verifiedAt: "2026-10-12",
+    verifiedAt: "2026-10-19",
     summary: "经开区开放2026年亦城人才备案认定申报，覆盖AI及相关产业人才，申报窗口为10月9日至11月20日。",
     businessImpact: "可把核心人才备案与AI项目落地、OPC培育和园区客户服务结合，形成客户经理长期跟进入口。",
     complianceImpact: "人才类别、认定标准和支持内容不能从通知标题推断，须以办事指南和平台字段为准，完整留存任职、项目和推荐材料。",
@@ -654,16 +654,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-10-12" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-10-19" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-10-19" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-10-26" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-10-19" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-10-26" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-10-19" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-10-26" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-10-19" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-10-26" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {
