@@ -41,3 +41,7 @@ npm run sync:github -- --dry-run --message "chore: verify GitHub sync workflow"
 - Sites 发布和 GitHub 推送是两个独立步骤；GitHub 失败时不能报告 GitHub 已同步。
 
 政策事实仍以已核验的官方来源为准，命令不会替代政策采集、来源核验或业务研判。
+
+## 本周运行记录
+
+- 2026-W43：完成 2026-10-12—2026-10-18 北京政策核验，生成 `public/weekly-share.txt`，私有 Sites 版本 30 已发布；随后按周次提交并同步 GitHub Pages。
