@@ -45,3 +45,4 @@ npm run sync:github -- --dry-run --message "chore: verify GitHub sync workflow"
 ## 本周运行记录
 
 - 2026-W43：完成 2026-10-12—2026-10-18 北京政策核验，生成 `public/weekly-share.txt`，私有 Sites 版本 30 已发布；随后按周次提交并同步 GitHub Pages。
+- 2026-W44：完成 2026-10-19—2026-10-25 北京政策核验，新增科学数据中心、AI赋能网络安全防御和人工智能颠覆性技术储备课题，修订人工智能应用服务商资源池阶段；私有 Sites 版本 31 已发布，GitHub 同步待本次脚本回读远程 SHA 与 Actions 结果后确认。
