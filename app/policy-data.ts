@@ -40,8 +40,8 @@ export type PolicyWithBrief = Policy & PolicyAnalysis & {
 export type PolicyGroup = { id: "national" | "beijing" | "districts" | "regions"; title: string; note: string; policies: PolicyWithBrief[] };
 
 export const siteCutoff = {
-  date: "2026-10-19",
-  isoWeek: 43,
+  date: "2026-10-26",
+  isoWeek: 44,
 } as const;
 
 function shiftDate(date: string, days: number) {
@@ -87,9 +87,12 @@ const policyGroupsBase = [
   },
   {
     id: "beijing" as const,
-    title: "北京市级（29 项）",
+    title: "北京市级（32 项）",
     note: "北京本市的政策、实施方案及可与企业行动直接关联的兑现机制。",
     policies: [
+      { title: "北京市科学技术委员会、中关村科技园区管理委员会关于开展北京科学数据中心建设项目申报工作的通知", issuer: "北京市科学技术委员会、中关村科技园区管理委员会", date: "2026-10-15", themes: "AI / 数据 / 算力", href: "https://kw.beijing.gov.cn/zwgk/zcwj/202610/t20261015_4903481.html", status: "滚动核验" },
+      { title: "北京市科学技术委员会、中关村科技园区管理委员会关于公开征集2026年度AI赋能网络安全防御领域储备课题的通知", issuer: "北京市科学技术委员会、中关村科技园区管理委员会", date: "2026-10-20", themes: "AI / 安全 / 数据", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202610/t20261021_4912463.html", status: "滚动核验" },
+      { title: "关于公开征集人工智能领域颠覆性技术方向储备课题的通知", issuer: "北京市科学技术委员会、中关村科技园区管理委员会", date: "2026-10-23", themes: "AI / 大模型 / 算力", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202610/t20261023_4916719.html", status: "滚动核验" },
       { title: "北京市加快词元经济发展的行动方案（2026—2028年）", issuer: "北京市经济和信息化局、北京市发展和改革委员会", date: "2026-09-18", themes: "AI / 大模型 / Token / 算力 / 数据", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260918_4870474.html", status: "持续适用" },
       { title: "北京市人工智能应用服务商资源池征集通知", issuer: "北京市经济和信息化局", date: "2026-09-18", themes: "AI / 大模型 / 数据 / 算力 / 安全", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260918_4869930.html", status: "滚动核验" },
       { title: "北京市城市科技与精细化管理领域第二批揭榜挂帅任务榜单", issuer: "北京市科学技术委员会、中关村科技园区管理委员会", date: "2026-09-17", themes: "AI / 数据 / 场景 / 智能运维", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260917_4868421.html", status: "滚动核验" },
@@ -266,6 +269,9 @@ const policyIds: Record<string, string> = {
   "北京市促进“人工智能+视听”产业高质量发展重点项目支持管理办法（2026—2029年）": "bj-ai-audiovisual-management-2026",
   "北京市关于征集2027年市重点工程的通知": "bj-key-projects-2027",
   "北京市经济和信息化局关于组织开展2026年度北京市先进级智能工厂（第三批）申报工作的通知": "bj-smart-factory-advanced-2026-batch3",
+  "北京市科学技术委员会、中关村科技园区管理委员会关于开展北京科学数据中心建设项目申报工作的通知": "bj-scientific-data-center-2026",
+  "北京市科学技术委员会、中关村科技园区管理委员会关于公开征集2026年度AI赋能网络安全防御领域储备课题的通知": "bj-ai-cybersecurity-defense-2026",
+  "关于公开征集人工智能领域颠覆性技术方向储备课题的通知": "bj-ai-disruptive-tech-2026",
   "北京市经济和信息化局关于印发《北京市软件和信息服务业企业重点领域安全工作指引》的通知": "bj-software-security-guide-2026",
   "关于印发《北京市人工智能专业职称评价办法》的通告": "bj-ai-professional-title-2026",
   "经开区：2026年具身智能产业政策相关事项申报通知": "dist-etown-embodied-intelligence-2026",
@@ -699,9 +705,11 @@ export const policyMetrics = {
 export type WeeklyChange = { title: string; changeType: "新增" | "修订" | "截止" | "移出"; date: string; detail: string; href?: string; status: Policy["status"] };
 
 export const weeklyChanges: WeeklyChange[] = [
-  { title: "经开区2026年具身智能产业政策相关事项申报", changeType: "截止", date: "2026-10-12", detail: "八类具身智能产业政策事项申报已于10月12日截止，政策方向继续保留为具身智能、机器人首试首用、实训场和场景集成线索，后续关注下一批办事指南和兑现通知。", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202609/t20260921_4874528.html", status: "滚动核验" },
-  { title: "北京市城市科技与精细化管理领域第二批揭榜挂帅任务", changeType: "截止", date: "2026-10-13", detail: "本轮榜单在线申报已于10月13日17:00截止，视联网、城市安全感知、智能运维和数据平台方向继续保留为项目线索，后续关注立项结果和下一批榜单。", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260917_4868421.html", status: "滚动核验" },
-  { title: "北京市人工智能应用服务商资源池征集", changeType: "截止", date: "2026-10-15", detail: "企业向所在区经信主管部门提交资源池材料的节点已于10月15日截止；服务商资源池和服务团仍是北京市人工智能服务生态的重要方向，后续关注区级推荐和市级评审结果。", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260918_4869487.html", status: "滚动核验" },
+  { title: "北京科学数据中心建设项目申报", changeType: "新增", date: "2026-10-15", detail: "面向数理化天地生、生命科学、材料、量子、医疗健康和生物育种等领域征集北京科学数据中心；申报周期不超过3年，需具备数据治理、API调用和算力一体化服务基础，企业配套经费与财政科技经费比例不低于2:1，材料须于10月28日18:00发送至指定邮箱。", href: "https://kw.beijing.gov.cn/zwgk/zcwj/202610/t20261015_4903481.html", status: "滚动核验" },
+  { title: "AI赋能网络安全防御领域储备课题", changeType: "新增", date: "2026-10-20", detail: "征集AI网络安全防御产品、工具、平台和高仿真对抗测试验证平台课题；企业或企业牵头课题每个企业限报1项，企业配套经费与科技经费总额比例不低于2:1，在线申报截止10月29日18:00。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202610/t20261021_4912463.html", status: "滚动核验" },
+  { title: "人工智能领域颠覆性技术方向储备课题", changeType: "新增", date: "2026-10-23", detail: "聚焦颠覆性芯片、非Transformer算法和大模型前沿技术，支持形成自主可控产品、工具或平台并开展真实用户验证；企业限报1项、配套经费与科技经费总额比例不低于2:1，在线申报截止11月2日18:00。", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202610/t20261023_4916719.html", status: "滚动核验" },
+  { title: "北京市人工智能应用服务商资源池征集", changeType: "修订", date: "2026-10-19", detail: "企业材料提交节点已于10月15日截止，当前进入区经信主管部门初审推荐阶段：各区须于11月6日前报送推荐表和材料，市级专家评审拟于11月20日前完成，12月1日前向工信部报送资源池及服务团信息。", href: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260918_4869930.html", status: "滚动核验" },
+  { title: "北京市产业技术基础公共服务平台申报", changeType: "截止", date: "2026-10-25", detail: "北京地区第八批产业技术基础公共服务平台申报材料已于10月25日前提交，属于工信部平台推荐申报，不等同于直接财政补贴；后续关注推荐结果和国家批次。", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202610/t20261016_4906525.html", status: "滚动核验" },
 ]; 
 
 export const priorityRegionWeeklyChanges: WeeklyChange[] = [
@@ -726,6 +734,9 @@ export const priorityRegionWeeklyChanges: WeeklyChange[] = [
 ];
 
 export const previousWeeklyChanges: WeeklyChange[] = [
+  { title: "经开区2026年具身智能产业政策相关事项申报", changeType: "截止", date: "2026-10-12", detail: "八类具身智能政策事项申报已于10月12日截止，后续关注下一批办事指南和兑现通知。", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202609/t20260921_4874528.html", status: "滚动核验" },
+  { title: "北京市城市科技与精细化管理领域第二批揭榜挂帅任务", changeType: "截止", date: "2026-10-13", detail: "本轮榜单在线申报已于10月13日17:00截止，后续关注立项结果和下一批榜单。", href: "https://kw.beijing.gov.cn/zwgk/zwgksbrl/202609/t20260917_4868421.html", status: "滚动核验" },
+  { title: "北京市人工智能应用服务商资源池征集", changeType: "截止", date: "2026-10-15", detail: "企业向所在区经信主管部门提交资源池材料的节点已于10月15日截止，后续进入区级推荐和市级评审。", href: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260918_4869487.html", status: "滚动核验" },
   { title: "经开区：关于开展2026年亦城人才备案认定申报的通知", changeType: "新增", date: "2026-10-08", detail: "经开区启动2026年亦城人才备案认定申报，申报期为10月9日至11月20日，可通过北京市政策兑现专区或经开区政策兑现综合服务平台提交；认定标准、支持内容和材料以配套办事指南为准。", href: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202610/t20261008_4892665.html", status: "滚动核验" },
   { title: "北京市住房城乡建设领域创新应用场景征集", changeType: "截止", date: "2026-10-10", detail: "本轮场景材料提交已于10月10日17:00截止，政策方向继续保留为场景线索，后续关注入选名单、供需对接和下一批征集通知。", href: "https://zjw.beijing.gov.cn/bjjs/kjcxytg/znjz/zjtz76/744118225/index.shtml", status: "滚动核验" },
 ]; 

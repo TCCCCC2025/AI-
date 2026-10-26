@@ -543,6 +543,46 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     action: "先按五类支持方向筛选客户并建立证据清单，待配套细则发布后再确认申报入口和材料。",
   },
   {
+    id: "bj-scientific-data-center-2026",
+    title: "北京科学数据中心建设项目申报（2026年度）",
+    region: "北京市级",
+    supportDirections: ["科学数据资源汇聚与治理", "AI 就绪数据供给", "数据检索/API/算力一体化服务", "科学智能重点领域数据中心"],
+    mechanism: "科技项目储备/专项申报",
+    beneficiaries: ["在京科研机构与高校", "具备科学数据资源的企业", "大模型与科学智能联合体", "数据治理与算力服务商"],
+    status: "current",
+    applicationWindow: "2026-10-15—2026-10-28 18:00",
+    amount: "待核（财政科技经费及企业配套比例以项目评审和任务书为准）",
+    eligibility: "在京独立法人，具备领域科学数据持续汇聚、治理加工、开放服务基础；建设周期不超过3年；已建数据服务系统或与大模型企业等下游主体形成合作意向；企业配套经费与财政科技经费比例不低于2:1，原则上每家单位限牵头1个中心。",
+    applicationUrl: "https://kw.beijing.gov.cn/zwgk/zcwj/202610/t20261015_4903481.html",
+    basisPolicyIds: ["bj-scientific-data-center-2026", "bj-public-data-operation", "nat-industry-datasets"],
+    sources: [{ title: "北京市科学技术委员会、中关村科技园区管理委员会关于开展北京科学数据中心建设项目申报工作的通知", url: "https://kw.beijing.gov.cn/zwgk/zcwj/202610/t20261015_4903481.html", publisher: "北京市科学技术委员会、中关村科技园区管理委员会", sourceGrade: "official", evidence: "官方通知明确支持领域、建设周期、数据服务/API与算力一体化条件、企业2:1配套经费要求及10月28日18:00邮件申报截止时间。" }],
+    verifiedAt: "2026-10-26",
+    summary: "北京面向科学智能重点领域建设数据中心，重点考察数据资源基础、治理加工能力、开放服务和与模型/算力的衔接。",
+    businessImpact: "可围绕数据目录、标注治理、API服务、算力接入和科学智能模型联合建设形成项目方案；科研机构和行业数据企业是重点客户。",
+    complianceImpact: "申报材料需证明数据权属、开放共享边界、保密与安全管理能力，企业配套经费应可核验，不能将意向合作替代真实基础条件。",
+    action: "10月28日18:00前锁定领域数据资源、平台网址、建设指标和合作协议，按邮件要求提交简表、申报书及盖章扫描件并留存发送凭证。",
+  },
+  {
+    id: "bj-ai-cybersecurity-defense-2026",
+    title: "AI赋能网络安全防御领域储备课题（2026年度）",
+    region: "北京市级",
+    supportDirections: ["AI 网络安全防御产品/工具/平台", "多智能体安全运营", "未知攻击检测与阻断", "高仿真攻防测试验证平台"],
+    mechanism: "科技项目储备/在线申报",
+    beneficiaries: ["网络安全企业或企业联合体", "高校与科研院所", "AI 安全产品与安全运营服务商", "关键信息基础设施和重点行业客户"],
+    status: "current",
+    applicationWindow: "2026-10-20—2026-10-29 18:00",
+    amount: "待核（课题经费以科技计划立项和任务书为准）",
+    eligibility: "独立法人，具备相应研发和项目管理能力；企业或企业牵头课题每个企业限报1项，企业配套经费与科技经费总额比例不低于2:1；课题周期原则上不超过1年。高校、科研院所可申报高仿真对抗测试验证平台方向。",
+    applicationUrl: "https://mis.kw.beijing.gov.cn/",
+    basisPolicyIds: ["bj-ai-cybersecurity-defense-2026", "bj-software-security-guide-2026"],
+    sources: [{ title: "北京市科学技术委员会、中关村科技园区管理委员会关于公开征集2026年度AI赋能网络安全防御领域储备课题的通知", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202610/t20261021_4912463.html", publisher: "北京市科学技术委员会、中关村科技园区管理委员会", sourceGrade: "official", evidence: "官方通知明确两类征集方向、企业/高校申报主体、2:1配套经费、在线申报系统及10月29日18:00截止时间。" }],
+    verifiedAt: "2026-10-26",
+    summary: "北京把未知攻击、AI驱动攻击和大模型/智能体应用安全纳入专项技术储备，兼顾产品研发与实战化测试验证。",
+    businessImpact: "安全产线可与 AI、大数据、视联网和智能运维联合包装告警关联、攻击面治理、检测阻断和安全运营平台方案。",
+    complianceImpact: "申报需明确自主可控技术路线、真实示范场景、科研诚信和安全管理制度；储备课题不等同于已获得财政资金。",
+    action: "10月29日18:00前按企业或高校方向选择赛道，准备简表、实施方案、盖章承诺书和证明材料，通过科技计划平台提交并保存回执。",
+  },
+  {
     id: "bj-ai-service-provider-pool-2026",
     title: "北京市人工智能应用服务商资源池征集",
     region: "北京市级",
@@ -550,17 +590,17 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     mechanism: "资源池征集/服务团培育",
     beneficiaries: ["大模型与智能体企业", "泛行业 IT 集成与智能运维服务商", "网络安全与合规服务机构", "云网算力与数据服务商"],
     status: "closed",
-    applicationWindow: "2026-09-18—2026-10-15（向所在区经信主管部门提交，本轮已截止）",
+    applicationWindow: "企业提交：2026-09-18—2026-10-15（已截止）；区级推荐：截至2026-11-06；市级评审：拟于2026-11-20前完成；报工信部：2026-12-01前",
     amount: "非直接财政补贴（资源池/服务团认定）",
     eligibility: "在京注册的独立法人或机构；具备稳定人工智能服务团队（直接服务人员不少于3人）、服务案例和良好信用。成立3年以上原则上有不少于30个服务案例，成立不足3年原则上有不少于10个案例。",
     applicationUrl: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202609/t20260918_4869487.html",
     basisPolicyIds: ["bj-ai-service-provider-pool-2026", "nat-ai-service-providers-2026"],
     sources: [{ title: "北京市人工智能应用服务商资源池征集通知", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260918_4869930.html", publisher: "北京市经济和信息化局", sourceGrade: "official", evidence: "官方通知明确服务商范围、团队和案例条件，材料于10月15日前提交所在区经信主管部门，后续进行区级推荐和专家评审。" }],
-    verifiedAt: "2026-10-19",
+    verifiedAt: "2026-10-26",
     summary: "北京首次以资源池和服务团方式集中识别可交付的 AI 服务能力，适合把五条产线的案例和安全治理能力打包申报。",
     businessImpact: "有助于把 AI、大数据、安全、视联网和智能运维的交付能力转化为市级服务商背书和后续场景线索。",
     complianceImpact: "资源池不等同于财政补贴或项目中标；服务案例、合同验收、团队人数和信用记录需真实可追溯。",
-    action: "本轮材料提交已截止；保留公司简介、团队、30/10个项目案例、合同验收和安全治理材料，跟踪区级推荐、市级评审和下一批征集。",
+    action: "企业材料提交已截止；当前应与所在区经信主管部门核对初审推荐状态，跟踪11月6日区级报送、11月20日前市级评审及12月1日前报工信部节点，保留公司简介、团队、案例、合同验收和安全治理材料。",
   },
   {
     id: "bj-city-science-fine-management-bang-2026",
@@ -654,16 +694,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-10-19" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-10-26" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-10-26" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-11-02" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-10-26" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-11-02" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-10-26" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-11-02" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-10-26" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-11-02" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {

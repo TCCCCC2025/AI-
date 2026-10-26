@@ -14,8 +14,8 @@ test("generates a WeChat-copyable summary with plain URLs", () => {
     subsidies: subsidyPolicies,
   });
 
-  assert.match(output, /【北京 AI 政策情报周更新｜2026年10月19日】/);
-  assert.match(output, /本周（2026-10-12—2026-10-18）北京范围内有新的官方核验政策变化/);
+  assert.match(output, /【北京 AI 政策情报周更新｜2026年10月26日】/);
+  assert.match(output, /本周（2026-10-19—2026-10-25）北京范围内有新的官方核验政策变化/);
   assert.match(output, /https:\/\/jxj\.beijing\.gov\.cn\/zwgk\/2024zcwj\/202607\/t20260730_4801241\.html/);
   assert.match(output, /申报入口：\nhttps:\/\/zhengce\.beijing\.gov\.cn/);
   assert.doesNotMatch(output, /\]\(/);
@@ -35,5 +35,5 @@ test("includes the current-week verified change", () => {
     subsidies: subsidyPolicies,
   });
 
-  assert.ok(output.includes("经开区2026年具身智能产业政策相关事项申报"));
+  assert.ok(output.includes("北京科学数据中心建设项目申报"));
 });
