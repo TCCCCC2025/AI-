@@ -330,8 +330,8 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["视听多模态工具", "视听大模型与智能体", "AIGC 视听内容", "智能修复与视听场景"],
     mechanism: "项目奖励/事后支持",
     beneficiaries: ["北京广电视听领域法人和活动单位", "视听技术与内容制作企业", "视听大模型和智能体项目单位"],
-    status: "current",
-    applicationWindow: "2026-06-01—2026-10-31（官方延期）",
+    status: "closed",
+    applicationWindow: "2026-06-01—2026-10-31（本轮已截止）",
     amount: "技术/场景方向按项目总投资不超过 30%，单项最高 300 万元；内容方向单项最高 300 万元；安全、服务方向按项目总投资不超过 30%，单项最高 100 万元",
     eligibility: "项目原则上应于 2025 年 1 月至 2026 年 9 月研发、制作或建设完成并投入使用/播出/运营；同一项目只能选择一个支持方向，且不得重复享受同方向市级财政支持。",
     applicationUrl: "https://zhengce.beijing.gov.cn",
@@ -342,11 +342,11 @@ export const subsidyPolicies: SubsidyPolicy[] = [
       { title: "北京市促进“人工智能+视听”产业高质量发展重点项目支持管理办法（2026—2029年）修订发布页", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202609/t20260924_4879514.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "2026年9月修订发布页确认五个支持方向、年度申报机制及原京广发〔2026〕27号废止。" },
       { title: "关于延长北京市“人工智能+视听”重点项目申报时间的通知", url: "https://gdj.beijing.gov.cn/zwxx/tzgg2/202609/t20260920_4871956.html", publisher: "北京市广播电视局", sourceGrade: "official", evidence: "官方延期通知将截止时间由9月30日延至10月31日，其他要求不变。" },
     ],
-    verifiedAt: "2026-09-28",
+    verifiedAt: "2026-11-02",
     summary: "视听 AI 项目支持覆盖技术、内容、场景、安全和服务五类方向，官方已将本轮申报窗口延长至 10 月 31 日。",
     businessImpact: "适合把多模态模型、视频理解、数字人、内容生产和智能运维能力与广电视听客户联合包装。",
     complianceImpact: "需准备知识产权、版权、备案、播出和投资凭证；同一项目不得跨方向或重复申报。",
-    action: "在10月31日前完成项目方向单选和证据清单，确认政策兑现平台的当期项目入口后再提交并保留回执。",
+    action: "本轮已于10月31日截止；保留项目投资、版权、备案和播出运营证据，跟踪入选名单、兑现通知和下一年度指南。",
   },
   {
     id: "bj-ai-plus-bang-breeding-2026",
@@ -491,16 +491,20 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     mechanism: "场景征集/入选清单",
     beneficiaries: ["建筑业及城市治理客户", "视频物联与安全服务商", "智能运维和云网集成服务商", "大模型与行业应用企业"],
     status: "closed",
-    applicationWindow: "2026-09-02—2026-10-10 17:00",
+    applicationWindow: "2026-09-02—2026-11-20 17:00（补充通知延长）",
     amount: "不涉及直接财政补贴（入选场景及后续供需对接以主管部门安排为准）",
     eligibility: "申报主体应具备相关知识产权、完整解决方案和真实项目部署能力，能够提供可复制的 AI+住房城乡建设场景及实施成效；电子版和盖章 PDF 按通知要求提交。",
+    applicationUrl: "https://zjw.beijing.gov.cn/bjjs/kjcxytg/znjz/zjtz76/744118225/index.shtml",
     basisPolicyIds: ["bj-housing-ai-scenes-2026", "bj-ai-industrial-internet"],
-    sources: [{ title: "关于征集北京市住房城乡建设领域创新应用场景的通知", url: "https://zjw.beijing.gov.cn/bjjs/kjcxytg/znjz/zjtz76/744118225/index.shtml", publisher: "北京市住房和城乡建设委员会", sourceGrade: "official", evidence: "官方通知列明 AI 视觉、规划设计、智能建造、设备预测性维护、建筑安全检测等方向，材料提交截止2026年10月10日17:00。" }],
-    verifiedAt: "2026-09-14",
-    summary: "住建领域 AI 场景征集把视联网、智能运维和行业大模型转成可落地示范入口，材料截止10月10日17:00。",
+    sources: [
+      { title: "关于征集北京市住房城乡建设领域创新应用场景的通知", url: "https://zjw.beijing.gov.cn/bjjs/kjcxytg/znjz/zjtz76/744118225/index.shtml", publisher: "北京市住房和城乡建设委员会", sourceGrade: "official", evidence: "官方通知列明 AI 视觉、规划设计、智能建造、设备预测性维护、建筑安全检测等方向和原申报要求。" },
+      { title: "关于延长北京市住房城乡建设领域创新应用场景征集时间的补充通知", url: "https://zjw.beijing.gov.cn/bjjs/kjcxytg/znjz/zjtz76/744152477/index.shtml", publisher: "北京市住房和城乡建设委员会", sourceGrade: "official", evidence: "补充通知于2026年10月29日发布，将申报截止时间延长至2026年11月20日17:00，其他事项不变。" },
+    ],
+    verifiedAt: "2026-11-02",
+    summary: "住建领域 AI 场景征集已延长至11月20日17:00，继续覆盖视联网、智能运维、行业大模型和智能建造应用。",
     businessImpact: "适合与建筑、物业、园区和城市治理客户联合打磨示范场景，带动视频感知、云网集成、设备维保和模型应用交付。",
     complianceImpact: "场景征集不等同于补贴承诺；需确认知识产权、数据授权、个人信息保护和现场安全责任边界。",
-    action: "在10月10日17:00前准备盖章材料、部署案例、指标和数据安全说明，按通知邮箱提交并保留回执。",
+    action: "在11月20日17:00前按原通知渠道补充或提交材料；已提交材料无需重复提交，重点补齐场景指标、部署案例、数据授权和安全说明。",
   },
   {
     id: "nat-data-factor-finals-2026",
@@ -549,18 +553,38 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["科学数据资源汇聚与治理", "AI 就绪数据供给", "数据检索/API/算力一体化服务", "科学智能重点领域数据中心"],
     mechanism: "科技项目储备/专项申报",
     beneficiaries: ["在京科研机构与高校", "具备科学数据资源的企业", "大模型与科学智能联合体", "数据治理与算力服务商"],
-    status: "current",
-    applicationWindow: "2026-10-15—2026-10-28 18:00",
+    status: "closed",
+    applicationWindow: "2026-10-15—2026-10-28 18:00（本轮已截止）",
     amount: "待核（财政科技经费及企业配套比例以项目评审和任务书为准）",
     eligibility: "在京独立法人，具备领域科学数据持续汇聚、治理加工、开放服务基础；建设周期不超过3年；已建数据服务系统或与大模型企业等下游主体形成合作意向；企业配套经费与财政科技经费比例不低于2:1，原则上每家单位限牵头1个中心。",
     applicationUrl: "https://kw.beijing.gov.cn/zwgk/zcwj/202610/t20261015_4903481.html",
     basisPolicyIds: ["bj-scientific-data-center-2026", "bj-public-data-operation", "nat-industry-datasets"],
     sources: [{ title: "北京市科学技术委员会、中关村科技园区管理委员会关于开展北京科学数据中心建设项目申报工作的通知", url: "https://kw.beijing.gov.cn/zwgk/zcwj/202610/t20261015_4903481.html", publisher: "北京市科学技术委员会、中关村科技园区管理委员会", sourceGrade: "official", evidence: "官方通知明确支持领域、建设周期、数据服务/API与算力一体化条件、企业2:1配套经费要求及10月28日18:00邮件申报截止时间。" }],
-    verifiedAt: "2026-10-26",
+    verifiedAt: "2026-11-02",
     summary: "北京面向科学智能重点领域建设数据中心，重点考察数据资源基础、治理加工能力、开放服务和与模型/算力的衔接。",
     businessImpact: "可围绕数据目录、标注治理、API服务、算力接入和科学智能模型联合建设形成项目方案；科研机构和行业数据企业是重点客户。",
     complianceImpact: "申报材料需证明数据权属、开放共享边界、保密与安全管理能力，企业配套经费应可核验，不能将意向合作替代真实基础条件。",
-    action: "10月28日18:00前锁定领域数据资源、平台网址、建设指标和合作协议，按邮件要求提交简表、申报书及盖章扫描件并留存发送凭证。",
+    action: "本轮已于10月28日18:00截止；保留数据权属、平台网址、建设指标和合作协议材料，跟踪评审结果和下一批科学数据中心征集。",
+  },
+  {
+    id: "bj-key-scenes-2026-batch2",
+    title: "北京市2026年第二批重点应用场景储备项目",
+    region: "北京市级",
+    supportDirections: ["人工智能重点应用场景", "关键核心技术验证迭代", "供需对接与示范推广"],
+    mechanism: "场景储备/综合评估支持",
+    beneficiaries: ["中关村示范区企业与事业单位", "AI技术和产品供给单位", "场景需求开放单位", "行业数字化和智能运维服务商"],
+    status: "current",
+    applicationWindow: "2026-10-29 09:00—2026-11-17 18:00",
+    amount: "待核（纳入储备库后按《中关村国家自主创新示范区提升企业创新能力支持资金管理办法》综合评估支持）",
+    eligibility: "申报主体须登记注册在中关村示范区范围内开展或服务科技创新活动；项目应明确需求开放单位和能力供给单位，双方不得存在关联关系，项目实施地在北京，原则上每个区推荐不超过1个重点应用场景项目，并须取得分园管理部门推荐函。",
+    applicationUrl: "https://mis.kw.beijing.gov.cn",
+    basisPolicyIds: ["bj-key-scenes-2026-batch2", "bj-ai-industrial-internet", "nat-science-industry-integration-2026"],
+    sources: [{ title: "北京市科学技术委员会、中关村科技园区管理委员会关于征集2026年第二批重点应用场景储备项目的通知", url: "https://kw.beijing.gov.cn/zwgk/zcwj/202610/t20261028_4921409.html", publisher: "北京市科学技术委员会、中关村科技园区管理委员会", sourceGrade: "official", evidence: "官方通知明确申报主体、AI重点支持方向、非关联关系、推荐函和2026年10月29日9:00至11月17日18:00申报窗口，并指定mis.kw.beijing.gov.cn和政策兑现专区为入口。" }],
+    verifiedAt: "2026-11-02",
+    summary: "北京第二批重点应用场景储备项目把AI技术供给与需求开放单位配对，支持真实场景验证、产品迭代和示范推广。",
+    businessImpact: "适合把AI、大数据、安全、视联网和智能运维的解决方案与园区、住建、制造、城市治理等需求方联合打包，形成场景牵引的销售和申报机会。",
+    complianceImpact: "场景储备不是固定金额补贴；需求方和供给方不得存在关联关系，推荐函、数据授权、项目实施地和场景成效材料需要提前核验。",
+    action: "11月17日18:00前取得分园推荐函，锁定需求开放单位、供给单位、场景指标和数据安全边界，通过科技计划平台提交并保留回执。",
   },
   {
     id: "bj-ai-cybersecurity-defense-2026",
@@ -569,18 +593,38 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["AI 网络安全防御产品/工具/平台", "多智能体安全运营", "未知攻击检测与阻断", "高仿真攻防测试验证平台"],
     mechanism: "科技项目储备/在线申报",
     beneficiaries: ["网络安全企业或企业联合体", "高校与科研院所", "AI 安全产品与安全运营服务商", "关键信息基础设施和重点行业客户"],
-    status: "current",
-    applicationWindow: "2026-10-20—2026-10-29 18:00",
+    status: "closed",
+    applicationWindow: "2026-10-20—2026-10-29 18:00（本轮已截止）",
     amount: "待核（课题经费以科技计划立项和任务书为准）",
     eligibility: "独立法人，具备相应研发和项目管理能力；企业或企业牵头课题每个企业限报1项，企业配套经费与科技经费总额比例不低于2:1；课题周期原则上不超过1年。高校、科研院所可申报高仿真对抗测试验证平台方向。",
     applicationUrl: "https://mis.kw.beijing.gov.cn/",
     basisPolicyIds: ["bj-ai-cybersecurity-defense-2026", "bj-software-security-guide-2026"],
     sources: [{ title: "北京市科学技术委员会、中关村科技园区管理委员会关于公开征集2026年度AI赋能网络安全防御领域储备课题的通知", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202610/t20261021_4912463.html", publisher: "北京市科学技术委员会、中关村科技园区管理委员会", sourceGrade: "official", evidence: "官方通知明确两类征集方向、企业/高校申报主体、2:1配套经费、在线申报系统及10月29日18:00截止时间。" }],
-    verifiedAt: "2026-10-26",
+    verifiedAt: "2026-11-02",
     summary: "北京把未知攻击、AI驱动攻击和大模型/智能体应用安全纳入专项技术储备，兼顾产品研发与实战化测试验证。",
     businessImpact: "安全产线可与 AI、大数据、视联网和智能运维联合包装告警关联、攻击面治理、检测阻断和安全运营平台方案。",
     complianceImpact: "申报需明确自主可控技术路线、真实示范场景、科研诚信和安全管理制度；储备课题不等同于已获得财政资金。",
-    action: "10月29日18:00前按企业或高校方向选择赛道，准备简表、实施方案、盖章承诺书和证明材料，通过科技计划平台提交并保存回执。",
+    action: "本轮已截止；保留简表、实施方案、盖章承诺书和配套经费证明，跟踪立项结果、课题指南和下一轮安全专项征集。",
+  },
+  {
+    id: "bj-ai-disruptive-tech-2026",
+    title: "人工智能领域颠覆性技术方向储备课题",
+    region: "北京市级",
+    supportDirections: ["颠覆性算力芯片", "非Transformer算法", "大模型前沿技术与自主进化"],
+    mechanism: "科技项目储备/在线申报",
+    beneficiaries: ["AI芯片与基础软件企业", "大模型与算法企业", "高校与科研院所", "模型、整机和应用联合体"],
+    status: "current",
+    applicationWindow: "2026-10-23—2026-11-02 18:00",
+    amount: "待核（课题经费以科技计划立项和任务书为准）",
+    eligibility: "企业作为申报单位限报1项（含联合申报），应明确课题投资总额和资金来源并提供配套经费，配套经费与财政科技经费总额比例不低于2:1；鼓励联合整机厂商、模型企业和应用单位，课题需开展真实用户验证。",
+    applicationUrl: "https://mis.kw.beijing.gov.cn/",
+    basisPolicyIds: ["bj-ai-disruptive-tech-2026", "nat-science-industry-integration-2026"],
+    sources: [{ title: "关于公开征集人工智能领域颠覆性技术方向储备课题的通知", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202610/t20261026_4918662.html", publisher: "北京市科学技术委员会、中关村科技园区管理委员会", sourceGrade: "official", evidence: "首都之窗官方原文列明颠覆性芯片、非Transformer算法和大模型前沿技术方向，企业限报1项、2:1配套经费要求、在线入口及11月2日18:00截止时间。" }],
+    verifiedAt: "2026-11-02",
+    summary: "北京颠覆性人工智能技术储备课题聚焦算力芯片、非Transformer架构和大模型自主进化，强调产业链联合与真实用户验证。",
+    businessImpact: "适合组织芯片、模型、整机、云网算力和行业客户联合形成技术攻关及应用验证方案，提前沉淀真实用户和适配证明。",
+    complianceImpact: "企业限报1项且必须证明配套资金来源，项目储备不等同于立项或财政资金到账；涉及芯片、算法和模型数据时需同步做好知识产权与安全审查。",
+    action: "11月2日18:00前完成在线提交；如本轮未提交，保留技术路线、联合体协议、用户验证和资金证明，跟踪下一轮颠覆性技术课题。",
   },
   {
     id: "bj-ai-service-provider-pool-2026",
@@ -694,16 +738,16 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-10-26" : "2026-08-03";
-    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-11-02" };
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-11-02" : "2026-08-03";
+    return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-11-09" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {
-    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-11-02" };
+    return { district, scanStatus: "scanned_no_official", lastScanned: "2026-08-03", channelsChecked: ["区政府网站", "区经信/科信部门", "政策兑现入口"], leadCount: 0, nextReview: "2026-11-09" };
   }
   if (district === "门头沟区") {
-    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-11-02" };
+    return { district, scanStatus: "lead_pending_verification", lastScanned: "2026-08-03", channelsChecked: ["区级公开平台", "园区/平台动态"], leadCount: 1, nextReview: "2026-11-09" };
   }
-  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-11-02" };
+  return { district, scanStatus: "not_scanned", lastScanned: "—", channelsChecked: [], leadCount: 0, nextReview: "2026-11-09" };
 });
 
 export function currentSubsidies(): SubsidyPolicy[] {

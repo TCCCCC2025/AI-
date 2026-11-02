@@ -109,7 +109,7 @@ function formatRegionalObservations(regional) {
   return [
     "外省市政策观察：",
     regional.map((change) => [
-      change.title + "：" + change.detail + "以上事项仅适用于当地项目或主体，不作为北京申报依据。",
+      change.title + "：" + change.detail + (change.detail.includes("不作为北京申报依据") ? "" : "以上事项仅适用于当地项目或主体，不作为北京申报依据。"),
       plainUrlBlock("政策原文", change.href ?? "待核"),
     ].join("\n")).join("\n\n"),
   ].join("\n\n");
