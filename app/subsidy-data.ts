@@ -21,6 +21,7 @@ export type SubsidyPolicy = {
   amount: string;
   eligibility: string;
   applicationUrl?: string;
+  applicationEntry?: string;
   basisPolicyIds: string[];
   sources: SubsidySource[];
   verifiedAt: string;
@@ -613,14 +614,14 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     supportDirections: ["颠覆性算力芯片", "非Transformer算法", "大模型前沿技术与自主进化"],
     mechanism: "科技项目储备/在线申报",
     beneficiaries: ["AI芯片与基础软件企业", "大模型与算法企业", "高校与科研院所", "模型、整机和应用联合体"],
-    status: "current",
+    status: "closed",
     applicationWindow: "2026-10-23—2026-11-02 18:00",
     amount: "待核（课题经费以科技计划立项和任务书为准）",
     eligibility: "企业作为申报单位限报1项（含联合申报），应明确课题投资总额和资金来源并提供配套经费，配套经费与财政科技经费总额比例不低于2:1；鼓励联合整机厂商、模型企业和应用单位，课题需开展真实用户验证。",
     applicationUrl: "https://mis.kw.beijing.gov.cn/",
     basisPolicyIds: ["bj-ai-disruptive-tech-2026", "nat-science-industry-integration-2026"],
     sources: [{ title: "关于公开征集人工智能领域颠覆性技术方向储备课题的通知", url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202610/t20261026_4918662.html", publisher: "北京市科学技术委员会、中关村科技园区管理委员会", sourceGrade: "official", evidence: "首都之窗官方原文列明颠覆性芯片、非Transformer算法和大模型前沿技术方向，企业限报1项、2:1配套经费要求、在线入口及11月2日18:00截止时间。" }],
-    verifiedAt: "2026-11-02",
+    verifiedAt: "2026-11-09",
     summary: "北京颠覆性人工智能技术储备课题聚焦算力芯片、非Transformer架构和大模型自主进化，强调产业链联合与真实用户验证。",
     businessImpact: "适合组织芯片、模型、整机、云网算力和行业客户联合形成技术攻关及应用验证方案，提前沉淀真实用户和适配证明。",
     complianceImpact: "企业限报1项且必须证明配套资金来源，项目储备不等同于立项或财政资金到账；涉及芯片、算法和模型数据时需同步做好知识产权与安全审查。",
@@ -729,6 +730,66 @@ export const subsidyPolicies: SubsidyPolicy[] = [
     complianceImpact: "人才类别、认定标准和支持内容不能从通知标题推断，须以办事指南和平台字段为准，完整留存任职、项目和推荐材料。",
     action: "在11月20日前核对人才类别与材料，先通过北京市政策兑现专区或经开区平台确认入口，再提交并留存回执。",
   },
+  {
+    id: "etown-data-voucher-2026-extension",
+    title: "经开区2026年数据券补贴申报（延长批次）",
+    region: "北京经开区",
+    supportDirections: ["数据集、接口和数据模型采购", "高质量人工智能数据集", "数据安全与可信数据空间"],
+    mechanism: "数据券申报",
+    beneficiaries: ["经开区数据产业企业", "AI 模型与数据服务企业", "制造、医药和具身智能数据应用客户"],
+    status: "closed",
+    applicationWindow: "2026-10-12—2026-11-06（延长后，本轮已截止）",
+    amount: "待核（具体支持方向和金额以《经开区2026年数据券补贴办事指南》及平台项目页为准）",
+    eligibility: "符合经开区数据产业政策要求的企业，须通过北京市政策兑现专区或经开区政策兑现综合服务平台提交，并留存数据交易合同、发票、付款和使用证明。",
+    applicationUrl: "https://zhengce.beijing.gov.cn",
+    basisPolicyIds: ["etown-ai-data-measures-2025", "dist-etown-data-voucher-extension-2026"],
+    sources: [{ title: "北京市智慧城市基础设施与智能网联汽车协同发展工作办公室关于延长经开区2026年数据券补贴申报时间的通知", url: "https://kfqgw.beijing.gov.cn/zwgkkfq/2024zcwj/202611/t20261103_4930870.html", publisher: "北京市智慧城市基础设施与智能网联汽车协同发展工作办公室", sourceGrade: "official", evidence: "官方通知将申报期延长至2026年11月6日，并明确市级政策兑现专区、经开区政策兑现平台和咨询电话；金额继续以办事指南及平台项目页为准。" }],
+    verifiedAt: "2026-11-09",
+    summary: "经开区2026年数据券补贴申报在本周延长后已于11月6日截止，后续关注下一批数据券及可信数据空间配套通知。",
+    businessImpact: "本轮可沉淀数据交易、模型调用和数据治理材料，为下一批数据券、数据集和可信空间项目建立证据底座。",
+    complianceImpact: "延长通知不改变原办事指南；逾期未提交视为自动放弃，同一笔支出仍需遵守不重复支持和实际支付核验要求。",
+    action: "本轮已截止；整理合同、发票、付款、数据用途和合规授权凭证，跟踪下一轮申报时间和平台项目页。",
+  },
+  {
+    id: "bj-smart-robot-products-scenes-2026",
+    title: "北京市智能机器人创新产品、典型应用场景及集成应用解决方案征集",
+    region: "北京市级",
+    supportDirections: ["智能机器人创新产品", "典型应用场景", "集成应用解决方案"],
+    mechanism: "产品/场景征集（非定额补贴）",
+    beneficiaries: ["机器人本体与核心部件企业", "视联网和智能运维服务商", "行业场景需求单位", "机器人集成应用方案商"],
+    status: "current",
+    applicationWindow: "2026-11-02—2026-11-30",
+    amount: "非直接财政补贴；入选典型案例将作为后续供需对接、奖励政策制定参考",
+    eligibility: "申报单位须具备独立法人资格和良好信用；创新产品原则上已完成样机研制和场景验证，集成方案至少包含两种不同形态、不同功能的智能机器人产品。",
+    applicationEntry: "liqi@jxj.beijing.gov.cn（盖章PDF，产品/场景/解决方案三选一填报）",
+    basisPolicyIds: ["bj-smart-robot-products-scenes-2026"],
+    sources: [{ title: "北京市经济和信息化局关于征集智能机器人创新产品、典型应用场景及集成应用解决方案的通知", url: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202611/t20261102_4928200.html", publisher: "北京市经济和信息化局", sourceGrade: "official", evidence: "官方通知明确征集范围、申报条件、11月30日截止时间、指定邮箱和后续典型案例编制用途。" }],
+    verifiedAt: "2026-11-09",
+    summary: "北京本周新增智能机器人产品、场景和集成方案征集，重点覆盖4D作业环境和机器人规模化应用。",
+    businessImpact: "视联网感知、云网集成、设备维保、驻场运维和机器人本体可联合打造产品+场景+运维方案，抢占后续供需对接入口。",
+    complianceImpact: "这是征集和案例遴选，不等同于已获财政支持；需对知识产权、场景真实性、数据安全和现场安全责任负责。",
+    action: "在11月30日前选择申报类型，准备产品参数、部署案例、运维服务和数据安全说明，并留存发送回执。",
+  },
+  {
+    id: "etown-ai4chip-2026",
+    title: "经开区AI4Chip人工智能赋能集成电路项目征集",
+    region: "北京经开区",
+    supportDirections: ["AI原生全链赋能", "AI+智能设计", "AI+制造封测", "AI+设备材料", "AI+产业生态"],
+    mechanism: "研发课题征集/项目支持",
+    beneficiaries: ["经开区集成电路相关企业", "算力芯片、EDA和基础软件企业", "工业大模型与智能制造服务商", "AI辅助中试和验证平台"],
+    status: "current",
+    applicationWindow: "2026-11-06—2026-11-20",
+    amount: "待核（经开区对通过评审项目给予相应资金支持，具体金额以评审和任务书为准）",
+    eligibility: "申报单位须为经开区集成电路相关企业，具备研发实力、科研条件和稳定团队；每家企业只能申报一个主对应任务。",
+    applicationEntry: "emica@exmoore.cn（先发电子版申报书，形式审查通过后再提交签字盖章纸质材料）",
+    basisPolicyIds: ["dist-etown-ai4chip-call-2026", "dist-etown-xinchuang-open-source-2026"],
+    sources: [{ title: "关于征集北京经济技术开发区AI4Chip人工智能赋能集成电路项目的通知", url: "https://kfqgw.beijing.gov.cn/zwgkkfq/tzgg/202611/t20261106_4935603.html", publisher: "北京市集成电路重大项目办公室", sourceGrade: "official", evidence: "官方通知明确五个征集方向、项目实施期原则上不超过24个月、每家企业限报1项、11月20日截止、电子邮件和纸质材料报送方式。" }],
+    verifiedAt: "2026-11-09",
+    summary: "经开区把AI与集成电路全链条融合纳入研发课题征集，支持金额待核，重点看技术路线、考核指标和产业化前景。",
+    businessImpact: "适合把算力、工业大模型、数字孪生、数据集、智能运维和安全能力嵌入芯片设计、制造封测及设备材料客户。",
+    complianceImpact: "项目支持需经过材料审查和会议评审，不是自动补贴；近两年审计报告、经费概算和单项目限报要求必须满足。",
+    action: "在11月20日前锁定一个主任务，准备申报书、营业执照、近两年审计报告和考核指标，先邮件提交并留存形式审查记录。",
+  },
 ];
 
 export const subsidyThemes = ["算力", "Token", "数据", "场景", "模型", "OPC"] as const;
@@ -738,7 +799,7 @@ const districtNames = ["东城区", "西城区", "朝阳区", "丰台区", "石�
 export const coverageRecords: CoverageRecord[] = districtNames.map((district) => {
   const verified = subsidyPolicies.filter((policy) => policy.region === district);
   if (verified.length > 0) {
-    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-11-02" : "2026-08-03";
+    const currentScan = district === "北京市级" || district === "北京经开区" ? "2026-11-09" : "2026-08-03";
     return { district, scanStatus: "verified_records", lastScanned: currentScan, channelsChecked: ["政府政策库", "主管部门通知", "政策兑现平台"], leadCount: 0, nextReview: "2026-11-09" };
   }
   if (["朝阳区", "石景山区", "昌平区", "大兴区", "顺义区", "房山区"].includes(district)) {

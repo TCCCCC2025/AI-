@@ -66,6 +66,7 @@ function formatCurrentWindows(policies) {
     const source = officialSource(policy);
     const blocks = [formatApplicationWindow(policy), plainUrlBlock("政策原文", source?.url ?? "待核")];
     if (policy.applicationUrl) blocks.push(plainUrlBlock("申报入口", policy.applicationUrl));
+    if (policy.applicationEntry) blocks.push("申报入口：\n" + policy.applicationEntry);
     return blocks;
   }).join("\n\n");
 }
@@ -104,11 +105,13 @@ function formatStatusReminders(policies, cutoffDate) {
   ].join("\n\n");
 }
 
-function formatRegionalObservations(regional) {
-  if (!regional.length) return "";
+function formatRegionalObservations(regional, periods) {
+  const [start, end] = periods.current.split("—");
+  const current = regional.filter((change) => change.date >= start && change.date <= end);
+  if (!current.length) return "";
   return [
     "外省市政策观察：",
-    regional.map((change) => [
+    current.map((change) => [
       change.title + "：" + change.detail + (change.detail.includes("不作为北京申报依据") ? "" : "以上事项仅适用于当地项目或主体，不作为北京申报依据。"),
       plainUrlBlock("政策原文", change.href ?? "待核"),
     ].join("\n")).join("\n\n"),
@@ -130,7 +133,7 @@ export function formatWeeklyShare({ cutoff = siteCutoff, periods = weeklyPeriods
   const status = formatStatusReminders(subsidies, cutoff.date);
   if (status) sections.push(status);
 
-  const regionalText = formatRegionalObservations(regional);
+  const regionalText = formatRegionalObservations(regional, periods);
   if (regionalText) sections.push(regionalText);
 
   sections.push("完整政策、申报入口和核验依据：", PUBLIC_SITE_URL);
