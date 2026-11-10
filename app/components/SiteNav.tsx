@@ -4,6 +4,7 @@ const links = [
   { href: "/client-manager", label: "客户分类" },
   { href: "/weekly", label: "本周最新" },
   { href: "/subsidies", label: "补贴申报雷达" },
+  { href: "/datasets", label: "高质量数据集" },
   { href: "/national", label: "国家" },
   { href: "/beijing", label: "北京市级" },
   { href: "/districts", label: "区级" },

@@ -34,6 +34,7 @@ test("renders the overview, weekly, and policy-category routes", async () => {
   const nationalHtml = await (await render("/national")).text();
   const beijingHtml = await (await render("/beijing")).text();
   const districtsHtml = await (await render("/districts")).text();
+  const datasetsHtml = await (await render("/datasets")).text();
 
   assert.match(homeHtml, /政策全景/);
   assert.match(homeHtml, /本周最新/);
@@ -45,6 +46,9 @@ test("renders the overview, weekly, and policy-category routes", async () => {
   assert.doesNotMatch(nationalHtml, /北京市级（14 项）/);
   assert.match(beijingHtml, /合规与业务影响/);
   assert.match(districtsHtml, /行动提示/);
+  assert.match(datasetsHtml, /高质量数据集政策/);
+  assert.match(datasetsHtml, /行业高质量数据集建设行动/);
+  assert.match(datasetsHtml, /数据集管理服务平台/);
 });
 
 test("renders policy action intelligence and homepage judgement board", async () => {
@@ -116,6 +120,7 @@ test("homepage links to subsidy radar and renamed audience views", async () => {
   assert.match(html, /客户分类/);
   assert.match(html, /有效申报入口/);
   assert.doesNotMatch(html, /政策来源库/);
+  assert.match(html, /高质量数据集/);
 });
 
 test("weekly page includes the previous week section", async () => {

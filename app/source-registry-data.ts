@@ -159,7 +159,16 @@ const currentWeekAdditions: SourceSeed[] = [
   { url: "https://www.jiangsu.gov.cn/art/2026/10/24/art_60095_11847418.html", title: "江苏省人工智能创新发展财政支持政策", publisher: "江苏省人民政府", sourceType: "official_repost", level: "外省市", region: "江苏省", firstSeen: "2026-10-24", lastVerified: "2026-11-02", verificationStatus: "verified", relatedPolicyIds: [], notes: "江苏省政府官方信息披露词元券、语料券、模型券支持上限；具体申领以正式实施方案和地方兑现为准。", nextReview: "2026-11-09" },
 ];
 
-const allSeeds = [...fromSubsidySources, ...policySeeds, ...externalWeeklySeeds, ...applicationSeeds, ...currentWeekSeeds, ...currentWeekAdditions];
+const datasetSourceSeeds: SourceSeed[] = [
+  { url: "https://www.nda.gov.cn/sjj/zhuanti/ztszzh/0429/20260429223349173144038_pc.html", title: "国家数据集管理服务平台正式发布", publisher: "国家数据局", sourceType: "platform_update", level: "国家", region: "国家", firstSeen: "2026-04-29", lastVerified: "2026-11-10", verificationStatus: "verified", relatedPolicyIds: ["nat-dataset-management-service-platform-2026"], notes: "国家数据集管理服务平台入口，提供目录管理、供需发布、检索、凭证和质量测评服务。", nextReview: "2026-11-17" },
+  { url: "https://www.nda.gov.cn/sjj/swdt/xwfb/0830/20250830210000366789341_mobile.html", title: "《高质量数据集建设指引》发布", publisher: "国家数据局指导编制", sourceType: "official_policy", level: "国家", region: "国家", firstSeen: "2025-08-28", lastVerified: "2026-11-10", verificationStatus: "verified", relatedPolicyIds: ["nat-high-quality-dataset-construction-guide-2025"], notes: "高质量数据集建设方法依据，覆盖体系化布局、设施化流通和生态化运营。", nextReview: "2026-11-17" },
+  { url: "https://banshi.beijing.gov.cn/zcjd/202604/t20260415_428575_qjd.html", title: "北京市行业高质量数据集建设成果公开征集", publisher: "北京市政务服务和数据管理局", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-04-08", lastVerified: "2026-11-10", verificationStatus: "verified", relatedPolicyIds: ["bj-industry-high-quality-dataset-collection-2026"], notes: "北京公开征集行业数据集资源、需求和典型案例；资源和案例方向原则上不少于1000条样本。", nextReview: "2026-11-17" },
+  { url: "https://www.beijing.gov.cn/fuwu/lqfw/gggs/202604/t20260430_4626621.html", title: "2026年第二批人工智能赋能新型工业化高质量数据集需求清单", publisher: "北京市经济和信息化局", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-04-30", lastVerified: "2026-11-10", verificationStatus: "verified", relatedPolicyIds: ["bj-industrial-high-quality-dataset-demand-2026-batch2"], notes: "北京第二批工业高质量数据集需求清单，面向在京企业或新型研发机构征集建设单位。", nextReview: "2026-11-17" },
+  { url: "https://www.beijing.gov.cn/zhengce/zhengcefagui/202605/t20260507_4639888.html", title: "北京市开源生态体系建设实施方案（2026—2028年）", publisher: "北京市经济和信息化局", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-05-07", lastVerified: "2026-11-10", verificationStatus: "verified", relatedPolicyIds: ["bj-open-source-ecosystem-high-quality-dataset-2026"], notes: "北京开源生态方案提出征集高质量AI数据集、建设标注清洗和质量验证工具。", nextReview: "2026-11-17" },
+  { url: "https://zwfwj.beijing.gov.cn/zwgk/jyta/202609/t20260904_4850967.html", title: "北京市关于加强高质量数据集建设提案答复", publisher: "北京市政务服务和数据管理局", sourceType: "official_policy", level: "北京市级", region: "北京市级", firstSeen: "2026-09-04", lastVerified: "2026-11-10", verificationStatus: "verified", relatedPolicyIds: ["bj-high-quality-dataset-policy-framework-signal-2026"], notes: "北京政策信号，涉及数据产权登记、标准评测和数据集资源建设；不构成独立申报依据。", nextReview: "2026-11-17" },
+];
+
+const allSeeds = [...fromSubsidySources, ...policySeeds, ...datasetSourceSeeds, ...externalWeeklySeeds, ...applicationSeeds, ...currentWeekSeeds, ...currentWeekAdditions];
 const uniqueSeeds = new Map<string, SourceSeed>();
 for (const item of allSeeds) {
   const existing = uniqueSeeds.get(item.url);
