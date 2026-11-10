@@ -49,6 +49,9 @@ test("renders the overview, weekly, and policy-category routes", async () => {
   assert.match(datasetsHtml, /高质量数据集政策/);
   assert.match(datasetsHtml, /行业高质量数据集建设行动/);
   assert.match(datasetsHtml, /数据集管理服务平台/);
+  assert.match(datasetsHtml, /现有政策库中的全部关联记录/);
+  assert.match(datasetsHtml, /补贴与申报关联事项/);
+  assert.match(datasetsHtml, /广州市政务服务和数据管理局关于征集人工智能高质量数据集/);
 });
 
 test("renders policy action intelligence and homepage judgement board", async () => {

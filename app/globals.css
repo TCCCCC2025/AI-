@@ -299,6 +299,22 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
 /* Dataset module: keep the homepage entry and card links separate. */
 .dataset-entry { margin: 0; color: var(--paper); font-size: inherit; font-weight: inherit; text-decoration: none; }
 .dataset-card-entry { display: block; margin-top: 12px; color: var(--signal); font-size: 12px; font-weight: 700; text-decoration: none; }
+.dataset-aggregation { padding: 52px 0 64px; border-top: 1px solid var(--ink); }
+.dataset-aggregation > .section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: end; margin-bottom: 28px; }
+.dataset-aggregation > .section-heading .eyebrow { grid-column: 1 / -1; margin-bottom: -12px; }
+.dataset-aggregation > .section-heading h2 { margin: 0; font-family: Georgia, "Songti SC", serif; font-size: 38px; font-weight: 500; }
+.dataset-aggregation > .section-heading p:last-child { margin: 0; color: #536164; }
+.dataset-related-list, .dataset-subsidy-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.dataset-related-card, .dataset-subsidy-card { padding: 20px; background: #fbfaf6; border-top: 2px solid var(--ink); }
+.dataset-related-head { display: flex; justify-content: space-between; align-items: start; gap: 14px; }
+.dataset-related-head .dataset-level { margin: 0; }
+.dataset-related-card h3, .dataset-subsidy-card h3 { margin: 16px 0 7px; font-family: Georgia, "Songti SC", serif; font-size: 20px; font-weight: 500; line-height: 1.2; }
+.dataset-related-card h3 a { color: var(--ink); text-decoration: none; }.dataset-related-card h3 a span { color: var(--signal); }
+.dataset-related-card > p, .dataset-subsidy-card > p { margin: 0; color: #536164; font-size: 12px; }
+.dataset-subsidy-section { background: #e8e8df; margin: 0 max(-1 * max(24px, calc((100vw - 1180px) / 2)), -100vw); padding-left: max(24px, calc((100vw - 1180px) / 2)); padding-right: max(24px, calc((100vw - 1180px) / 2)); }
+.dataset-subsidy-facts { display: grid; gap: 12px; margin: 17px 0; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.dataset-subsidy-facts div { display: grid; grid-template-columns: 100px 1fr; gap: 10px; }.dataset-subsidy-facts span { color: #536164; font-size: 11px; letter-spacing: .08em; }.dataset-subsidy-facts strong { font-size: 13px; line-height: 1.35; }
+.dataset-subsidy-links { display: grid; gap: 7px; margin-top: 15px; }.dataset-subsidy-links a { color: var(--signal); font-size: 12px; font-weight: 700; text-decoration: none; }
 
 @media (max-width: 720px) {
   .dataset-entry, .dataset-summary, .dataset-list > .section-heading, .dataset-action { grid-template-columns: 1fr; }
@@ -310,6 +326,15 @@ footer { padding-top: 26px; padding-bottom: 26px; background: var(--ink); color:
   .dataset-ladder div:nth-child(2) { border-right: 0; }
   .dataset-ladder div:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
   .dataset-list > .section-heading h2 { font-size: 34px; }
+  .dataset-aggregation, .dataset-subsidy-section { padding-top: 34px; padding-bottom: 42px; }
+  .dataset-aggregation > .section-heading { grid-template-columns: 1fr; gap: 16px; }
+  .dataset-aggregation > .section-heading .eyebrow { grid-column: auto; margin-bottom: 0; }
+  .dataset-aggregation > .section-heading h2 { font-size: 32px; }
+  .dataset-related-list, .dataset-subsidy-list { grid-template-columns: 1fr; }
+  .dataset-related-head { display: block; }
+  .dataset-related-head .status { display: inline-flex; margin-top: 10px; }
+  .dataset-subsidy-section { margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
+  .dataset-subsidy-facts div { grid-template-columns: 86px 1fr; }
   .dataset-card { padding: 20px; }
   .dataset-card-head { display: block; }
   .dataset-card-head .status { display: inline-flex; margin-top: 12px; }

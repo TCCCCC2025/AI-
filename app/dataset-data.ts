@@ -1,3 +1,6 @@
+import { policyGroups } from "./policy-data.ts";
+import { subsidyPolicies } from "./subsidy-data.ts";
+
 export type DatasetLevel = "国家" | "北京市级" | "北京各区";
 export type DatasetStatus = "持续适用" | "滚动核验" | "政策信号";
 
@@ -18,6 +21,17 @@ export type DatasetPolicy = {
   businessImpact: string;
   complianceImpact: string;
   action: string;
+};
+
+export type DatasetRelatedPolicy = {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  level: string;
+  status: string;
+  sourceUrl: string;
+  relation: string;
 };
 
 export const datasetPolicies: DatasetPolicy[] = [
@@ -144,8 +158,119 @@ export const datasetPolicies: DatasetPolicy[] = [
   },
 ];
 
+const datasetAdditionalPolicies: DatasetRelatedPolicy[] = [
+  {
+    id: "bj-industrial-dataset-demand-202601",
+    title: "2026年第一批人工智能赋能新型工业化高质量数据集需求清单",
+    issuer: "北京市经济和信息化局",
+    date: "2026-01-07",
+    level: "北京市级",
+    status: "滚动核验",
+    sourceUrl: "https://jxj.beijing.gov.cn/zwgk/2024zcwj/202601/t20260107_4407489.html",
+    relation: "北京工业数据集需求与供需对接",
+  },
+  {
+    id: "gz-ai-high-quality-dataset-2026",
+    title: "广州市政务服务和数据管理局关于征集人工智能高质量数据集的通知",
+    issuer: "广州市政务服务和数据管理局",
+    date: "2026-05-20",
+    level: "外省市",
+    status: "滚动核验",
+    sourceUrl: "https://zsj.gz.gov.cn/zwgk/tzgg/content/post_10818819.html",
+    relation: "广州资源池、测评与供需对接",
+  },
+  {
+    id: "js-high-quality-dataset-pilot-2026",
+    title: "关于征集2026年江苏省高质量数据集建设先行先试项目的通知",
+    issuer: "江苏省数据局",
+    date: "2026-03-03",
+    level: "外省市",
+    status: "滚动核验",
+    sourceUrl: "https://jszwb.jiangsu.gov.cn/art/2026/3/3/art_19390_11734809.html",
+    relation: "江苏先行先试项目与常态化入库",
+  },
+  {
+    id: "js-physical-ai-dataset-projects-2026",
+    title: "物理AI与世界模型方向江苏省高质量数据集建设重点项目名单",
+    issuer: "江苏省数据局",
+    date: "2026-10-21",
+    level: "外省市",
+    status: "持续适用",
+    sourceUrl: "https://jszwb.jiangsu.gov.cn/art/2026/10/21/art_71871_11845055.html",
+    relation: "江苏物理AI、具身智能与世界模型数据集",
+  },
+  {
+    id: "hb-industrial-high-quality-dataset-2026",
+    title: "2026年湖北省工业高质量数据集和智能体评选结果公示",
+    issuer: "湖北省经济和信息化厅",
+    date: "2026-11-06",
+    level: "外省市",
+    status: "持续适用",
+    sourceUrl: "https://jxt.hubei.gov.cn/fbjd/zc/qtzdgkwj/gsgg/202611/t20261106_6072089.shtml",
+    relation: "湖北工业数据集与智能体典型项目",
+  },
+  {
+    id: "gd-manufacturing-ai-dataset-cases-2026",
+    title: "广东省制造业领域人工智能高质量数据集、行业大模型及智能体典型案例征集",
+    issuer: "广东省工业和信息化厅（广州转发）",
+    date: "2026-09-01",
+    level: "外省市",
+    status: "滚动核验",
+    sourceUrl: "https://gxj.gz.gov.cn/yw/tzgg/content/post_10968599.html",
+    relation: "广东制造业数据集与模型/智能体案例",
+  },
+  {
+    id: "hn-ai-dataset-agent-cases-2026",
+    title: "湖南省人工智能高质量行业数据集、语料库、智能体典型案例征集",
+    issuer: "湖南省人民政府门户网站",
+    date: "2026-08-10",
+    level: "外省市",
+    status: "滚动核验",
+    sourceUrl: "https://www.hunan.gov.cn/zqt/xmsb/202608/t20260810_34042693.html",
+    relation: "湖南行业数据集、语料库与智能体案例",
+  },
+];
+
+const datasetKeywordRelations: Array<[RegExp, string]> = [
+  [/高质量数据集|行业数据集|训练数据|语料|数据标注/, "数据集/语料直接相关"],
+  [/可信数据空间|数据产权|科学数据|数据资源|数据产品/, "数据资产与流通配套"],
+  [/数据要素|数据券/, "数据要素与采购支持"],
+];
+
+function datasetRelation(record: unknown) {
+  const text = JSON.stringify(record);
+  return datasetKeywordRelations.find(([pattern]) => pattern.test(text))?.[1] ?? "数据集应用关联";
+}
+
+const coreDatasetUrls = new Set(datasetPolicies.map((item) => item.sourceUrl));
+const relatedPolicyMap = new Map<string, DatasetRelatedPolicy>();
+for (const item of datasetAdditionalPolicies) relatedPolicyMap.set(item.id, item);
+for (const group of policyGroups) {
+  for (const policy of group.policies) {
+    if (!policy.href || coreDatasetUrls.has(policy.href)) continue;
+    if (!datasetKeywordRelations.some(([pattern]) => pattern.test(JSON.stringify(policy)))) continue;
+    relatedPolicyMap.set(policy.id, {
+      id: policy.id,
+      title: policy.title,
+      issuer: policy.issuer,
+      date: policy.date,
+      level: group.id === "national" ? "国家" : group.id === "beijing" ? "北京市级" : group.id === "districts" ? "北京各区" : "外省市",
+      status: policy.status,
+      sourceUrl: policy.href,
+      relation: datasetRelation(policy),
+    });
+  }
+}
+
+export const datasetRelatedPolicies = Array.from(relatedPolicyMap.values()).sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+
+export const datasetSubsidies = subsidyPolicies.filter((item) => /数据集|语料|可信数据空间|数据资源|数据产品|数据券/.test(JSON.stringify(item)));
+
 export const datasetMetrics = {
   total: datasetPolicies.length,
+  related: datasetRelatedPolicies.length,
+  subsidies: datasetSubsidies.length,
+  combined: datasetPolicies.length + datasetRelatedPolicies.length + datasetSubsidies.length,
   national: datasetPolicies.filter((item) => item.level === "国家").length,
   beijing: datasetPolicies.filter((item) => item.level === "北京市级").length,
   active: datasetPolicies.filter((item) => item.status === "持续适用").length,
